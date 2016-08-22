@@ -10,7 +10,9 @@ import android.widget.Filter;
 import android.widget.TextView;
 
 import com.rarasnet.rnp.shared.R;
+import com.rarasnet.rnp.shared.disease.search.models.DisordersModel;
 import com.rarasnet.rnp.shared.disease.search.models.SearchDisordersAutocomplete;
+import com.rarasnet.rnp.shared.models.Disorder;
 
 import org.json.JSONObject;
 
@@ -91,6 +93,7 @@ public class DisordersAutocompleteAdapter extends ArrayAdapter<String> {
                 FilterResults filterResults = new FilterResults();
 
                 SearchDisordersAutocomplete searchDisordersAutocomplete = new SearchDisordersAutocomplete();
+                DisordersModel disorders = new DisordersModel();
 
                 //faz pesquisa em tempo de execução após 3 caracteres
                 if (constraint != null) {
@@ -99,6 +102,7 @@ public class DisordersAutocompleteAdapter extends ArrayAdapter<String> {
                     Log.d("constraint string", JSONObject.quote(constraint.toString()));
 
                     List<String> new_suggestions = null;
+                    List<Disorder> disordersSuggestions = null;
                     searchOption = getSearchType(constraint.toString());
 
                     try {
@@ -113,17 +117,28 @@ public class DisordersAutocompleteAdapter extends ArrayAdapter<String> {
                     } catch (UnsupportedEncodingException e) {
                     }
 
+                    suggestions.clear();
+
                     try {
-                        new_suggestions = searchDisordersAutocomplete.getSuggestions(constraint.toString(), searchOption);
+                        Log.d("Type of search", searchOption);
+                        if(searchOption == "name"){
+                            disordersSuggestions = disorders.nameSearch(constraint.toString());
+                            for(Disorder d: disordersSuggestions){
+                                suggestions.add(d.getName());
+                            }
+                        }else{
+                            new_suggestions = searchDisordersAutocomplete.getSuggestions(constraint.toString(), searchOption);
+                            if(new_suggestions != null) {
+                                for (String suggestion : new_suggestions) {
+                                    suggestions.add(suggestion);
+                                }
+                            }
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    suggestions.clear();
-                    if(new_suggestions != null) {
-                        for (String suggestion : new_suggestions) {
-                            suggestions.add(suggestion);
-                        }
-                    }
+
+
 
                     // Atribui valores aos FilterResults
                     // object

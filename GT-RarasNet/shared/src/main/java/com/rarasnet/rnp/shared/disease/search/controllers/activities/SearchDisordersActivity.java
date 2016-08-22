@@ -544,7 +544,7 @@ private android.app.AlertDialog progress;
                 Toast.makeText(SearchDisordersActivity.this, "Erro de Conexão"
                         , Toast.LENGTH_LONG).show();
             else if(disorders.isEmpty())
-                Toast.makeText(SearchDisordersActivity.this, "Nenhuma Doença foi encontrada"
+                Toast.makeText(SearchDisordersActivity.this, "Nenhuma Disordem foi encontrada"
                         , Toast.LENGTH_LONG).show();
             else
                 SearchDisordersActivity.this.renderDisordersList(disorders);
@@ -614,7 +614,7 @@ private android.app.AlertDialog progress;
                 Toast.makeText(SearchDisordersActivity.this, "Erro de Conexão"
                         , Toast.LENGTH_LONG).show();
             else if(disorders.isEmpty())
-                Toast.makeText(SearchDisordersActivity.this, "Nenhuma Doença foi encontrada"
+                Toast.makeText(SearchDisordersActivity.this, "Nenhuma Disordem foi encontrada"
                         , Toast.LENGTH_LONG).show();
             else
                 SearchDisordersActivity.this.renderDisordersList(disorders);
