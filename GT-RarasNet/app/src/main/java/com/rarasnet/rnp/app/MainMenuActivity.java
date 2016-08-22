@@ -82,7 +82,7 @@ public class MainMenuActivity extends AppCompatActivity {
         mProtocolos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainMenuActivity.this, MainActivity.class);
+                Intent it = new Intent(MainMenuActivity.this, com.rarasnet.rnp.shared.protocol.ProtocolActivity.class);
                 startActivity(it);
             }
         });
