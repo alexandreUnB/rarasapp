@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/default_3line_icon_descript_item_rl_frame"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <ImageView
+        android:id="@+id/default_3line_icon_descript_item_iv_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true" />
+    <!--        android:background="@drawable/menu_round_icon_bg"
+-->
+
+    <TextView
+        android:id="@+id/default_3line_icon_descript_item_tv_principal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="16dp"
+        android:text="Título"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#263238"
+        />
+
+    <TextView
+        android:id="@+id/default_3line_icon_descript_item_tv_info1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="info1"
+        android:textSize="14sp"
+        android:layout_alignLeft="@id/default_3line_icon_descript_item_tv_principal"
+        android:layout_below="@id/default_3line_icon_descript_item_tv_principal"
+        android:textColor="#263238" />
+
+    <!--<TextView-->
+        <!--android:id="@+id/default_3line_icon_descript_item_tv_info2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="info2"-->
+        <!--android:textSize="14sp"-->
+        <!--android:layout_below="@id/default_3line_icon_descript_item_tv_info1"-->
+        <!--android:layout_alignLeft="@id/default_3line_icon_descript_item_tv_principal"-->
+        <!--android:ellipsize="end"-->
+        <!--android:singleLine="true"-->
+        <!--android:textColor="@color/material_grey_palette_400" />-->
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/material_grey_palette_200"
+        android:layout_alignLeft="@id/default_3line_icon_descript_item_tv_principal"
+        android:layout_alignParentBottom="true"
+        />
+
+
+</RelativeLayout>

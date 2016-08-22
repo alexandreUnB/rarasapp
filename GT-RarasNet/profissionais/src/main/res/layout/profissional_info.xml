@@ -1,0 +1,251 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="?android:attr/actionBarSize"
+    android:background="@drawable/main_bg">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/logo_rederaras" />
+
+
+
+        <LinearLayout
+            android:id="@+id/profissionais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/shape_background_black">
+
+
+            <RelativeLayout
+                android:id="@+id/profissional_perfil_button"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+
+
+                android:background="@drawable/seletor_transparence">
+
+                <RelativeLayout
+                    android:id="@+id/profe_image_perfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_centerVertical="true"
+
+
+                    android:background="@null">
+
+                    <ImageView
+                        android:id="@+id/profe_image"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/doctorview"
+
+                        />
+
+                </RelativeLayout>]
+
+
+
+
+
+                <TextView
+
+                    android:id="@+id/profe_perfil_name"
+                    android:typeface="sans"
+                    android:textStyle="bold"
+                    android:text="@string/default_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_toRightOf="@id/profe_image_perfil"
+
+                    />
+
+                <TextView
+
+                    android:id="@+id/profe_perfil_setname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="2dp"
+                    android:layout_toRightOf="@id/profe_perfil_name" />
+
+                <TextView
+
+                    android:id="@+id/profe_perfil_setsobrenome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/profe_perfil_name"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="2dp"
+                    android:layout_toRightOf="@id/profe_perfil_setname" />
+
+
+
+                <TextView
+
+                    android:id="@+id/profe_perfil_cidade"
+                    android:text="@string/default_cidade"
+                    android:typeface="sans"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/profe_image_perfil"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_below="@id/profe_perfil_name" />
+
+
+                <TextView
+
+                    android:id="@+id/profe_perfil_setcidade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="italic"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_toRightOf="@id/profe_perfil_cidade"
+                    android:layout_below="@id/profe_perfil_name" />
+
+                <TextView
+
+                    android:id="@+id/profe_perfil_estado"
+                    android:text="@string/default_estado"
+                    android:typeface="sans"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/profe_image_perfil"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_below="@id/profe_perfil_cidade" />
+
+                <TextView
+
+                    android:id="@+id/profe_perfil_setestado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:textStyle="italic"
+                    android:layout_toRightOf="@id/profe_perfil_estado"
+                    android:layout_below="@id/profe_perfil_cidade" />
+
+                <TextView
+
+                    android:id="@+id/profe_perfil_email"
+                    android:text="@string/default_email"
+                    android:typeface="sans"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/profe_image_perfil"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/profe_perfil_estado" />
+
+                <TextView
+
+                    android:id="@+id/profe_perfil_setemail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"
+                    android:layout_toRightOf="@id/profe_perfil_estado"
+                    android:layout_below="@id/profe_perfil_estado" />
+
+                <ImageButton
+                    android:id="@+id/profe_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentRight="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_centerVertical="true"
+
+
+                    android:src="@mipmap/email" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:id="@+id/profe_label_disease"
+                android:layout_above="@+id/instituicao"
+
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/shape_background_black"
+                    android:textSize="18dp"
+                    android:text="@string/professional_desiase" />
+
+                <ListView
+                    android:layout_margin="10dp"
+                    android:id="@+id/profe_perfil_listdisease"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></ListView>
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:id="@+id/center_label_disease"
+
+
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/shape_background_black"
+                    android:textSize="18dp"
+                    android:text="@string/professional_center" />
+
+                <ListView
+                    android:layout_margin="10dp"
+                    android:id="@+id/profe_perfil_listcenter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></ListView>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+
+    android:background="@android:drawable/dialog_holo_light_frame">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:layout_toRightOf="@+id/agora"
+        android:layout_toLeftOf="@+id/proarrow"
+        android:layout_centerInParent="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@+id/thumbnail"
+            android:layout_toRightOf="@+id/thumbnail1">
+
+
+            <TextView
+
+                android:id="@+id/professional_name"
+                android:text="@string/default_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="2dp"
+                />
+
+            <TextView
+
+                android:id="@+id/profissional_setname"
+                android:text="Cidade:2222 "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+
+                android:layout_marginBottom="2dp"
+                android:layout_toRightOf="@id/professional_name" />
+
+
+            <TextView
+
+                android:id="@+id/profissional_cidade"
+                android:text="@string/default_cidade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_below="@id/professional_name" />
+
+
+            <TextView
+
+                android:id="@+id/profissional_setcidade"
+                android:text="Cidade:2222 "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+
+                android:layout_marginBottom="2dp"
+                android:layout_toRightOf="@id/profissional_cidade"
+                android:layout_below="@id/professional_name" />
+
+            <TextView
+
+                android:id="@+id/profissional_estado"
+                android:text="@string/default_estado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@id/profissional_cidade" />
+
+            <TextView
+
+                android:id="@+id/profissional_setestado"
+                android:text="Cidade:2222 "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@id/profissional_estado"
+                android:layout_below="@id/profissional_setcidade" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/agora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
+        android:background="@null">
+
+        <RelativeLayout
+            android:id="@+id/disease_detalhe_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+
+
+            android:background="@null">
+
+            <ImageView
+                android:id="@+id/disease_detalhe_button1"
+                android:clickable="false"
+                android:focusable="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/doctorview"
+                android:background="@null" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/proarrow"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow"
+        android:layout_margin="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/shape_background_black" />
+
+
+</RelativeLayout>

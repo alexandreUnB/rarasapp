@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+
+    android:background="@android:drawable/dialog_holo_light_frame">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:layout_toLeftOf="@+id/proarrow"
+        android:layout_centerInParent="true">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_margin="15dp"
+            android:layout_gravity="center_vertical"
+            android:layout_toLeftOf="@+id/thumbnail"
+            android:layout_toRightOf="@+id/thumbnail1">
+
+
+            <TextView
+                android:id="@+id/resultDiseaseName"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medium Text"
+                android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#040404"
+                android:typeface="sans"
+                android:textSize="15dip"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/thumbnail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dip"
+
+            android:orientation="horizontal">
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/proarrow"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/shape_background_black" />
+
+
+</RelativeLayout>

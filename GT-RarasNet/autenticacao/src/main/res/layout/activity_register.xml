@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical"
+
+  >
+
+
+    <RelativeLayout
+        android:id="@+id/act_register_rl_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        >
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            >
+
+            <ImageView
+                android:id="@+id/act_register_iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo_no_name"
+                android:scaleType="center"
+                />
+
+            <TextView
+                android:id="@+id/act_register_tv_titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/act_register_tv_titulo"
+                android:textSize="@dimen/title_size"
+                android:layout_marginLeft="@dimen/icon_leftMargin"
+                android:layout_toRightOf="@id/act_register_iv_logo"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_above="@+id/layout_button"
+        android:id="@+id/act_register_rl_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/act_register_rl_title"
+        >
+
+        <ProgressBar
+            android:id="@+id/act_register_pb_carregando"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            />
+
+        <!-- Login Label -->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/act_register_ti_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:errorEnabled="true"
+            >
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/act_register_et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textWebEmailAddress"
+                android:hint="@string/act_register_et_email"
+                android:ems="10"
+                android:singleLine="true"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Email Label -->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/act_register_ti_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/act_register_ti_email"
+
+            >
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/act_register_et_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/act_register_et_login"
+                android:singleLine="true"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Senha Label -->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/act_register_ti_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/act_register_ti_login"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:errorEnabled="true"
+            >
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/act_register_et_senha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/act_register_et_senha"
+                android:ems="10"
+                android:singleLine="true"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <!-- Confirmar Label -->
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/act_register_ti_senhaConf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/act_register_ti_senha"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:errorEnabled="true"
+
+            >
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/act_register_et_senhaConf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/act_register_et_senhaConf"
+                android:singleLine="true"/>
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/act_login_ti_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/act_register_ti_senhaConf"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:errorEnabled="true"
+            >
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/act_login_et_nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:singleLine="true"
+                android:hint="Nome"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/act_login_ti_sobrenome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/act_login_ti_nome"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:errorEnabled="true"
+            >
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/act_login_et_sobrenome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:singleLine="true"
+                android:hint="Sobrenome"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/sp_user"
+
+
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/act_login_ti_sobrenome"
+            android:orientation="horizontal">
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/sexo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="18dp"
+                android:text="Sexo: "/>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/act_login_sp_sexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sp_sexo"
+            android:layout_marginTop="10dp"
+
+            android:paddingBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sp_user"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tp_usuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:background="@null"
+                android:layout_below="@id/act_login_sp_sexo"
+                android:text="Tipo de Usúario: "/>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/act_login_sp_tpusuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tp_usuario"
+
+                android:spinnerMode="dropdown"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/layout_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/act_register_cv_cadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/button_marginTop"
+        card_view:cardBackgroundColor="@color/primary_accent"
+        card_view:cardCornerRadius="@dimen/cv_button_radius"
+        card_view:cardElevation="@dimen/cv_button_elevation">
+
+        <TextView
+            android:id="@+id/act_register_tv_cadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/default_text_padding"
+            android:textSize="@dimen/text_size_small"
+            android:text="@string/act_register_tv_cadastrar"
+            android:gravity="center"
+            android:background="@drawable/tv_selector"
+            android:clickable="true"
+            />
+    </android.support.v7.widget.CardView>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/act_register_tv_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:padding="4dp"
+        android:text="@string/act_register_tv_login"
+        android:gravity="center"
+        android:textSize="@dimen/text_size_medium"
+        android:clickable="true"
+        android:background="@drawable/tv_selector"
+        />
+
+
+    </RelativeLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+
+
+</android.support.v7.widget.LinearLayoutCompat>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="act_login_et_email">Login</string>
+    <string name="act_login_et_senha">Senha</string>
+
+    <string name="act_login_tv_entrar">ENTRAR</string>
+    <string name="act_login_tv_cadastrar">Sem Conta? Cadastre-se</string>
+</resources>

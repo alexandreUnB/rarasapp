@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/default_3line_icon_item_rl_frame"
+    android:layout_width="match_parent"
+    android:layout_height="88dp">
+
+    <ImageView
+        android:id="@+id/default_3line_icon_item_iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/menu_round_icon_bg"
+        />
+
+    <TextView
+        android:id="@+id/default_3line_icon_item_tv_principal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="16dp"
+        android:text="Título"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#263238"
+        />
+
+    <TextView
+        android:id="@+id/default_3line_icon_item_tv_info1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="info1"
+        android:textSize="14sp"
+        android:layout_alignLeft="@id/default_3line_icon_item_tv_principal"
+        android:layout_below="@id/default_3line_icon_item_tv_principal"
+        android:textColor="#263238" />
+
+    <TextView
+        android:id="@+id/default_3line_icon_item_tv_info2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="info2"
+        android:textSize="14sp"
+        android:layout_below="@id/default_3line_icon_item_tv_info1"
+        android:layout_alignLeft="@id/default_3line_icon_item_tv_principal"
+        android:textColor="#263238" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/material_grey_palette_200"
+        android:layout_alignLeft="@id/default_3line_icon_item_tv_principal"
+        android:layout_alignParentBottom="true"
+    />
+
+</RelativeLayout>

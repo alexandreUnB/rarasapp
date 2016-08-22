@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:background="@color/white"
+    >
+
+    <TextView
+        android:id="@+id/default_autocomplete_item_tv_suggestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textSize="@dimen/text_size_medium"
+        android:textColor="@color/text_primary_dark_color"
+    />
+
+</RelativeLayout>

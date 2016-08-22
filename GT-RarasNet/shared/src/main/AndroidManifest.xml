@@ -1,0 +1,62 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rarasnet.rnp.shared">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <application
+
+        android:allowBackup="true" android:label="@string/app_name">
+        <meta-data android:name="DATABASE" android:value="sugar.db"/>
+        <meta-data android:name="VERSION" android:value="3"/>
+        <meta-data android:name="QUERY_LOG" android:value="true"/>
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.rarasnet.rnp.shared"/>
+
+
+        <activity
+            android:name=".profissionais.controllers.activities.SearchProfissionaisActivity"
+            android:label="Profissionais de Saúde"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".profissionais.profile.ProfissionalProfile"
+            android:label="Perfil"
+            android:screenOrientation="portrait" />
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+        <activity
+            android:name=".center.controllers.activities.SearchCentersActivity"
+            android:label="Centros de Referência"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".center.profile.CenterProfile"
+            android:label="Perfil"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".disease.profile.DisorderProfileActivity"
+            android:label="Doença"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".disease.search.controllers.activities.SearchDisordersActivity"
+            android:label="@string/doenca"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".usuario.controllers.activities.UserActivity"
+            android:label="Usúario"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
+
+
+    </application>
+
+</manifest>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/act_contact_tb_mainToolbar"
+        android:layout_height="@dimen/abc_action_bar_default_height_material"
+        android:layout_width="match_parent"
+        android:background="@color/primary"
+        app:theme="@style/AppTheme.Toolbar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+
+        />
+    <View
+        android:id="@+id/act_center_profile_tb_mainToolbarElevation"
+        android:layout_height="5dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/elevation"
+        android:layout_below="@id/act_center_profile_tb_mainToolbar"
+        />
+
+
+    <ScrollView
+        android:layout_below="@id/act_center_profile_tb_mainToolbarElevation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ab"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="3dp"
+            >
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/act_center_profile_cv_mainCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardElevation="3dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.gms.maps.MapView
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/act_center_profile_mp_centerLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+
+                        <android.support.v7.widget.CardView
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/act_center_profile_cv_profsCard2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            card_view:cardUseCompatPadding="true"
+                            card_view:cardElevation="3dp"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/act_profe_profile"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:orientation="horizontal">
+                                <RelativeLayout
+
+                                    android:id="@+id/av"
+                                    android:layout_weight="1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+
+                                 >
+
+
+                                    <de.hdodenhof.circleimageview.CircleImageView
+                                        android:id="@+id/avatar"
+                                        android:layout_width="70dp"
+                                        android:layout_height="70dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/ic_no_profile_picture"
+
+
+                                       />
+
+                                    <TextView
+                                        android:id="@+id/nome"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Dr. XX0777 jhjhjjhjhjj jhjjjhjjhj"
+                                        android:textStyle="bold"
+                                       android:textAlignment="center"
+                                        android:layout_below="@id/avatar"
+                                        android:textSize="10sp"
+                                        android:textColor="@color/accentColor"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/especialidade"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="especialidade"
+                                        android:textStyle="bold"
+                                        android:layout_centerInParent="true"
+                                        android:layout_below="@id/nome"
+                                        android:textSize="10sp"
+                                        android:textColor="@color/material_grey_palette_400"
+                                        />
+
+
+                                </RelativeLayout>
+                                <LinearLayout
+                                    android:id="@+id/info"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="3dp"
+                                    android:layout_weight="0.5"
+                                    android:orientation="vertical"
+
+                                    >
+
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                        <ImageView
+                                            android:id="@+id/act_center_profile_iv_profissionaiscrm"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:padding="3dp"
+                                            android:layout_centerHorizontal="true"
+                                            android:src="@drawable/ic_crm"
+                                            />
+
+
+
+                                        <TextView
+                                            android:id="@+id/crm"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="123445"
+                                            android:padding="5dp"
+                                            android:layout_gravity="center"
+                                            android:textSize="13sp"
+                                            android:textColor="@color/material_grey_palette_400"
+                                            />
+                                    </LinearLayout>
+                                <LinearLayout
+
+
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+                                        <ImageView
+                                            android:id="@+id/act_center_profile_iv_profissionais1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:padding="5dp"
+                                            android:layout_centerInParent="true"
+                                            android:src="@drawable/ic_email_black_36dp"
+
+                                            />
+
+
+
+                                        <TextView
+                                            android:id="@+id/email"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Email@email.com.br"
+                                            android:layout_gravity="center"
+                                            android:padding="5dp"
+                                            android:textSize="13sp"
+                                            android:textColor="@color/material_grey_palette_400"
+                                            />
+                                    </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_marginTop="10dp"
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:id="@+id/act_center_profile_iv0_pesquisadores"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="5dp"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@drawable/ic_map_marker_black_36dp"
+                                    />
+
+
+
+                                <TextView
+                                    android:id="@+id/endereco"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sertor Comercial, Asa Norte, Brasilia - DF"
+                                    android:layout_gravity="center"
+                                    android:padding="5dp"
+                                    android:layout_alignLeft="@id/act_center_profile_iv0_pesquisadores"
+                                    android:textSize="13sp"
+                                    android:textColor="@color/material_grey_palette_400"
+                                    />
+                            </LinearLayout>
+
+
+
+
+
+
+
+
+                                    </LinearLayout>
+
+
+
+                            </LinearLayout>
+                               <!-- <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_below="@id/act_profe_profile">
+                                    <TextView
+                                        android:id="@+id/act_center_profile_tv_maisInfos"
+
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:layout_marginLeft="10dp"
+                                        android:textSize="12sp"
+                                        android:text="MAIS INFORMAÇÕES"
+                                        android:textColor="@color/primary_accent"
+                                        />
+
+                                    <ImageView
+                                        android:id="@+id/act_center_profile_iv_expandCard"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
+                                        android:layout_alignParentRight="true"
+                                        android:scaleType="center"
+                                        />
+                                </LinearLayout>-->
+                            </LinearLayout>
+
+
+                        </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+
+
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="2dp"
+                >
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/act_center_profile_cv_diseasesCar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                 
+                    card_view:cardElevation="3dp"
+                    >
+
+
+
+                    <RelativeLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+
+
+                        android:background="@color/white"
+
+                        >
+
+
+
+                        <ExpandableListView
+
+                            android:id="@+id/frag_center_associates_el_associatesLists"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:layout_width="match_parent"
+                            android:childDivider="#00000000"
+                            android:dividerHeight="0dp"
+                            />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

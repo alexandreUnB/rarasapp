@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- Parte 3 do Formulário de Pacientes -->
+    <string name="form_pt3_et_nome_responsavel" translatable="false">Nome do Pai, Mãe ou Responsável</string>
+    <string name="form_pt3_tv_data_nascimento" translatable="false">Data de Nascimento:</string>
+    <string name="form_pt3_et_data_nascimento" translatable="false">DD-MM-YYYY</string>
+    <string name="form_pt3_tv_tem_assoc" translatable="false">Faz parte de alguma associação de apoio?</string>
+
+</resources>

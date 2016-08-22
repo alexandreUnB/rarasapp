@@ -1,0 +1,40 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rarasnet.rnp.profissionais">
+
+    <application android:allowBackup="true" android:label="@string/app_name">
+        <activity
+            android:name=".controllers.activities.SearchProfissionaisActivity"
+            android:label="Profissionais de Saúde"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.rarasnet.rnp.profissionais.controllers.activities.ProfessionalProfileActivity"
+            android:label="Perfil do Profissional"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.rarasnet.rnp.profissionais.action.PROFILE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".controllers.activities.SendMail"
+            android:label="Contato"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".profile.ProfissionalProfile"
+            android:label="Perfil"
+            android:screenOrientation="portrait" />
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+
+
+    </application>
+
+</manifest>
+

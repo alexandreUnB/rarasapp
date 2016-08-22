@@ -1,0 +1,756 @@
+<resources>
+
+
+    <!--About-->
+
+    <string name="about_title"> Quem Somos</string>
+    <string name="about_subtitle">Quem Somos?</string>
+    <string name="about_membros">Menbros do Projeto</string>
+    <string name="about_apoio">Apoio</string>
+
+    <!--Fale Conosco-->
+    <string name="contato_tv_Links">Links Úteis</string>
+    <string name="contato_tvFale">Fale Conosco</string>
+    <string name="contato_tvEmail">Para sugestões dúvidads ou críticas, mande-nos um e-mail!</string>
+
+    <string name="contato_btnEnvio">ENVIAR E-MAIL</string>
+
+
+
+    <string name="app_name">RarasNet</string>
+
+        <string name="quem_somos" translatable="false">\t\t\t\t Doenças raras são afecções de baixa prevalência e, de modo geral, são quadros
+             sindrômicos, geralmente de origem genética, abrangendo mais de 5000 diferentes doenças que
+            afetam um grande número de pessoas em todo o mundo, principalmente
+            crianças. Dentre os problemas apontados por profissionais de saúde e
+            associações de pacientes estão:\n\n
+            \t\t(1) a falta de informação sobre tais doenças e sobre onde obter ajuda,\n
+            \t\t(2) a falta de conhecimento científico com escassez de estratégias diagnósticas e
+            terapêuticas.\n\n
+            \t\t\t\t Propõe-se a criação de um aplicativo Android e uma plataforma integrada mobile/web para veiculação de
+            informações nacionais tais doenças,incluindo protocolos, listas de medicamentos
+            e centros de referência a fim de ampliar e qualificar o cuidado em saúde.</string>
+
+    <string name="teste">
+        <![CDATA[
+
+        <h4 style="text-align:center"> Observatório de Doenças Raras</h2>
+
+
+        <p>O Observatório de Doenças Raras é composto por pesquisadores interessados no tema e com o objetivo de agregar expertise no campo referido. O observatório está relacionados a pesquisas epidemiológicas, que deem subsídios a formulação de políticas públicas, a produção de informação e qualificação dos mecanismos de comunicação no campo da saúde e no campo das doenças raras, além de promover reflexão bioética, apoiar as associações de pacientes e interessados, desenvolver e organizar produções acadêmicas em doenças raras.</p>
+        <p>É importante ressaltar a existência da portaria 199 de 30 de janeiro de 2014 Institui a Política Nacional de Atenção Integral às Pessoas com Doenças Raras, onde aprova as “Diretrizes para Atenção Integral às Pessoas com Doenças Raras no âmbito do Sistema Único de Saúde (SUS) e institui incentivos financeiros de custeio”. Para que essa portaria seja aceita, considera-se doença rara aquela que atinge até 65 pessoas em cada 100.000 indivíduos, ou seja, 1,3 pessoas para cada 2.000 indivíduos.
+        <br>
+        <br>
+        <b>Sobre o Aplicativo RarasNet: </b> O aplicativo está em fase experimental, versão Beta 1.0.
+        ]]>
+
+</string>
+
+    <string name="membros_projeto">
+        <![CDATA[
+
+
+        <h4> Coordenador Geral </h4>
+        <li> Professor Dr. Natan Monsores de Sá</li>
+
+         <h4> Equipe de TI </h4>
+        <li> Alexandre Sanches - Gerente de Projeto</li>
+        <li> Felipe Brandão - Desenvolvedor</li>
+        <li> Ronnyery Barbosa - Desenvolverdor</li>
+
+        <h4> Equipe de Conteúdo </h4>
+        <li> Larissa Arruda</li>
+        <li> Rebeca Campos</li>
+        <li> Vanessa Buzogany</li>
+
+
+
+        ]]>
+
+</string>
+
+        <string name="lei_1">
+        <![CDATA[
+
+
+        <h4> PORTARIA GM N. 981, DE 21 DE MAIO DE 2014</h4>
+
+      <p>Altera, acresce e revoga dispositivos da Portaria nº 199/GM/MS, de 30 de janeiro de 2014, que institui a Política Nacional de Atenção Integral às Pessoas com Doenças Raras, aprova as Diretrizes para Atenção Integral às Pessoas com Doenças Raras no âmbito do Sistema Único de Saúde (SUS) e institui incentivos financeiros de custeio.</p>
+
+
+
+<p>A MINISTRA DE ESTADO DA SAÚDE, INTERINA, no uso da atribuição que lhe confere o inciso II do parágrafo único do art. 87 da Constituição, resolve:</p>
+
+
+
+<p>Art. 1º Os incisos I, II e III do "caput" do § 2º do art. 14; a alínea "a" do inciso I do "caput" do art. 20; o "caput" do § 2º do art. 22 e o art. 39 da Portaria nº 199/GM/MS, de 30 de janeiro de 2014, passam a vigorar com a seguinte redação:</p>
+
+<p>"Art. 14. .....................................................................
+
+.....................................................................................
+
+§ 2º ...............................................................................</p>
+
+<p>I - oferte atenção diagnóstica e terapêutica para no mínimo 2 (dois) grupos de doenças raras do Eixo I de que trata o art. 12;</p>
+
+<p>II - oferte atenção diagnóstica e terapêutica para no mínimo 2 (dois) grupos de doenças raras do Eixo II de que trata o art. 12; ou</p>
+
+<p>III - oferte atenção diagnóstica e terapêutica para no mínimo 1 (um) grupo de doenças raras de cada um dos Eixos de que trata o art. 12." (NR)</p>
+
+<p>"Art. 20. ....................................................................
+
+I - ...................................................................................</p>
+
+<p>a) a relação dos estabelecimentos de saúde que realizarão a atenção especializada como Serviço de Atenção Especializada ou Serviço de Referência em Doenças Raras, indicando quais destes realizarão o aconselhamento genético, se necessário; e" (NR)</p>
+
+<p>"Art. 22. ........................................................................
+
+........................................................................................</p>
+
+<p>§ 2º Quando houver a habilitação de mais de um Serviço de Atenção Especializada em Doenças Raras dentro do mesmo estabelecimento de saúde, o valor de que trata o § 1º será acrescido de R$ 5.750,00 (cinco mil setecentos e cinquenta reais) por serviço excedente, destinado à inclusão de mais 1 (um) profissional médico por serviço, não ultrapassando o quantitativo financeiro de um Serviço de Referência em Doenças Raras." (NR)</p>
+
+<p>"Art. 39. Fica incluído na Tabela de Serviços Especializados do SCNES o SERVIÇO DE ATENÇÃO ÀS PESSOAS COM DOENÇAS RARAS (código - 168) com as respectivas classificações, conforme o anexo I." (NR)</p>
+
+<p>Art. 2º A Portaria nº 199/GM/MS, de 2014, passa a vigorar acrescida da alínea "d" ao inciso II do art. 12; do inciso XX ao art. 15; do § 3º ao art. 20; do § 4º ao art. 23 e do art. 38-A, "caput", e §§ 1º, 2º, 3º e 4º, nos seguintes termos:</p>
+
+<p>"Art. 12. ........................................................................</p>
+
+<p>II - ..................................................................................
+
+........................................................................................</p>
+
+<p>d) outras doenças raras de origem não genética."</p>
+
+<p>"Art. 15. ........................................................................
+
+........................................................................................</p>
+
+<p>XX - realizar o aconselhamento genético das pessoas acometidas e seus familiares, quando indicado."</p>
+
+<p>"Art. 20. ........................................................................
+
+........................................................................................</p>
+
+<p>§ 3º O Serviço de Atenção Especializada em Doenças Raras ou o Serviço de Referência em Doenças Raras que realizar o aconselhamento genético, deverá obedecer os critérios descritos nesta Portaria."</p>
+
+<p>"Art. 23. ........................................................................
+
+........................................................................................<p>
+
+<p>§ 4º Não será permitida a habilitação de mais de um Serviço de Referência em Doenças Raras dentro do mesmo estabelecimento de saúde."</p>
+
+<p>"Art. 38-A. O procedimento de Aconselhamento Genético (código: 03.01.01.022-6) descrito nesta Portaria e nos seus anexos poderá ser executado por equipe de saúde multiprofissional habilitada para a sua realização, conforme legislação específica sobre as profissões de saúde e regulamentação de seus respectivos conselhos profissionais, respeitados os critérios de habilitação.</p>
+
+<p>§ 1º O Aconselhamento Genético envolve a existência prévia ou o estabelecimento de diagnóstico de determinada doença, a interpretação de achados e estimativas de riscos genéticos para pessoas clinicamente normais com familiares que apresentam diagnóstico de doença rara documentada, a transmissão das informações relativas à etiologia, à evolução, ao prognóstico e ao risco de recorrência, as estratégias de tratamento e prevenção, além de recomendações para acompanhamento e elaboração de relatório final a ser entregue ao consulente.</p>
+
+<p>§ 2º Quando o aconselhamento genético envolver diagnóstico médico, tratamento clínico e medicamentoso, será obrigatória a presença de médico geneticista.</p>
+
+<p>§ 3º É obrigatória a elaboração de laudo escrito e assinado pelo profissional responsável que realizou o aconselhamento genético, a ser anexado no prontuário do consulente.</p>
+
+<p>§ 4º O aconselhamento genético será realizado no SUS apenas nos serviços de saúde definidos e pactuados pelo gestor local com habilitação específica para o referido procedimento (código 32.14), conforme descrito no anexo II."
+</p>
+
+<p>Art. 3º Os anexos I, II, III, V da Portaria nº 199/GM/MS, de 2014, passam a vigorar na forma dos anexos I, II, III e IV, respectivamente, a esta Portaria.</p>
+
+<p>Art. 4º Esta Portaria entra em vigor na data de sua publicação.</p>
+
+
+
+<p>Art. 5º Fica revogado o inciso II do art. 16 da Portaria nº 199/GM/MS, de 30 de janeiro de 2014, publicada no Diário Oficial da União nº 30, Seção I, do dia 12 de fevereiro seguinte, p. 44.</p>
+
+Acesse aqui o ANEXO da referida Portaria.
+
+
+
+        ]]>
+
+</string>
+
+
+     <string name="lei2">
+        <![CDATA[
+
+
+        <h4>PORTARIA Nº 199, DE 30 DE JANEIRO DE 2014 </h4>
+
+
+<p>Institui a Política Nacional de Atenção Integral às Pessoas com Doenças Raras, aprova as Diretrizes para Atenção Integral às Pessoas com Doenças Raras no âmbito do Sistema Único de Saúde (SUS) e institui incentivos financeiros de custeio.</p>
+
+<p>O MINISTRO DE ESTADO DA SAÚDE, no uso da atribuição que lhe confere o inciso II do parágrafo único do art. 87 da Constituição, e</p>
+
+<p>Considerando a Lei nº 8.080, de 19 de setembro de 1990, que dispõe sobre as condições para a promoção, proteção e recuperação da saúde, a organização e o funcionamento dos serviços correspondentes e dá outras providências;</p>
+
+<p>Considerando a Lei nº 8.142, de 28 de dezembro de 1990, que dispõe sobre a participação da comunidade na gestão do SistemaÚnico de Saúde (SUS) e sobre as transferências intergovernamentais de recursos financeiros na área da saúde;</p>
+
+<p>Considerando o Decreto nº 7.508, de 28 de junho de 2011, que regulamenta a Lei nº 8.080, de 1990, para dispor sobre a organização do SUS, o planejamento da saúde, a assistência à saúde e a articulação interfederativa, e dá outras providências;</p>
+
+<p>Considerando o Decreto nº 7.646, de 21 de dezembro de 2011, que dispõe sobre a Comissão Nacional de Incorporação de Tecnologias no SUS e sobre o processo administrativo para incorporação, exclusão e alteração de tecnologias em saúde pelo SUS;</p>
+
+
+<p>Considerando a Portaria nº 1.559/GM/MS, de 1º de agosto de 2008, que institui a Política Nacional de Regulação do SUS;</p>
+
+<p>Considerando a Portaria nº 81/GM/MS, de 20 de janeiro de 2009, que institui, no âmbito do SUS, a Política Nacional de Atenção Integral em Genética Clínica;</p>
+
+<p>Considerando a Portaria nº 4.279/GM/MS, de 30 de dezembro de 2010, que estabelece diretrizes para a organização da Rede de Atenção à Saúde no âmbito do SUS;</p>
+
+<p>Considerando a Portaria nº 1.459/GM/MS, de 24 de junho de 2011, que institui, no âmbito do SUS, a Rede Cegonha;</p>
+
+<p>Considerando a Portaria nº 1.600/GM/MS, de 7 de julho de 2011, que reformula a Política Nacional de Atenção às Urgências e institui a Rede de Atenção às Urgências no SUS;</p>
+
+<p>Considerando a Portaria nº 2.488/GM/MS, de 21 de outubro de 2011, que aprova a Política Nacional de Atenção Básica (PNAB), estabelecendo a revisão de diretrizes e normas para a organização da Atenção Básica, para a Estratégia Saúde da Família (ESF) e o Programa de Agentes Comunitários de Saúde (PACS);</p>
+
+<p>Considerando a Portaria nº 3.088/GM/MS, de 23 de dezembro de 2011, que institui a Rede de Atenção Psicossocial para pessoas com sofrimento ou transtorno mental e com necessidades decorrentes do uso de crack, álcool e outras drogas, no âmbito do SUS;</p>
+
+<p>Considerando a Portaria nº 533/GM/MS, de 28 de março de 2012, que estabelece o elenco de medicamentos e insumos da Relação Nacional de Medicamentos Essenciais (RENAME) no âmbito do SUS;</p>
+
+<p>Considerando a Portaria nº 793/GM/MS, de 24 de abril de 2012, que institui a Rede de Cuidados à Pessoa com Deficiência noâmbito do SUS;</p>
+
+<p>Considerando a Portaria nº 841/GM/MS, de 2 de maio de 2012, que publica a Relação Nacional de Ações e Serviços de Saúde (RENASES) no âmbito do SUS;</p>
+
+<p>Considerando a Portaria nº 252/GM/MS, de 19 de fevereiro de 2013, que institui a Rede de Atenção à Saúde das Pessoas com Doenças Crônicas no âmbito do SUS;</p>
+
+<p>Considerando a Portaria nº 963/GM/MS, de 27 de maio de 2013, que redefine a Atenção Domiciliar no âmbito do SUS;</p>
+
+<p>Considerando a Portaria nº 1.554/GM/MS, de 30 de julho de 2013, que dispõe sobre as regras de financiamento e execução do Componente Especializado da Assistência Farmacêutica no âmbito do SUS;</p>
+
+<p>Considerando a Portaria nº 2.135/GM/MS, de 25 de setembro de 2013, que estabelece diretrizes para o processo de planejamento no âmbito do SUS;</p>
+
+<p>Considerando as sugestões dadas à Consulta Pública nº 07, de 10 de abril de 2013, por meio da qual foram discutidos os documentos"Normas para Habilitação de Serviços de Atenção Especializada e Serviços de Referência em Doenças Raras no Sistema Único de Saúde" e "Diretrizes para Atenção Integral às Pessoas com Doenças Raras no âmbito do Sistema Único de Saúde (SUS)";</p>
+
+<p>Considerando a Deliberação da Comissão Nacional de Incorporação de Tecnologias nº 78/ CONITEC, de 2013;</p>
+
+<p>Considerando a Política Nacional de Humanização (PNH);</p>
+
+<p>Considerando a necessidade do atendimento integral e multidisciplinar para o cuidado das pessoas com doenças raras;</p>
+
+<p>Considerando a necessidade de estabelecer normas para a habilitação de Serviços de Atenção Especializada e Serviços de Referência em Doenças Raras no Sistema Único de Saúde;</p>
+
+<p>Considerando a necessidade de estabelecer o escopo de atuação dos Serviços de Atenção Especializada e Serviços de Referência em Doenças Raras no Sistema Único de Saúde, bem como as qualidades técnicas necessárias ao bom desempenho de suas funções no contexto da rede assistencial; e</p>
+
+<p>Considerando a necessidade de auxiliar os gestores na regulação do acesso, controle e avaliação da assistência às pessoas com doenças raras no âmbito do Sistema Único de Saúde (SUS), resolve:
+</p>
+<p>CAPÍTULO I DAS DISPOSIÇÕES GERAIS</p>
+
+<p>Art. 1º Esta Portaria institui a Política Nacional de Atenção Integral às Pessoas com Doenças Raras, aprova as Diretrizes para Atenção Integral às Pessoas com Doenças Raras no âmbito do Sistema Único de Saúde (SUS) e institui incentivos financeiros de custeio.</p>
+
+<p>Art. 2º A Política Nacional de Atenção Integral às Pessoas com Doenças Raras tem abrangência transversal às redes temáticas prioritárias do SUS, em especial à Rede de Atenção às Pessoas com Doenças Crônicas, Rede de Atenção à Pessoa com Deficiência, Rede de Urgência e Emergência, Rede de Atenção Psicossocial e Rede Cegonha.</p>
+
+<p>Art. 3º Para efeito desta Portaria, considera-se doença rara aquela que afeta até 65 pessoas em cada 100.000 indivíduos, ou seja, 1,3 pessoas para cada 2.000 indivíduos.</p>
+
+<p>CAPÍTULO II DOS OBJETIVOS</P>
+
+<p>Art. 4º A Política Nacional de Atenção Integral às Pessoas com Doenças Raras tem como objetivo reduzir a mortalidade, contribuir para a redução da morbimortalidade e das manifestações secundárias e a melhoria da qualidade de vida das pessoas, por meio de ações de promoção, prevenção, detecção precoce, tratamento oportuno redução de incapacidade e cuidados paliativos.</p>
+
+<p>Art. 5º São objetivos específicos da Política Nacional de Atenção Integral às Pessoas com Doenças Raras:</p>
+
+<p>I - garantir a universalidade, a integralidade e a equidade das ações e serviços de saúde em relação às pessoas com doenças raras, com consequente redução da morbidade e mortalidade;</p>
+
+<p>II - estabelecer as diretrizes de cuidado às pessoas com doenças raras em todos os níveis de atenção do SUS;</p>
+
+<p>III - proporcionar a atenção integral à saúde das pessoas com doença rara na Rede de Atenção à Saúde (RAS);</p>
+
+<p>IV - ampliar o acesso universal e regulado das pessoas com doenças raras na RAS;</p>
+
+<p>V - garantir às pessoas com doenças raras, em tempo oportuno, acesso aos meios diagnósticos e terapêuticos disponíveis conforme suas necessidades; e</p>
+
+<p>VI - qualificar a atenção às pessoas com doenças raras.</p>
+
+<p>CAPÍTULO III DOS PRINCÍPIOS E DAS DIRETRIZES</p>
+
+<p>Art. 6º A Política Nacional de Atenção Integral às Pessoas com Doenças Raras é constituída a partir dos seguintes princípios:</p>
+
+<p>I - atenção humanizada e centrada nas necessidades das pessoas;</p>
+
+<p>II - reconhecimento da doença rara e da necessidade de oferta de cuidado integral, considerando-se as diretrizes da RAS no âmbito do SUS;</p>
+
+<p>III - promoção do respeito às diferenças e aceitação de pessoas com doenças raras, com enfrentamento de estigmas e preconceitos;</p>
+
+<p>IV - garantia de acesso e de qualidade dos serviços, ofertando cuidado integral e atenção multiprofissional;</p>
+
+<p>V - articulação intersetorial e garantia de ampla participação e controle social;</p>
+
+<p>VI - incorporação e uso de tecnologias voltadas para a promoção, prevenção e cuidado integral na RAS, incluindo tratamento medicamentoso e fórmulas nutricionais quando indicados no âmbito do SUS, que devem ser resultados das recomendações formuladas por órgãos governamentais a partir do processo de avaliação e aprovação pela Comissão Nacional de Incorporação de Tecnologias no SUS (CONITEC) e Protocolos Clínicos e Diretrizes Terapêuticas (PCDT); e</p>
+
+<p>VII - promoção da acessibilidade das pessoas com doenças raras a edificações, mobiliário, espaços e equipamentos urbanos.</p>
+
+<p>Art. 7º São diretrizes da Política Nacional de Atenção Integral às Pessoas com Doenças Raras:</p>
+
+<p>I - educação permanente de profissionais de saúde, por meio de atividades que visem à aquisição e ao aprimoramento de conhecimentos, habilidades e atitudes para a atenção à pessoa com doença rara;</p>
+
+<p>II - promoção de ações intersetoriais, buscando-se parcerias que propiciem o desenvolvimento das ações de promoção da saúde;</P>
+
+<p>III - organização das ações e serviços de acordo com a RAS para o cuidado da pessoa com doença rara;</p>
+
+<p>IV - oferta de cuidado com ações que visem à habilitação/ reabilitação das pessoas com doenças raras, além de medidas assistivas para os casos que as exijam;</p>
+
+<p>V - diversificação das estratégias de cuidado às pessoas com doenças raras; e</p>
+
+<p>VI - desenvolvimento de atividades no território que favoreçam a inclusão social com vistas à promoção de autonomia e ao exercício da cidadania.</p>
+
+<p>CAPÍTULO IV DAS RESPONSABILIDADES</p>
+
+<p>Art. 8º São responsabilidades comuns do Ministério da Saúde e das Secretarias de Saúde dos Estados, do Distrito Federal e dos Municípios em seu âmbito de atuação:</p>
+
+<p>I - garantir que todos os serviços de saúde que prestam atendimento às pessoas com doenças raras possuam infraestrutura adequada, recursos humanos capacitados e qualificados, recursos materiais, equipamentos e insumos suficientes, de maneira a garantir o cuidado necessário;</p>
+
+<p>II - garantir o financiamento tripartite para o cuidado integral das pessoas com doenças raras, de acordo com suas responsabilidades e pactuações;</p>
+
+<p>III - garantir a formação e a qualificação dos profissionais e dos trabalhadores de saúde de acordo com as diretrizes da Política de Educação Permanente em Saúde (PNEPS);</p>
+
+<p>IV - definir critérios técnicos para o funcionamento dos serviços que atuam no escopo das doenças raras nos diversos níveis de atenção, bem como os mecanismos para seu monitoramento e avaliação;</p>
+
+<p>V - garantir o compartilhamento das informações na RAS e entre as esferas de gestão;</p>
+
+<p>VI - adotar mecanismos de monitoramento, avaliação e auditoria, com vistas à melhoria da qualidade das ações e dos serviços ofertados, considerando as especificidades dos serviços de saúde e suas responsabilidades;</p>
+
+<p>VII - promover o intercâmbio de experiências e estimular o desenvolvimento de estudos e de pesquisas que busquem o aperfeiçoamento, a inovação de tecnologias e a disseminação de conhecimentos voltados à promoção da saúde, à prevenção, ao cuidado e à reabilitação/habilitação das pessoas com doenças raras;</p>
+
+<p>VIII - estimular a participação popular e o controle social visando à contribuição na elaboração de estratégias e no controle da execução da Política Nacional de Atenção Integral às Pessoas com Doenças Raras;</p>
+
+<p>IX - contribuir para o desenvolvimento de processos e métodos de coleta, análise e produção de informações, aperfeiçoando permanentemente a confiabilidade dos dados e a capilarização das informações, na perspectiva de usá-las para alinhar estratégias de aprimoramento da gestão, disseminação das informações e planejamento em saúde; e</p>
+
+<p>X - monitorar e avaliar o desempenho e qualidade das ações e serviços de prevenção e de controle das doenças raras no país no âmbito do SUS, bem como auditar, quando pertinente.</p>
+
+<p>Art. 9º. Compete ao Ministério da Saúde:</p>
+
+
+<p>I - prestar apoio institucional às Secretarias de Saúde dos Estados, do Distrito Federal e dos Municípios no processo de qualificação e de consolidação da atenção ao paciente com doença rara;</p>
+
+<p>II - analisar, consolidar e divulgar as informações provindas dos sistemas de informação federais vigentes que tenham relação com doenças raras, que devem ser enviadas pelas Secretarias de Saúde dos Estados, do Distrito Federal e dos Municípios, e utilizá-las para planejamento e programação de ações e de serviços de saúde e para tomada de decisão;</p>
+
+<p>III - definir diretrizes gerais para a organização do cuidado às doenças raras na população brasileira;</p>
+
+<p>IV - estabelecer, através de PCDT, recomendações de cuidado para tratamento de doenças raras, levando em consideração a incorporação de tecnologias pela CONITEC, de maneira a qualificar o cuidado das pessoas com doenças raras;</p>
+
+<p>V - efetuar a homologação da habilitação dos estabelecimentos de saúde que realizam a atenção à saúde das pessoas com doenças raras, de acordo com critérios técnicos estabelecidos previamente de forma tripartite; e</p>
+
+<p>VI - disponibilizar sistema de informação para registro das ações prestadas no cuidado às pessoas com doenças raras em todos os serviços de saúde, seja na atenção básica ou especializada, ambulatorial ou hospitalar.</p>
+
+<p>Art. 10. Às Secretarias de Saúde dos Estados e do Distrito Federal compete:</p>
+
+<p>I - pactuar regionalmente, por intermédio do Colegiado Intergestores Regional (CIR) e da Comissão Intergestores Bipartite (CIB) todas as ações e os serviços necessários para a atenção integral às pessoas com doenças raras;</p>
+
+<p>II - definir estratégias de articulação com as Secretarias Municipais de Saúde com vistas à inclusão da atenção e do cuidado integral às pessoas com doenças raras nos planos municipais, estadual e planejamento regional integrado;</p>
+
+<p>III - apoiar tecnicamente os Municípios para organização e implantação do cuidado para as pessoas com doenças raras;</p>
+
+<p>IV - realizar a regulação visando à garantia do atendimento local, regional, estadual ou nacional às pessoas com doenças raras, de acordo com as necessidades de saúde;</p>
+
+<p>V - analisar os dados estaduais relacionados às doenças raras produzidos pelos sistemas de informação vigentes e utilizá-los de forma a aperfeiçoar o planejamento das ações e a qualificar a atenção prestada às pessoas com doenças raras;</p>
+
+<p>VI - definir os estabelecimentos de saúde de natureza pública, sob sua gestão, que ofertam ações de promoção e prevenção e que prestam o cuidado às pessoas com doenças raras, em conformidade com a legislação vigente;</p>
+
+<p>VII - apoiar os Municípios na educação permanente dos profissionais de saúde a fim de promover a qualificação profissional, desenvolvendo competências e habilidades relacionadas às ações de prevenção, controle e no cuidado às pessoas com doenças raras;</p>
+
+<p>VIII - efetuar e manter atualizado o cadastramento dos serviços de saúde sob sua gestão no sistema de informação federal vigente para esse fim e que realizam a atenção à saúde das pessoas com doenças raras, de acordo com critérios técnicos estabelecidos em Portarias específicas do Ministério da Saúde; e</p>
+
+<p>IX - planejar e programar as ações e os serviços necessários para atender a população de acordo com a contratualização dos serviços, quando for de gestão estadual.</p>
+
+<p>Art. 11. Compete às Secretarias Municipais de Saúde:</p>
+
+<p>I - pactuar regionalmente, por intermédio do Colegiado Intergestores Regional (CIR) e da Comissão Intergestores Bipartite (CIB) todas as ações e os serviços necessários para a atenção integral das pessoas com doenças raras;</p>
+
+<p>II - planejar e programar as ações e os serviços de doenças raras, assim como o cuidado das pessoas com doenças raras, considerando- se sua base territorial e as necessidades de saúde locais;</p>
+
+<p>III - organizar as ações e serviços de atenção para doenças raras, assim como o cuidado das pessoas com doenças raras, considerando- se os serviços disponíveis no Município;</p>
+
+<p>IV - planejar e programar as ações e os serviços necessários para atender a população e operacionalizar a contratualização dos serviços, quando não existir capacidade própria;</p>
+
+<p>V - planejar e programar as ações e os serviços necessários para atender a população de acordo com a contratualização dos serviços, quando de gestão municipal;</p>
+
+<p>VI - realizar regulação visando à garantia do atendimento local, regional, estadual ou nacional às pessoas com doenças raras, de acordo com as necessidades de saúde;</p>
+
+<p>VII - realizar a regulação entre os componentes da rede de atenção à saúde, com definição de fluxos de atendimento à saúde para fins de controle do acesso e da garantia de equidade, promovendo a otimização de recursos segundo a complexidade e a densidade tecnológica necessárias à atenção à pessoa com doenças raras, com sustentabilidade do sistema público de saúde;</p>
+
+<p>VIII - realizar a articulação interfederativa para pactuação de ações e de serviços em âmbito regional ou inter-regional para garantia da equidade e da integralidade do cuidado;</p>
+
+<p>IX - implantar o acolhimento e a humanização da atenção de acordo com a Política Nacional de Humanização (PNH);</p>
+
+<p>X - analisar os dados municipais relativos às ações de prevenção e às ações de serviços prestados às pessoas com doenças raras, produzidos pelos sistemas de informação vigentes e utilizá-los de forma a aperfeiçoar o planejamento das ações locais e a qualificar a atenção das pessoas com doenças raras;</p>
+
+<p>XI - definir os estabelecimentos de saúde de natureza pública, sob sua gestão, que ofertam ações de promoção e prevenção e que prestam o cuidado às pessoas com doenças raras, em conformidade com a legislação vigente;</p>
+
+<p>XII - efetuar e manter atualizado os dados dos profissionais e de serviços de saúde que estão sob gestão municipal, públicos e privados, que prestam serviço ao SUS no Sistema do Cadastro Nacional de Estabelecimentos de Saúde (SCNES); e</p>
+
+<p>XIII - programar ações de qualificação para profissionais e trabalhadores de saúde para o desenvolvimento de competências e de habilidades relacionadas às ações de prevenção e de controle das doenças raras.</p>
+
+<p>CAPÍTULO V DA ORGANIZAÇÃO DA ATENÇÃO</p>
+
+<p>Art. 12 A organização do cuidado das pessoas com doenças raras será estruturada nos seguintes eixos:</p>
+
+<p>I - Eixo I: composto pelas doenças raras de origem genética e organizado nos seguintes grupos:</p>
+
+<p>a) anomalias cogênitas ou de manifestação tardia;</p>
+
+<p>b) deficiência intelectual; e</p>
+
+<p>c) erros inatos de metabolismo;</p>
+
+<p>II - Eixo II: composto por doenças raras de origem não genética e organizado nos seguintes grupos:</p>
+
+<p>a) infecciosas;</p>
+
+<p>b) inflamatórias; e</p>
+
+<p>c) autoimunes.</p>
+
+<p>CAPÍTULO VI DA ESTRUTURA DA LINHA DE CUIDADO DA ATENÇÃO ÀS PESSOAS COM DOENÇAS RARAS</p>
+
+<p>Art. 13. A linha de cuidado da atenção aos usuários com demanda para a realização das ações na Política Nacional de Atenção Integral às Pessoas com Doenças Raras é estruturada pela Atenção Básica e Atenção Especializada, em conformidade com a RAS e seguindo as Diretrizes para Atenção Integral às Pessoas com Doenças Raras no SUS.</p>
+
+<p>§ 1º À Atenção Básica, que é responsável pela coordenação do cuidado e por realizar a atenção contínua da população que está sob sua responsabilidade adstrita, além de ser a porta de entrada prioritária do usuário na rede, compete:</p>
+
+<p>I - realizar ações de promoção da saúde com foco nos fatores de proteção relativos às doenças raras;</p>
+
+<p>II - desenvolver ações voltadas aos usuários com doenças raras, na perspectiva de reduzir os danos relacionados a essas doenças no seu território;</p>
+
+<p>III - avaliar a vulnerabilidade e a capacidade de autocuidado das pessoas com doenças raras e realizar atividades educativas, conforme necessidade identificada, ampliando a autonomia dos usuários e seus familiares;</p>
+
+<p>IV - implementar ações de diagnóstico precoce, por meio da identificação de sinais e de sintomas, e seguimento das pessoas com resultados alterados, de acordo com as diretrizes técnicas vigentes, respeitando-se o que compete a este nível de atenção;</p>
+
+<p>V - encaminhar oportunamente a pessoa com suspeita de doença rara para confirmação diagnóstica;</p>
+
+<p>VI - coordenar e manter o cuidado das pessoas com doenças raras, quando referenciados para outros pontos da RAS;</p>
+
+<p>VII - registrar as informações referentes às doenças raras nos sistemas de informação vigentes, quando couber;</p>
+
+<p>VIII - realizar o cuidado domiciliar às pessoas com doenças raras, de forma integrada com as equipes de atenção domiciliar e com os serviços de atenção especializada e serviços de referência em doenças raras locais e com demais pontos de atenção, conforme proposta definida para a região de saúde; e</p>
+
+<p>IX - implantar o acolhimento e a humanização da atenção de acordo com a PNH.</p>
+
+<p>§ 2º A Atenção Especializada, composta pelo conjunto de pontos de atenção com diferentes densidades tecnológicas para a realização de ações e serviços de urgência, ambulatorial especializado e hospitalar, apoiando e complementando os serviços da atenção básica de forma integral, resolutiva e em tempo oportuno, é composta, ainda, por:</p>
+
+<p>I - Serviço de Atenção Especializada em Doenças Raras, a quem compete oferecer atenção diagnóstica e terapêutica específica para uma ou mais doenças raras, em caráter multidisciplinar; e</p>
+
+<p>II - Serviço de Referência em Doenças Raras, que oferece atenção diagnóstica e terapêutica específica, em caráter multidisciplinar.</p>
+
+<p>§ 3º Compete ao Componente Atenção Domiciliar:</p>
+
+<p>I - realizar o cuidado às pessoas com doença rara de forma integrada com os componentes da Atenção Básica e da Atenção Especializada;</p>
+
+<p>II - implantar o acolhimento e a humanização da atenção de acordo com a PNH;</p>
+
+<p>III - instrumentalizar e orientar cuidadores e familiares para o cuidado domiciliar;</p>
+
+<p>IV - contribuir para a qualidade de vida da pessoa com doença rara no ambiente familiar; e</p>
+
+<p>V - promover ações que auxiliem a autonomia das pessoas com doenças raras.</p>
+
+<p>§ 4º Os pontos de atenção à saúde garantirão tecnologias adequadas e profissionais aptos e suficientes para atender à região de saúde, considerando-se que a caracterização desses pontos de atenção deve obedecer a uma definição mínima de competências e de responsabilidades, mediante articulação dos distintos componentes da RAS.</p>
+
+<p>Art. 14. O componente da Atenção Especializada da Política Nacional de Atenção Integral às Pessoas com Doenças Raras será composto por:</p>
+
+<p>I - Serviço de Atenção Especializada em Doenças Raras; e<p>
+
+<p>II - Serviço de Referência em Doenças Raras</p>.
+
+<p>§ 1º O Serviço de Atenção Especializada em Doenças Raras é o serviço de saúde que possui condições técnicas, instalações físicas, equipamentos e recursos humanos adequados à prestação da atenção especializada em uma ou mais doenças raras.</p>
+
+<p>§ 2º O Serviço de Referência em Doenças Raras é o serviço de saúde que possui condições técnicas, instalações físicas, equipamentos e recursos humanos adequados à prestação da atenção especializada para pessoas com doenças raras pertencentes a, no mínimo, dois eixos assistenciais, de acordo com os seguintes parâmetros:</p>
+
+<p>I - oferte atenção diagnóstica e terapêutica para no mínimo 2 (duas) doenças raras dos grupos do Eixo I de que trata o art. 12 ou;</p>
+
+<p>II - oferte atenção diagnóstica e terapêutica para no mínimo 2 (duas) doenças raras dos grupos do Eixo II de que trata o art. 12 ou;</p>
+
+<p>III - oferte atenção diagnóstica e terapêutica para no mínimo 1 (um) grupo de cada um dos Eixos de que trata o art. 12.</p>
+
+<p>§ 3º Os Serviços de Atenção Especializada e Serviços de Referência em Doenças Raras são responsáveis também por ações diagnósticas, terapêuticas e preventivas às pessoas com doenças raras ou sob risco de desenvolvê-las, de acordo com os dois eixos assistenciais.</p>
+
+<p>Art 15. Compete ao Serviço de Atenção Especializada em Doenças Raras e ao Serviço de Referência em Doenças Raras:</p>
+
+<p>I - compor a RAS regional, de forma que se garantam os princípios, as diretrizes e competências descritas na Politica Nacional de Atenção Integral às Pessoas com Doenças Raras;</p>
+
+<p>II - ter uma população definida como de sua responsabilidade para o cuidado, assim como ter vinculado a si os serviços para os quais é a referência para tratamento às pessoas com doenças raras, podendo ser de abrangência local, regional, estadual ou nacional;</p>
+
+<p>III - apoiar os outros serviços de atenção à saúde no que se refere ao cuidado da pessoa com doença rara, participando sempre que necessário da educação permanente dos profissionais de saúde que atuam neste cuidado;</p>
+
+<p>IV - utilizar os sistemas de informação vigentes para registro da atenção dispensada no cuidado às pessoas com doenças raras, conforme normas técnico-operacionais preconizadas pelo Ministério da Saúde;</p>
+
+<p>V - garantir a integralidade do cuidado às pessoas com doenças raras;</p>
+
+<p>VI - reavaliar periodicamente as pessoas, de acordo com cada doença rara;</p>
+
+<p>VII - estabelecer avaliações para verificar outras pessoas em risco de doenças raras;</p>
+
+<p>VIII - encaminhar as pessoas para a Atenção Básica para a continuidade do seguimento clínico, garantindo seu matriciamento;</p>
+
+<p>IX - submeter-se à regulação, fiscalização, monitoramento e avaliação do Gestor Municipal, Estadual e do Distrito Federal, conforme as atribuições estabelecidas nas respectivas condições de gestão;</p>
+
+<p>X - investigar e buscar determinar o diagnóstico definitivo e assegurar a continuidade do atendimento de acordo com as rotinas e as condutas estabelecidas, sempre com base nos PCDT estabelecidos pelo Ministério da Saúde;</p>
+
+<p>XI - garantir, por meio dos profissionais da RAS, o acesso às diversas categorias profissionais necessárias para o cuidado e tratamento integral às pessoas com doenças raras, incluindo as diversas especialidades médicas e profissionais para atendimento ambulatorial e hospitalar de acordo com as necessidades do cuidado às doenças raras;</p>
+
+<p>XII - encaminhar as pessoas para os Centros Especializados de Reabilitação (CER) ou outros com a finalidade de reabilitação para complementaridade do cuidado, sem se eximir de continuar ofertando o cuidado integral às pessoas com doenças raras, garantidos mediante regulação;</p>
+
+<p>XIII - realizar tratamento clínico e medicamentoso, quando houver, das pessoas com doenças raras segundo os PCDT instituídos;</p>
+
+<p>XIV - oferecer atenção diagnóstica e terapêutica específica para uma ou mais doenças raras, em caráter multidisciplinar;</p>
+
+<p>XV - referenciar as pessoas para os Serviços de Referência em Doenças Raras, quando se fizer necessário;</p>
+
+<p>XVI - garantir a investigação diagnóstica e o acompanhamento das doenças para as quais estiverem habilitados;</p>
+
+<p>XVI - acolher o encaminhamento regulado de pessoas com diagnóstico ou suspeita de doença rara, provenientes da atenção básica ou especializada, para fins de investigação e tratamento;</p>
+
+<p>XVIII - garantir, por meio dos profissionais da RAS, o acesso regulado às diversas categorias profissionais necessárias para o cuidado e tratamento integral às pessoas com doenças raras, incluindo as diversas especialidades médicas e profissionais para atendimento ambulatorial e hospitalar de acordo com as necessidades do cuidado às pessoas com doenças raras; e</p>
+
+<p>XIX - oferecer atenção diagnóstica e terapêutica específica, em caráter multidisciplinar, de acordo com os eixos assistenciais e baseados nos PCDT instituídos.</p>
+
+<p>Art. 16. São competências específicas do Serviço de Referência em Doenças Raras:</p>
+
+<p>I - realizar o acompanhamento clínico especializado multidisciplinar à pessoa com doença rara;</p>
+
+<p>II - realizar o aconselhamento genético das pessoas acometidas e seus familiares, quando indicado;</p>
+
+<p>III - apresentar estrutura adequada, realizar pesquisa e ensino organizado, com programas e protocolos estabelecidos, reconhecidos e aprovados pelo comitê de ética pertinente;</p>
+
+<p>IV - subsidiar ações de saúde dos gestores no âmbito das doenças raras, quando necessário;</p>
+
+<p>V - participar como polo de desenvolvimento profissional em parceria com a gestão, tendo como base a PNEPS; e</p>
+
+<p>VI - realizar atividades de educação ao público e aos profissionais de saúde no tema doenças raras, em conjunto com os gestores do SUS, os conselhos de saúde, a comunidade científica e as associações civis relacionadas às doenças raras ou outros representantes da sociedade civil organizada, com o objetivo de promover a compreensão da diversidade humana, dos direitos dos usuários e extinção dos preconceitos, buscando sua integração à sociedade.</p>
+
+<p>Art. 17. Poderão pleitear a habilitação como Serviço de Atenção Especializada em Doenças Raras ou Serviço de Referência em Doenças Raras os estabelecimentos de saúde que obedeçam aos seguintes requisitos mínimos:</p>
+
+<p>I - possuam alvará de funcionamento e se enquadrem nos critérios e normas estabelecidos pela legislação em vigor ou outros que venham a substituí-la ou complementá-la, precipuamente:</p>
+
+<p>a) Resolução - RDC nº 50/ANVISA, de 21 de fevereiro de 2002, que dispõe sobre o Regulamento Técnico para Planejamento, Programação, elaboração e avaliação de projetos físicos de estabelecimentos assistenciais de saúde e suas alterações;</p>
+
+<p>b) Resolução - RDC nº 306/ANVISA, de 6 de dezembro de 2004, que dispõe sobre o Regulamento Técnico para o gerenciamento de resíduos de serviços da saúde; e</p>
+
+<p>c) Resolução - ABNT NBR 9050 - Norma Brasileira de Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos - que estabelece critérios e parâmetros técnicos a serem observados quando do projeto de construção, instalações e adaptações de edificações, mobiliários, espaços e equipamentos urbanos;</p>
+
+<p>II - disponham dos seguintes serviços de apoio diagnóstico:</p>
+
+<p>a) laboratório de patologia clínica, anatomia patológica e de exames genéticos próprio ou alcançável; e</p>
+
+<p>b) laboratório de imagem próprio ou alcançável; e</p>
+
+<p>III - garantam, junto à RAS, as necessidades de internação (enfermaria e UTI) e cirurgia, que terão seus fluxos regulados conforme pactuações locais.</p>
+
+<p>Parágrafo único. Na hipótese dos estabelecimentos de saúde de que trata o "caput" não oferecerem, dentro de sua estrutura física, as ações e serviços necessários para o cumprimento dos requisitos mínimos para habilitação como Serviço de Atenção Especializada em Doenças Raras ou Serviço de Referência em Doenças Raras, estas ações e serviços poderão ser formalmente referenciados e contratualizados.</p>
+
+<p>Art. 18. Além dos requisitos mínimos de que trata o art. 17, para pleitear a habilitação como Serviço de Atenção Especializada em Doenças Raras, o estabelecimento de saúde deverá cumprir os seguintes requisitos:</p>
+
+<p>I - possuir equipe assistencial composta, no mínimo, por:</p>
+
+<p>a) enfermeiro;</p>
+
+<p>b) técnico de enfermagem; e</p>
+
+<p>c) médico responsável pelo Serviço de Atenção Especializada em Doenças Raras com comprovada experiência na área ou especialidade; e</p>
+
+<p>II - contar com um responsável técnico médico, registrado no Conselho Regional de Medicina, devendo assumir a responsabilidade técnica por uma única unidade habilitada pelo SUS.</p>
+
+<p>Parágrafo único. O responsável técnico de que trata o inciso II poderá atuar como profissional em outro serviço habilitado pelo SUS.</p>
+
+<p>Art. 19. Além dos requisitos mínimos de que trata o art. 17, para pleitear a habilitação como Serviço de Referência em Doenças Raras, o estabelecimento de saúde deverá cumprir os seguintes requisitos:</p>
+
+<p>I - possuir equipe assistencial para cada grupo dos Eixos de que trata o art. 12 composta, no mínimo, por:</p>
+
+<p>a) enfermeiro;</p>
+
+<p>b) técnico de enfermagem;</p>
+
+<p>c) médico com título de especialista na área da especialidade que acompanha, registrado no Conselho Regional de Medicina e/ou comprovação de atuação na doença rara específica por pelo menos 5 (cinco) anos;</p>
+
+<p>d) médico geneticista;</p>
+
+<p>e) neurologista;</p>
+
+<p>f) pediatra (quando atender criança);</p>
+
+<p>g) clínico geral (quando atender adulto);</p>
+
+<p>h) psicólogo;</p>
+
+<p>i) nutricionista (quando atender erros inatos do metabolismo); e</p>
+
+<p>j) assistente social; e</p>
+
+<p>II - contar com um responsável técnico médico, registrado no Conselho Regional de Medicina, devendo assumir a responsabilidade técnica por uma única unidade habilitada pelo SUS.</p>
+
+<p>Parágrafo único. O responsável técnico poderá fazer parte de equipe mínima assistencial, desde que tenha título de especialista na área da especialidade que acompanha e/ou comprovação de atuação na área por pelo menos 5 (cinco) anos para uma das doenças raras acompanhadas pelo Serviço de Referência em Doenças Raras.</p>
+
+<p>Art. 20. Para pleitear a habilitação dos estabelecimentos de saúde como Serviço de Atenção Especializada em Doenças Raras ou Serviço de Referência em Doenças Raras, as Secretarias de Saúde dos Estados, do Distrito Federal e dos Municípios encaminharão à Coordenação- Geral de Média e Alta Complexidade (CGMAC/ DAET/SAS/MS):</p>
+
+<p>I - Resolução da CIR e da CIB ou, no caso do Distrito Federal, do Colegiado de Gestão da Secretaria de Saúde (CGSES/DF) contendo:</p>
+
+<p>a) a relação dos estabelecimentos de saúde que realizarão a atenção especializada como Serviço de Atenção Especializada ou Serviço de Referência em Doenças Raras; e<p>
+
+<p>b) a relação dos laboratórios que realizarão os exames diagnósticos, conforme descrito nesta Portaria;</p>
+
+<p>II - atualização dos dados no SCNES dos estabelecimentos a serem habilitados;</P>
+
+<p>III - cópia da publicação em diário oficial do extrato de contrato com o serviço de saúde, quando este não for da rede própria da respectiva secretaria de saúde;</p>
+
+<p>IV - a indicação do(s) eixo(s) assistencial(is) de que trata o art. 12, bem como os grupos de doenças doença(s) para a(s) qual(is) o estabelecimento ofertará a assistência;</p>
+
+<p>V - Formulário de Vistoria disponível no Anexo V, preenchido e assinado pelos respectivos gestores públicos de saúde; e</p>
+
+<p>VI - titulação dos profissionais da equipe mínima assistencial e do responsável técnico cadastrados no SCNES.</p>
+
+<p>§ 1º Poderá ser habilitado mais de 1 (um) Serviço de Atenção Especializada em Doenças Raras dentro do mesmo estabelecimento de saúde.</p>
+
+<p>§ 2º Na hipótese de ocorrência do disposto no § 1º, será acrescido à equipe mínima um profissional médico para cada Serviço de Atenção Especializada em Doenças Raras excedente, sendo os demais profissionais da equipe mínima comuns a todos os Serviços de Atenção Especializada em Doenças raras habilitados nesse mesmo estabelecimento de saúde.</P>
+
+<p>Art. 21. O Ministério da Saúde avaliará os documentos encaminhados pelas Secretarias de Saúde, podendo proceder a vistoria "in loco" para conceder a habilitação do estabelecimento de saúde.</p>
+
+<p>Parágrafo único. Caso a avaliação seja favorável, a Secretaria de Atenção à Saúde (SAS/MS) tomará as providências para a publicação da Portaria específica de habilitação.</p>
+
+<p>CAPITULO VII DO FINANCIAMENTO</p>
+
+<p>Art. 22. Fica instituído incentivo financeiro de custeio mensal para as equipes profissionais dos estabelecimentos de saúde habilitados como Serviços de Atenção Especializada em Doenças Raras.</p>
+
+<p>§ 1º O incentivo financeiro de que trata o "caput" possuirá o valor de R$ 11.650,00 (onze mil seiscentos e cinquenta reais) por equipe.</p>
+
+<p>§ 2º Quando houver a habilitação de mais de um Serviço de Atenção Especializada em Doenças Raras dentro do mesmo estabelecimento de saúde, o valor de que trata o § 1º será acrescido de R$ 5.750,00 (cinco mil setecentos e cinquenta reais) por serviço excedente, destinado à inclusão de mais 1 (um) profissional médico por serviço.</p>
+
+<p>§ 3º O recursos do incentivo financeiro de que trata o "caput" serão utilizados exclusivamente nas ações necessárias ao funcionamento adequado dos Serviços de Atenção Especializada em Doenças Raras.</p.
+
+<p>§ 4º Os incentivo financeiro de que trata o "caput" será repassado em parcelas mensais pelo Fundo Nacional de Saúde para o fundo de saúde do ente federativo beneficiário.</p>
+
+<p>Art. 23. Fica instituído incentivo financeiro de custeio mensal para as equipes profissionais dos estabelecimentos de saúde habilitados como Serviços de Referência em Doenças Raras.</p>
+
+<p>§ 1º O incentivo financeiro de que trata o "caput" possuirá o valor de R$ 41.480,00 (quarenta e um mil quatrocentos e oitenta reais) por equipe.</p>
+
+<p>§ 2º O recursos do incentivo financeiro de que trata o "caput" serão utilizados exclusivamente nas ações necessárias ao funcionamento adequado dos Serviços de Referência em Doenças Raras.</p>
+
+<p>§ 3º Os incentivo financeiro de que trata o "caput" será repassado em parcelas mensais pelo Fundo Nacional de Saúde para o fundo de saúde do ente federativo beneficiário.</p>
+
+<p>Art. 24. Fica instituído incentivo financeiro para custeio dos procedimentos dispostos no anexo III, a serem incorporados na Tabela de Procedimentos, Medicamentos e OPM do SUS para fins diagnósticos em doenças raras, realizados pelos Serviços de Atenção Especializada em Doenças Raras e Serviços de Referência em Doenças Raras.</P>
+
+<p>§ 1º O incentivo financeiro de que trata o "caput" será efetuado por meio do Fundo de Ações Estratégicas e Compensação (FAEC) pós-produção.</p>
+
+<p>§ 2º Farão jus ao recebimento do incentivo financeiro de que trata o "caput" os estabelecimentos de saúde habilitados como Serviço de Atenção Especializada em Doenças Raras e Serviços de Referência em Doenças Raras.</p>
+
+<p>§ 3º O repasse dos recursos de que trata este artigo ocorrerá em conformidade com a produção dos respectivos procedimentos informados no Sistema de Informação Ambulatorial (SIA/SUS).</p>
+
+<p>§ 4º O incentivo financeiro previsto neste Capítulo será repassado pelo Fundo Nacional de Saúde para os fundos de saúde dos entes federativos beneficiários, respeitando-se a especificidade do Serviço.</p>
+
+<p>Art. 25. O repasse dos incentivos financeiros de que trata esta Portaria será imediatamente interrompido quando:</p>
+
+<p>I - constatada, durante o monitoramento, a inobservância dos requisitos de habilitação e das demais condições previstas nesta Portaria; e</p>
+
+<p>II - houver falha na alimentação do SIA/SUS, por período superior ou igual a 3 (três) competências consecutivas, conforme Portaria nº 3.462/GM/MS, de 11 de novembro de 2010.</p>
+
+<p>§ 1º Uma vez interrompido o repasse do incentivo financeiro, novo pedido somente será deferido após novo procedimento de habilitação, em que fique demonstrado o cumprimento de todos os requisitos previstos nesta Portaria, hipótese em que o custeio voltará a ser pago, sem efeitos retroativos, a partir do novo deferimento pelo Ministério da Saúde.</p>
+
+<p>§ 2º As situações descritas neste artigo serão constatadas por meio do monitoramento e/ou da supervisão direta do Ministério da Saúde, da Secretaria de Saúde do Estado ou do Distrito Federal ou municipal por auditoria do Departamento Nacional de Auditoria do SUS (DENASUS/SGEP/MS).</p>
+
+<p>Art. 26. Eventual complementação dos recursos financeiros repassados pelo Ministério da Saúde para o custeio das ações da Politica é de responsabilidade conjunta dos Estados, do Distrito Federal e dos Municípios, em conformidade com a pactuação estabelecida na respectiva CIB e CIR.</p>
+
+<p>Art. 27. Os recursos financeiros transferidos serão movimentados sob fiscalização do respectivo Conselho de Saúde, sem prejuízo da fiscalização exercida pelos órgãos do sistema de controle interno do Poder Executivo e pelo Tribunal de Contas da União conforme disposto no art. 3º do Decreto nº 1.232, de 30 de agosto de 1994.</p>
+
+<p>Art. 28. O monitoramento de que trata esta Portaria não dispensa o ente federativo beneficiário de comprovação da aplicação dos recursos financeiros percebidos por meio do Relatório Anual de Gestão (RAG).</p>
+
+<p>Art. 29. O Sistema Nacional de Auditoria (SNA), com fundamento nos relatórios de gestão, acompanhará a conformidade da aplicação dos recursos transferidos nos termos do disposto no art. 5º do Decreto nº 1.232, de 1994.</p>
+
+<p>Art. 30. Para fins do disposto nesta Portaria, o ente federativo beneficiário estará sujeito:</p>
+
+<p>I - à devolução imediata dos recursos financeiros repassados, acrescidos da correção monetária prevista em lei, mas apenas em relação aos recursos que foram repassados pelo Fundo Nacional de Saúde para o respectivo fundo de saúde e não executados nos termos desta Portaria; e</p>
+
+<p>II - ao regramento disposto na Lei Complementar nº 141, de 3 de janeiro de 2012, e no Decreto nº 7.827, de 16 de outubro de 2012, em relação aos recursos financeiros que foram repassados pelo Fundo Nacional de Saúde para o respectivo fundo de saúde e executados parcial ou totalmente em objeto diverso ao originalmente pactuado.</p>
+
+<p>CAPITULO VIII DA AVALIAÇÃO E DO MONITORAMENTO</p>
+
+<p>Art. 31. Os estabelecimentos de saúde autorizados a prestarem a atenção à saúde às pessoas com doenças raras no âmbito do SUS estarão submetidos à regulação, controle e avaliação pelos respectivos gestores públicos de saúde.</p>
+
+<p>Art. 32. O Ministério da Saúde monitorará e avaliará periodicamente o atendimento contínuo dos serviços prestados para manutenção do repasse dos recursos financeiros ao ente federativo beneficiário, de acordo com as informações no SIA/SUS e Sistema de Informação Hospitalar (SIH/SUS).</p>
+
+<p>Art. 33. As Secretarias de Saúde dos Estados e dos Municípios adotarão as providências necessárias ao cumprimento das normas estabelecidas nesta Portaria, podendo estabelecer normas de caráter suplementar, a fim de adequá-las às especificidades locais ou regionais.</p>
+
+<p>Art. 34. O Departamento de Regulação, Avaliação e Controle de Sistemas (DRAC/SAS/MS), em conjunto com a CGMAC/ DAET/SAS/MS, será responsável pelo monitoramento e a avaliação contínua dos Serviços de Atenção Especializada em Doenças Raras e dos Serviços de Referência em Doenças Raras.</p>
+
+<p>CAPITULO IX DAS DISPOSIÇÕES FINAIS</p>
+
+<p>Art. 35. A solicitação dos exames para diagnóstico das doenças raras, conforme descrito nesta Portaria, será facultado apenas aos estabelecimentos habilitados como Serviço de Atenção Especializada em Doenças Raras ou Serviços de Referência em Doenças Raras.</p>
+
+<p>Art. 36. As Diretrizes para Atenção Integral às Pessoas com Doenças Raras no âmbito do SUS serão disponibilizadas no endereço eletrônico http://www.portal.saude.gov.br.</p>
+
+<p>Art. 37. Os medicamentos e as fórmulas nutricionais incorporados pela CONITEC e constantes dos protocolos clínicos e diretrizes terapêuticas para os cuidados das pessoas com doenças raras serão objeto de pactuação tripartite no âmbito da assistência farmacêutica e dispostos em atos específicos.</p>
+
+<p>Art. 38. A APAC emitida para a realização dos procedimentos de avaliação clinica para diagnóstico de doenças raras - Eixo I: 1 - Anomalias congênitas ou de manifestação tardia, Eixo I: 2 - Deficiência Intelectual e Eixo I: 3 - Erros Inatos do Metabolismo, terão validade fixa de 3 (três) competências.</p>
+
+<p>§ 1º Na APAC inicial dos procedimentos descritos no "caput" deverá ser registrado o procedimento principal (códigos: 03.01.01.019-6 ou 03.01.01.020-0 ou 03.01.01.021-8) de avaliação clinica para diagnóstico de doenças raras com o quantitativo 1 (um) com os procedimentos secundários realizados.</p>
+
+<p>§ 2º A partir da segunda competência (APAC de continuidades), se houver necessidade de novos procedimentos secundários, o procedimento principal de avaliação clinica para diagnóstico de doenças raras deverá ser registrado com o quantitativo zerado e os respectivos procedimentos secundários realizados quantificados, durante o período de validade da APAC.</p>
+
+<p>Art. 39. Fica incluído na Tabela de Serviços Especializados do SCNES o Serviço de ATENÇÃO ÀS PESSOAS COM DOENÇAS
+RARAS (código - 167) com as respectivas classificações, conforme o Anexo I.</p>
+
+<p>Art. 40. Ficam incluídas na Tabela de Habilitações do SCNES, Grupo de habilitação 35 - Atenção às Pessoas com Doenças Raras, as habilitações, conforme definido no Anexo II.</p>
+
+<p>Art. 41. Ficam incluídos na Tabela de Procedimentos, Medicamentos, Órteses, Próteses e Materiais Especiais do SUS os procedimentos referentes à assistência às pessoas com doenças raras no SUS, conforme disposto no Anexo III.</p>
+
+<p>Art. 42. Ficam incluídas compatibilidades entre procedimentos da Tabela de Procedimentos, Medicamentos, Órteses, Próteses e Materiais Especiais do SUS referentes aos procedimentos relativos à assistência às pessoas com doenças raras no SUS, conforme disposto no anexo IV.</p>
+
+<p>Art. 43. Ficam alterados na Tabela de Procedimentos do SUS os atributos dispostos no anexo VI.</p>
+
+<p>Art. 44. Os recursos orçamentários objeto desta Portaria, correrão por conta do orçamento do Ministério da Saúde, devendo onerar o Programa de Trabalho 10.302.2015.8585 Atenção à Saúde da População para Procedimentos de Média e Alta Complexidade (Plano Orçamentário 0007).</p>
+
+<p>Art. 45. Esta Portaria entra em vigor na data de sua publicação, com efeitos operacionais a partir da competência posterior a sua publicação.</p>
+
+
+
+
+        ]]>
+
+</string>
+
+    <string name="lei3">
+        <![CDATA[
+
+
+        <h4> PORTARIA Nº 81, DE 20 DE JANEIRO DE 2009 </h4>
+        <P>Institui, no âmbito do Sistema Único de Saúde (SUS), a Política Nacional de Atenção Integral em Genética Clínica.
+
+O MINISTRO DE ESTADO DA SAÚDE, no uso de suas atribuições, e
+
+Considerando a necessidade de estruturar no SUS uma rede de serviços regionalizada e hierarquizada que permita a atenção integral em Genética Clínica e a melhoria do acesso a esse atendimento especializado;
+
+Considerando que, segundo a Organização Mundial da Saúde (OMS), a Sociedade Brasileira de Genética Clínica e a Sociedade Brasileira de Genética, aproximadamente cinco por cento das gestações resultam no nascimento de uma criança com algum tipo de anomalia congênita ou doença genética que comprometerá seu desenvolvimento e qualidade de vida;
+
+Considerando que condições de etiologia predominantemente genética respondem por quinze por cento a vinte e cinco por cento das causas de mortalidade perinatal e infantil em nações em desenvolvimento, tendo as anomalias congênitas passado da quinta para a segunda causa de mortalidade infantil no Brasil nos últimos vinte e cinco anos;
+
+Considerando haver indicações de que as anomalias congênitas e as doenças geneticamente determinadas têm maior prevalência nos países em desenvolvimento, possivelmente refletindo a falta de medidas preventivas e terapêuticas adequadas;
+
+Considerando que o aconselhamento genético é o pilar central da atenção à saúde em genética clínica e deve ser garantido a todos os indivíduos e famílias sob risco de anomalia congênita ou doença genética;
+
+Considerando a necessidade de estabelecer critérios mínimos para o credenciamento e a habilitação dos serviços de genética clínica na rede SUS;
+
+Considerando a necessidade de auxiliar os gestores do SUS na regulação, fiscalização, controle e avaliação da assistência prestada aos usuários em genética clínica; e
+
+Considerando a decisão da Comissão Intergestores Tripartite - CIT, em reunião ordinária de 27 de novembro de 2008, resolve: Art. 1º Instituir, no âmbito do SUS a Política Nacional de Atenção Integral em Genética Clínica.
+
+Parágrafo único. A Política Nacional de Atenção Integral em Genética Clínica será implantada de forma articulada nas três esferas de gestão do SUS.</p>
+
+<p>Art. 2° São objetivos da Política Nacional de Atenção Integral em Genética Clínica:</p>
+
+<p>I - organizar uma linha de cuidados integrais (promoção, prevenção, tratamento e reabilitação) que perpasse todos os níveis de atenção, promovendo, dessa forma, a atenção por intermédio de equipe multiprofissional, com atuação interdisciplinar;</p>
+
+<p>II - possibilitar a identificação dos determinantes e condicionantes dos principais problemas de saúde relacionados a anomalias congênitas e doenças geneticamente determinadas, de forma a fornecer subsídios para a elaboração de ações e políticas públicas no setor, sem prejuízo da participação social;</p>
+
+<p>III - definir critérios técnicos mínimos para o funcionamento, o monitoramento e a avaliação dos serviços que realizam os procedimentos e técnicas em genética clínica;</p>
+
+<p>IV -incentivar a realização de pesquisas e projetos estratégicos destinados ao estudo do custo-efetividade, eficácia e qualidade e incorporação de tecnologias na área de genética clínica; e</p>
+
+<p>V - qualificar a assistência e promover a educação permanente dos profissionais de saúde envolvidos com a implantação e a implementação da Política de Atenção Integral em Genética Clínica, em conformidade com os princípios da integralidade e da Política Nacional de Humanização (PNH).</p>
+
+<p>Art. 3º A Política Nacional de Atenção Integral em Genética Clínica, será constituída dos seguintes níveis:</p>
+
+<p>I - Atenção Básica;</p>
+
+
+
+
+
+
+        ]]>
+
+</string>
+
+
+
+
+</resources>

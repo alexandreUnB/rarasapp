@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="menu_search_disorders_searchView">Pesquisar</string>
+    <string name="activity_search_disorders_et_search">Pesquisar Doença</string>
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/default_search_item_rl_frame"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:paddingLeft="@dimen/abc_list_item_padding_horizontal_material"
+    android:paddingRight="@dimen/abc_list_item_padding_horizontal_material"
+    android:clickable="true"
+    android:background="?android:selectableItemBackground"
+    >
+
+    <ImageView
+        android:id="@+id/default_search_item_iv_iconRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_chevron_right_black_36dp" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="16dp"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/default_search_item_iv_iconRight"
+        />
+
+    <RelativeLayout
+        android:id="@+id/default_search_item_tv_itemFrame"
+        android:layout_toLeftOf="@id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/default_search_item_tv_principal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Título"
+            android:textSize="16sp"
+            android:paddingTop="16dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary_dark_color"
+            />
+
+        <TextView
+            android:id="@+id/default_search_item_tv_info1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="info1"
+            android:textSize="14sp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:layout_below="@id/default_search_item_tv_principal"
+            android:textColor="@color/text_primary_dark_color" />
+
+        <TextView
+            android:id="@+id/default_search_item_tv_info2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="info2"
+            android:textSize="14sp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:layout_below="@id/default_search_item_tv_info1"
+            android:textColor="@color/text_primary_dark_color" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

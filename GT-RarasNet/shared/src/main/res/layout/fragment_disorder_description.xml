@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    >
+<View
+    android:id="@+id/frag_disorder_description_vi_toolbarElevation"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/toolbarElevation"
+    android:background="@drawable/elevation"
+    android:layout_alignParentTop="true" />
+
+<ScrollView
+    android:layout_below="@id/frag_disorder_description_vi_toolbarElevation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/disorder_title"
+        android:orientation="vertical"
+        >
+    <TextView
+        android:id="@+id/center_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disordem"
+        android:textColor="@color/material_blue_grey_950"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"/>
+
+    <View
+        android:id="@+id/frag_disorder_signs_tb_toolbarElevation2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbarElevation"
+        android:background="@drawable/elevation"
+        android:layout_alignParentTop="true"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+
+            android:id="@+id/frag_title">
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/frag_disorder_description_rl_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/frag_title"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            >
+
+            <RelativeLayout
+                android:id="@+id/frag_disorder_Lawer_Value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/frag_disorder_tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome: "
+                android:layout_alignParentTop="true"
+
+
+                android:textColor="@color/material_blue_grey_950"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                />
+
+
+            <TextView
+                android:id="@+id/frag_disorder_description_tv_titleValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/frag_disorder_tv_title"
+                android:textColor="@color/material_blue_grey_950"
+                android:textSize="18sp"
+                />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/frag_disorder_description_tv_especialidades"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/frag_disorder_Lawer_Value"
+                android:textColor="@color/material_blue_grey_950"
+                android:layout_marginTop="12dp"
+                android:textSize="14sp"
+                android:text="Especialidade(s): "
+                android:textStyle="bold"
+                />
+
+
+            <TextView
+                android:id="@+id/frag_disorder_description_tv_especialidadesValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_below="@id/frag_disorder_Lawer_Value"
+                android:layout_toRightOf="@id/frag_disorder_description_tv_especialidades"
+                android:textColor="@color/material_blue_grey_950"
+                android:textSize="14sp"
+            />
+
+
+            <TextView
+                android:id="@+id/frag_disorder_description_tv_orpha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/frag_disorder_description_tv_especialidadesValue"
+                android:textColor="@color/material_blue_grey_950"
+                android:layout_marginTop="12dp"
+                android:textSize="14sp"
+                android:text="Orphanumber: "
+                android:textStyle="bold"
+            />
+
+
+            <TextView
+                android:id="@+id/frag_disorder_description_tv_orphaValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_below="@id/frag_disorder_description_tv_especialidadesValue"
+                android:layout_toRightOf="@id/frag_disorder_description_tv_orpha"
+                android:textColor="@color/material_blue_grey_950"
+                android:textSize="14sp"
+                />
+
+
+            <TextView
+                android:id="@+id/frag_disorder_description_tv_cid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/frag_disorder_description_tv_orpha"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/material_blue_grey_950"
+                android:textSize="14sp"
+                android:text="Cid: "
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/frag_disorder_description_tv_cidValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/frag_disorder_description_tv_orpha"
+                android:layout_marginTop="12dp"
+                android:layout_toRightOf="@id/frag_disorder_description_tv_cid"
+                android:textColor="@color/material_blue_grey_950"
+                android:textSize="14sp"
+                />
+
+            <ImageView
+                android:id="@+id/frag_disorder_description_iv_downloadIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="3dp"
+            />
+
+            <TextView
+                android:id="@+id/frag_disorder_description_tv_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_marginTop="12dp"
+                android:layout_below="@id/frag_disorder_description_tv_especialidadesValue"
+                android:layout_toLeftOf="@id/frag_disorder_description_iv_downloadIcon"
+                android:text="Baixar Protocolo"
+                android:textColor="@color/primary_accent"
+            />
+
+            <TextView
+                android:id="@+id/frag_disorder_description_tv_expertlink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:layout_below="@id/frag_disorder_description_tv_download"
+                android:layout_alignLeft="@id/frag_disorder_description_tv_download"
+                android:singleLine="true"
+                android:layout_marginTop="12dp"
+                android:text="Consultar Orpha"
+                android:textColor="@color/primary_accent"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/frag_disorder_description_vi_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/material_grey_palette_200"
+            android:layout_below="@id/frag_disorder_description_rl_header"
+
+            />
+
+    <RelativeLayout
+        android:id="@+id/frag_disorder_description_rl_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/frag_disorder_description_vi_divider"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        >
+        <TextView
+            android:id="@+id/frag_disorder_description_tv_descricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="Esta doença ainda não possui uma descrição"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/material_blue_grey_950"
+            />
+    </RelativeLayout>
+
+    </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>
+
+</RelativeLayout>

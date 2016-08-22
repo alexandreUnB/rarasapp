@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rarasnet.rnp.centros">
+
+    <application android:allowBackup="true" android:label="@string/app_name">
+        <activity
+            android:name=".controllers.activities.SearchCentersdepreActivity"
+            android:label="Centros de Referência"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".controllers.activities.CenterProfileActivity"
+            android:label="Centro de Referência"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.rarasnet.rnp.centros.action.PROFILE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".profile.CenterProfile"
+            android:label="Perfil"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

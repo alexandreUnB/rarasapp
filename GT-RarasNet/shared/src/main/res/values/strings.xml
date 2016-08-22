@@ -1,0 +1,147 @@
+<resources>
+    <string name="app_name">RarasNet</string>
+    <string name="title_activity_about" translatable="false">About</string>
+
+    <string name="hello_world" translatable="false">Hello world!</string>
+    <string name="action_settings" translatable="false">Configurações</string>
+    <string name="title_activity_main" translatable="false">Main</string>
+
+    <!-- Textviews-->
+    <string name="doenca" translatable="false">Doença</string>
+    <string name="doenca_perfil" translatable="false">Perfil da Doença</string>
+    <string name="doenca_name" translatable="false">Nome: </string>
+    <string name="doenca_orphanumber" translatable="false">Orphanumber: </string>
+    <string name="doenca_expertlink" translatable="false">Expertlink: </string>
+    <string name="doenca_favoritos" translatable="false">FAVORITOS</string>
+    <string name="doenca_descricao" translatable="false">Descrição</string>
+
+
+    <string name="sinonimos_doenca" translatable="false">Sinônimos desta doença</string>
+    <string name="sinonimos_consulta" translatable="false">Consultar Sinônimos</string>
+    <string name="sinonimos_notfound" translatable="false">Esta Doença Não Possui Sinônimos</string>
+
+
+    <string name="sinais_doenca" translatable="false">Sinais clínicos desta doença</string>
+    <string name="sinais_consulta" translatable="false">Consultar Sinais Clínicos</string>
+    <string name="sinais_notfound" translatable="false">Esta Doença Não Possui Sinais Clínicos</string>
+    <string name="sinais_name" translatable="false">Sinal Clínico:</string>
+    <string name="sinais_detalhes" translatable="false">Detalhes do Sinal Clínico</string>
+    <string name="sinais_imagens" translatable="false">Imagens do Sinal Clínico</string>
+    <string name="sign_imagens" translatable="false">Não existem imagens do sinal cadastrado na base de dados.</string>
+    <string name="sign_detalhe" translatable="false">Não existe descrição do sinal cadastrado na base de dados.</string>
+
+    <string name="referencia_consulta" translatable="false">Consultar Referência</string>
+    <string name="referencia_notfound" translatable="false">Esta Doença Não Possui Referências!</string>
+    <string name="referencia_doenca" translatable="false">Está Doença não Possui Referência</string>
+
+
+    <!--Text ImagensView-->
+    <string name="main_doctor" translatable="false">Profissional</string>
+    <string name="main_disease" translatable="false">Doença</string>
+    <string name="resume_disease" translatable="false">A doença</string>
+    <string name="main_center" translatable="false">Centros</string>
+    <string name="imagens" translatable="false">Imagens</string>
+    <string name="main_protocol" translatable="false">Protocolos</string>
+    <string name="main_legislacao" translatable="false">Legislação</string>
+    <string name="main_profile" translatable="false">Perfil</string>
+    <string name="main_about" translatable="false">Sobre Nós</string>
+    <string name="main_contact" translatable="false">Contato</string>
+    <string name="disease_profissional" translatable="false"> Profissionais Especializados</string>
+
+    <!-- Text Button-->
+    <string name="load" translatable="false">Carregar</string>
+    <string name="cancel" translatable="false">Cancelar</string>
+    <string name="caution" translatable="false">Atenção</string>
+    <string name="delete" translatable="false">Excluir</string>
+    <string name="add" translatable="false">Adicionar</string>
+
+
+    <!--Text-->
+    <string name="detalhes_notfound" translatable="false">Não existe detalhes da doença</string>
+    <string name="doctor_notfound" translatable="false">Profissionais ainda não cadastrados</string>
+    <string name="center_notfound" translatable="false">Centros ainda não cadastrados</string>
+    <string name="imagens_notfound" translatable="false">Não existem imagens na base de dados</string>
+    <string name="protocol_notfound" translatable="false">Protocolos ainda não cadastrados</string>
+    <string name="professional_notfound" translatable="false">Professional ainda não cadastrados</string>
+
+    <string name="doenca_add" translatable="false">Deseja adicionar a doença</string>
+    <string name="doenca_list" translatable="false"> a sua lista? </string>
+    <string name="doenca_dalist" translatable="false"> da lista? </string>
+    <string name="doenca_load" translatable="false">Deseja carregar informações da doença </string>
+    <string name="doenca_remove" translatable="false">Deseja excluir a doença </string>
+    <string name="doenca_remove_confirma" translatable="false">A doença será excluida </string>
+
+
+    <!-- Text Link -->
+    <string name="consultarorpha" translatable="false">Consultar Orphanet</string>
+
+    <string-array name="tipos_usuarios">
+        <item>Paciente</item>
+        <item>Médico</item>
+        <item>Pesquisador</item>
+    </string-array>
+
+    <string-array name="sexo_usuario">
+        <item>Masculino</item>
+        <item>Feminino</item>
+    </string-array>
+
+    <string-array name="uf_brasil">
+        <item>AC</item>
+        <item>AL</item>
+        <item>AM</item>
+        <item>AP</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>DF</item>
+        <item>ES</item>
+        <item>GO</item>
+        <item>MA</item>
+        <item>MG</item>
+        <item>MS</item>
+        <item>MT</item>
+        <item>PA</item>
+        <item>PB</item>
+        <item>PE</item>
+        <item>PI</item>
+        <item>PR</item>
+        <item>RJ</item>
+        <item>RN</item>
+        <item>RO</item>
+        <item>RR</item>
+        <item>RS</item>
+        <item>SC</item>
+        <item>SE</item>
+        <item>SP</item>
+        <item>TO</item>
+    </string-array>
+
+    <string name="sim" translatable="false">Sim</string>
+    <string name="nao" translatable="false">Não</string>
+
+    <!-- Default -->
+    <string name="default_name" translatable="false">Nome:</string>
+    <string name="default_cidade" translatable="false">Cidade:</string>
+    <string name="default_estado" translatable="false">Estado:</string>
+    <string name="default_email">Email:</string>
+    <string name="default_telefone" translatable="false">Telefone:</string>
+    <string name="default_endereco" translatable="false">Endereço:</string>
+    <string name="default_orphanumber">Orphanumber:</string>
+    <string name="default_expertlink">Expertlink:</string>
+    <string name="default_perfil_disease" translatable="false">Perfil da Doença</string>
+
+    <!-- center -->
+    <string name="center_referencia" translatable="false">Centro de Referência</string>
+    <string name="center_especialidade" translatable="false">Especialidade:</string>
+    <string name="center_atendimento">Atendimento:</string>
+    <string name="center_am">h</string>
+    <string name="center_pm">h</string>
+    <string name="center_esecialistas" translatable="false">Especialistas Associados </string>
+    <string name="center_doenca" translatable="false">Doenças Tratadas</string>
+
+    <!-- profissionais -->
+    <string name="profissional" translatable="false">Perfil do Profissional</string>
+    <string name="professional_center" translatable="false">Instituições que trabalha</string>
+    <string name="professional_desiase" translatable="false">Doenças em que possui especialidade:</string>
+
+</resources>

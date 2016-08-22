@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingTop="?android:attr/actionBarSize"
+    android:layout_height="wrap_content"
+    android:background="@drawable/main_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/frame_disorder_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingBottom="25dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:background="@android:drawable/dialog_holo_light_frame">
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="6dp"
+                android:text="@string/doenca"
+                android:textStyle="bold"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/nameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_below="@id/title1"
+                android:text="@string/doenca_name"
+                android:textStyle="bold"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/diseaseName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/nameLabel"
+                android:layout_below="@id/title1"
+                android:layout_marginTop="6dp"
+                android:textSize="15sp"
+                android:textColor="#33B5E5" />
+
+            <TextView
+                android:id="@+id/orphanumberLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_below="@id/diseaseName"
+                android:text="@string/doenca_orphanumber"
+                android:textStyle="bold"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/diseaseOrphanum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/orphanumberLabel"
+                android:layout_below="@id/diseaseName"
+                android:layout_marginTop="6dp"
+                android:textSize="15sp"
+                android:textColor="#33B5E5" />
+
+
+            <TextView
+                android:id="@+id/expertLinkLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_below="@id/orphanumberLabel"
+                android:text="@string/doenca_expertlink"
+                android:textStyle="bold"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/diseaseExpertlink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/expertLinkLabel"
+                android:layout_below="@id/orphanumberLabel"
+                android:layout_marginTop="6dp"
+                android:textSize="15sp"
+                android:textColor="#33B5E5" />
+
+            <TextView
+                android:id="@+id/quest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@id/expertLinkLabel"
+                android:layout_marginTop="6dp"
+                android:textSize="15sp" />
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/quest"
+                android:layout_alignParentBottom="true">
+
+
+                <ImageButton
+                    android:id="@+id/save"
+                    android:layout_marginLeft="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/ir"
+                    android:visibility="invisible"
+                    android:onClick="salvar"
+                    android:background="@null" />
+
+                <ImageButton
+                    android:id="@+id/del"
+                    android:layout_marginLeft="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/delete"
+                    android:visibility="invisible"
+                    android:onClick="excluir"
+                    android:background="@null"
+                    android:text="excluir" />
+
+                <ImageButton
+                    android:id="@+id/add"
+                    android:layout_marginLeft="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:visibility="invisible"
+                    android:src="@mipmap/add"
+                    android:onClick="salvar"
+                    android:background="@null" />
+
+                <ImageButton
+                    android:layout_marginRight="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/seta"
+                    android:background="@null"
+                    android:onClick="cancelar" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

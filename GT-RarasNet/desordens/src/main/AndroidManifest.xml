@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rarasnet.rnp.desordens" >
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name" >
+
+        <activity
+            android:name=".search.controllers.activities.Graph"
+            android:label="SinaisZ"
+            android:screenOrientation="reverseLandscape"></activity>
+
+        <activity
+            android:name=".search.controllers.activities.SearchDisordersActivity"
+            android:label="@string/doenca"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".profile.DisorderProfileActivity"
+            android:label="Doença"
+            android:screenOrientation="portrait">
+
+            <intent-filter>
+                <action android:name="com.rarasnet.rnp.desordens.action.PROFILE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".search.controllers.activities.Signs"
+            android:label="Sinais"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".search.controllers.activities.SignsInfo"
+            android:label="Sinais"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".search.controllers.activities.Synonyms"
+            android:label="Sinais"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".search.controllers.activities.References"
+            android:label="Sinais"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".search.controllers.activities.DiseaseDescricao"
+            android:label="@string/doenca"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".search.controllers.activities.Professionals"
+            android:label="Profissionais"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".search.controllers.activities.Centers"
+
+            android:label="@string/center_referencia"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

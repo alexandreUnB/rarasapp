@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RarasNet</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="delete" translatable="false">Delete</string>
+    <string name="caution" translatable="false">Caution</string>
+    <string name="cancel" translatable="false">Cancel</string>
+    <string name="doenca" translatable="false">Disease</string>
+    <string name="doenca_expertlink" translatable="false">Expertlink:</string>
+    <string name="doenca_name" translatable="false">Name:</string>
+    <string name="doenca_orphanumber" translatable="false">Orphanumber:</string>
+    <string name="doenca_perfil" translatable="false">Disease com.rarasnet.rnp.usuario.Profile</string>
+    <string name="imagens" translatable="false">Imagens</string>
+    <string name="load" translatable="false">Load</string>
+    <string name="main_about" translatable="false">About Us</string>
+    <string name="main_center" translatable="false">Centers</string>
+    <string name="main_contact" translatable="false">Contact us</string>
+    <string name="main_disease" translatable="false">Disease</string>
+    <string name="main_doctor" translatable="false">Professional</string>
+    <string name="main_legislacao" translatable="false">Legislation</string>
+    <string name="main_profile" translatable="false">com.rarasnet.rnp.usuario.Profile</string>
+    <string name="main_protocol" translatable="false">Protocols</string>
+    <string name="protocol_notfound" translatable="false">Protocols have not been registered</string>
+    <string name="quem_somos" translatable="false"></string>
+    <string name="referencia_consulta" translatable="false">Consult Reference</string>
+    <string name="referencia_doenca" translatable="false">Is not Disease has Reference</string>
+    <string name="referencia_notfound" translatable="false">Is not Disease has Reference!</string>
+    <string name="resume_disease" translatable="false">Disease</string>
+    <string name="sinais_consulta" translatable="false">Consult Clinical Signs</string>
+    <string name="sinais_detalhes" translatable="false">Details Clinical Sign</string>
+    <string name="sinais_doenca" translatable="false">Clinical Sing of this Disease</string>
+    <string name="sinais_imagens" translatable="false">Imagens Clinical Sing</string>
+    <string name="sinais_name" translatable="false">Clinical Sing:</string>
+    <string name="sinais_notfound" translatable="false">This Disease does not have clinical signs</string>
+    <string name="sinonimos_consulta" translatable="false">Consult Synonyms</string>
+    <string name="sinonimos_doenca" translatable="false">Synonums of this Disease</string>
+    <string name="sinonimos_notfound" translatable="false">This Disease does not have Synonyms</string>
+    <string name="title_activity_about" translatable="false"></string>
+    <string name="imagens_notfound" translatable="false">There are no images in the database</string>
+    <string name="doenca_load" translatable="false">Want to load information of the Disease</string>
+    <string name="doenca_list" translatable="false">your list</string>
+    <string name="doenca_favoritos" translatable="false">FAVORITES</string>
+    <string name="doenca_descricao" translatable="false">Description</string>
+    <string name="doenca_dalist" translatable="false">the list?</string>
+    <string name="doenca_add" translatable="false">Want to add the disease</string>
+    <string name="doctor_notfound" translatable="false">There are no registered professionals</string>
+    <string name="detalhes_notfound" translatable="false">Details have not registered disease</string>
+    <string name="consultarorpha" translatable="false">Consult Orphanet</string>
+    <string name="center_notfound" translatable="false">Centers have not been registered</string>
+    <string name="add" translatable="false">Add</string>
+    <string name="doenca_remove_confirma">The disease will be deleted</string>
+    <string name="doenca_remove" translatable="false">Want to delete the disease</string>
+    <string name="disease_profissional" translatable="false">Specialized Professionals</string>
+    <string name="sign_detalhe" translatable="false">There is no description of the clinical signs in the Database</string>
+    <string name="sign_imagens" translatable="false">There is no images of the clinical signs in the Database</string>
+
+    <string-array name="tipos_usuarios">
+        <item>Pacient</item>
+        <item>Doctor</item>
+        <item>Researcher</item>
+    </string-array>
+
+    <string-array name="sexo_usuario">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+</resources>

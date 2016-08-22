@@ -1,0 +1,201 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/disease_profile_tab1"
+    android:paddingTop="?android:attr/actionBarSize"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/main_bg">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/frame_disorder_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:paddingBottom="25dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:background="@drawable/shape_background_white">
+
+                <TextView
+                    android:id="@+id/title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:text="@string/default_perfil_disease"
+                    android:textStyle="bold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/nameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:layout_below="@id/title1"
+                    android:text="@string/default_name"
+                    android:textStyle="bold"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/diseaseName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/nameLabel"
+                    android:layout_below="@id/title1"
+                    android:layout_marginTop="6dp"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/orphanumberLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:layout_below="@id/diseaseName"
+                    android:text="@string/default_orphanumber"
+                    android:textStyle="bold"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/diseaseOrphanum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/orphanumberLabel"
+                    android:layout_below="@id/diseaseName"
+                    android:layout_marginTop="6dp"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/expertLinkLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:layout_below="@id/diseaseOrphanum"
+                    android:text="@string/default_expertlink"
+                    android:textStyle="bold"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/diseaseExpertlink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/expertLinkLabel"
+                    android:layout_below="@id/diseaseOrphanum"
+                    android:layout_marginTop="6dp"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/frame_signs_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/frame_disorder_data"
+                android:layout_margin="10dp"
+
+                android:background="@drawable/shape_background_white">
+
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:text="@string/sinais_name"
+                    android:textStyle="bold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/name_sign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+
+                    android:layout_toRightOf="@id/title2"
+                    android:textSize="15sp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sign_frame_detalhe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/selector_green_button">
+
+                <TextView
+                    android:id="@+id/btnSign_detalhe"
+                    android:textColor="#000000"
+                    android:text="@string/sinais_detalhes"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="left"
+                    android:layout_margin="10dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@null" />
+
+                <TextView
+                    android:id="@+id/sing_discricao"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:textColor="#ffffff"
+                    android:layout_below="@id/btnSign_detalhe" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sign_frame_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/selector_green_button">
+
+                <TextView
+                    android:id="@+id/btnSign_image"
+                    android:textColor="#000000"
+                    android:text="@string/sinais_imagens"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_margin="10dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:background="@null" />
+
+                <TextView
+                    android:id="@+id/sing_imagens"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:background="@null"
+                    android:layout_below="@id/btnSign_image" />
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,0 +1,1 @@
+include ':app', ':shared', ':autenticacao', ':documentos', ':desordens', ':usuario', ':centros', ':profissionais', ':info_projeto', ':library', ':controller', ':user'

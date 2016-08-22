@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".desordens.profile.DisorderProfileActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:id="@+id/act_disorder_profile_ll_navTabs"
+        android:background="@color/primary"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/act_disorder_profile_ab_appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/act_disorder_profile_tb_toolbar"
+                android:layout_height="?android:actionBarSize"
+                android:layout_width="match_parent"
+                android:background="@color/primary"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                app:theme="@style/AppTheme.Toolbar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                >
+
+                <TextView
+                    android:id="@+id/act_disorder_profile_tv_toolbarTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textSize="20sp"
+                    android:gravity="bottom"
+                    android:layout_marginBottom="11dp"
+                    />
+
+            </android.support.v7.widget.Toolbar>
+
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/act_disorder_profile_tl_slidingTabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/AppTheme.TabLayout"
+                android:fillViewport="false" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/act_disorder_profile_vp_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+</RelativeLayout>

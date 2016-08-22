@@ -1,0 +1,94 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/material_palette_900</item>
+        <item name="colorAccent">@color/accent</item>
+
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+
+        <item name="android:windowBackground">@color/primary</item>
+
+        <item name="colorButtonNormal">@color/primary_accent</item>
+
+    </style>
+
+
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/iron</item>
+        <item name="android:background">@color/primary</item>
+    </style>
+
+    <style name="WhiteDrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="WhiteTbSpinnerIconStyle" parent="Widget.AppCompat.Spinner">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+
+    <style name="AppTheme.Toolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- android:textColorPrimary is the  color of the title text
+     in the Toolbar, in the Theme.AppCompat theme:  -->
+        <item name="android:textColorPrimary">@color/white</item>
+
+        <!-- android:textColorPrimaryInverse is the  color of the title
+             text in the Toolbar, in the Theme.AppCompat.Light theme:  -->
+        <!-- <item name="android:textColorPrimaryInverse">@color/abc_primary_text_material_light</item> -->
+
+        <!-- android:actionMenuTextColor is the color of the text of
+              action (menu) items in the Toolbar, at least in the
+              Theme.AppCompat theme.
+              For some reason, they already get the textColorPrimary
+              when running on API 21, but not on older versions of
+              Android, so this is only necessary to support older
+              Android versions.-->
+        <item name="actionMenuTextColor">@color/abc_primary_text_material_light</item>
+        <!-- android:textColorSecondary is the color of the menu
+             overflow icon (three vertical dots) -->
+        <item name="android:textColorSecondary">@color/white</item>
+
+        <!-- This would set the toolbar's background color,
+              but setting this also changes the popup menu's background,
+              even if we define popupTheme for our <Toolbar> -->
+        <!-- <item name="android:background">@color/color_primary</item> -->
+
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/material_palette_100</item>
+        <item name="colorControlHighlight">@color/material_palette_100</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="searchViewStyle">@style/CustomSearchViewStyle</item>
+
+        <item name="android:selectableItemBackground">@drawable/tv_selector</item>
+        <item name="selectableItemBackground">@drawable/tv_selector</item>
+    </style>
+
+    <style name="AppTheme.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/primary_accent</item>
+    </style>
+
+    <style name="ListView" parent="@android:style/Widget.ListView">
+        <item name="android:divider">@drawable/list_divider</item>
+        <item name="android:dividerHeight">1px</item>
+    </style>
+
+    <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="colorControlHighlight">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="android:textColorHighlight">@color/white</item>
+        <item name="android:textColorLink">@color/white</item>
+    </style>
+
+</resources>

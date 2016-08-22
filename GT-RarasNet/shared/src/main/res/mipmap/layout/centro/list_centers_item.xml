@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:drawable/dialog_holo_light_frame"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/list_centers_item_tv_nomeProfissional"
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentLeft="true"
+        android:textColor="#040404"
+        android:typeface="sans"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/shape_background_black" />
+
+
+</LinearLayout>

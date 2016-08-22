@@ -1,0 +1,62 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/disease_profile_tab3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="?android:attr/actionBarSize"
+    android:background="@drawable/main_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/especialista_title"
+        android:orientation="vertical"
+        >
+    <TextView
+        android:id="@+id/center_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Especialistas"
+        android:textColor="@color/material_blue_grey_950"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"/>
+
+    <View
+        android:id="@+id/frag_disorder_signs_tb_toolbarElevation2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbarElevation"
+        android:background="@drawable/elevation"
+        android:layout_alignParentTop="true"
+        />
+
+    <RelativeLayout
+        android:id="@+id/frame_references"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="25dp"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@android:drawable/dialog_holo_light_frame">
+
+        <TextView
+            android:id="@+id/referencesNotFound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+
+            />
+
+        <ListView
+            android:id="@+id/list_references"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ListView>
+
+    </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

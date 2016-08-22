@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rarasnet.rnp.usuario">
+
+    <application android:allowBackup="true" android:label="@string/app_name">
+        <activity
+            android:name="com.rarasnet.rnp.usuario.UserProfile"
+            android:label="Meu Perfil"
+            android:screenOrientation="portrait"></activity>
+    </application>
+
+</manifest>

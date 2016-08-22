@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    >
+
+    <View
+        android:id="@+id/frag_disorder_associates_vi_toolbarElevation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbarElevation"
+        android:background="@drawable/elevation"
+        android:layout_alignParentTop="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/especialista_title"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/profissionais_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profissionais"
+            android:textColor="@color/material_blue_grey_950"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+
+        <View
+            android:id="@+id/frag_disorder_signs_tb_toolbarElevation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbarElevation"
+            android:background="@drawable/elevation"
+            android:layout_alignParentTop="true"
+            />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/frag_associates_tv_associatesQnt"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:textSize="14sp"
+                android:text="12"
+                android:textColor="@color/material_grey_palette_400"
+                />
+
+            <TextView
+                android:id="@+id/frag_disorder_associeates_tv_profissional"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="20dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/frag_disorder_associates_tv_associatesQnt"
+
+                android:textSize="14sp"
+                android:text="Profissionais"
+                android:textColor="@color/material_grey_palette_400"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fragment_associated_profi_rl_frameList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+
+            android:background="@color/white">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/fragment_associated_profi_rv_listaProfi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_list_item">
+
+        </android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
+
+
+    <!--<ExpandableListView
+        android:id="@+id/frag_disorder_associates_el_associatesLists"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_below="@id/frag_disorder_associates_vi_toolbarElevation"
+        android:childDivider="#00000000"
+        android:dividerHeight="0dp"
+        />-->
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="primary">@color/material_palette_600</color>
+    <color name="primary_accent">@color/material_green_accent</color>
+    <color name="text_primary_dark_color">@color/material_grey_palette_800</color>
+    <color name="text_primary_light_color">@color/white</color>
+
+    <color name="accent">#2962ff</color>
+
+    <color name="black">#000000</color>
+    <color name="jet">#222222</color>
+    <color name="oil">#333333</color>
+    <color name="monsoon">#777777</color>
+    <color name="jumbo">#888888</color>
+    <color name="aluminum">#999999</color>
+    <color name="base">#AAAAAA</color>
+    <color name="iron">#CCCCCC</color>
+    <color name="white">@color/material_grey_palette_50</color>
+
+    <!-- Cores de Referência do Material Design -->
+    <color name="material_palette_50">#e3f2fd</color>
+    <color name="material_palette_100">#bbdefb</color>
+    <color name="material_palette_200">#90caf9</color>
+    <color name="material_palette_300">#64b5f6</color>
+    <color name="material_palette_400">#42a5f5</color>
+    <color name="material_palette_500">#2196f3</color>
+    <color name="material_palette_600">#1e88e5</color>
+    <color name="material_palette_700">#1976d2</color>
+    <color name="material_palette_800">#1565c0</color>
+    <color name="material_palette_900">#0d47a1</color>
+
+    <color name="material_palette_A100">#82b1ff</color>
+    <color name="material_palette_A200">#448aff</color>
+    <color name="material_palette_A400">#2979ff</color>
+    <color name="material_palette_A700">#2962ff</color>
+
+    <color name="material_grey_palette_50">#eceff1</color>
+    <color name="material_grey_palette_100">#cfd8dc</color>
+    <color name="material_grey_palette_200">#b0bec5</color>
+    <color name="material_grey_palette_300">#90a4ae</color>
+    <color name="material_grey_palette_400">#78909c</color>
+    <color name="material_grey_palette_500">#607d8b</color>
+    <color name="material_grey_palette_600">#546e7a</color>
+    <color name="material_grey_palette_700">#455a64</color>
+    <color name="material_grey_palette_800">#37474f</color>
+    <color name="material_grey_palette_900">#263238</color>
+
+    <color name="material_green_accent_A100">#b9f6ca</color>
+    <color name="material_green_accent_A200">#69f0ae</color>
+    <color name="material_green_accent_A400">#00e676</color>
+    <color name="material_green_accent_A700">#00c853</color>
+    <color name="material_green_accent">#27ae60</color>
+
+    <color name="accentColor">#448AFF</color>
+
+
+</resources>

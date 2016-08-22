@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@android:drawable/dialog_holo_light_frame">
+
+    <TextView
+        android:layout_gravity="center_vertical"
+        android:id="@+id/txtNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="Medium Text"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:textSize="15dip"
+        android:layout_weight="1"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageButton
+        android:id="@+id/btnEditar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:background="@null"
+        android:padding="2dp"
+        android:layout_gravity="center_vertical"
+
+        android:src="@mipmap/view" />
+
+    <ImageButton
+        android:id="@+id/btnExcluir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:layout_gravity="center_vertical"
+
+
+        android:src="@drawable/delete" />
+
+</LinearLayout>

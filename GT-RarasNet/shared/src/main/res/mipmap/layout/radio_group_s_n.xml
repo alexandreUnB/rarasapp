@@ -1,0 +1,29 @@
+<RadioGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    android:orientation='horizontal'
+    >
+
+    <RadioButton
+        android:id="@+id/radioYes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_primary_dark_color"
+        android:text="@string/sim"
+        android:textSize="@dimen/text_size_small"
+        />
+
+    <RadioButton
+        android:id="@+id/radioNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/text_primary_dark_color"
+        android:text="@string/nao"
+        android:textSize="@dimen/text_size_small"
+        android:checked="true"
+        />
+
+</RadioGroup>

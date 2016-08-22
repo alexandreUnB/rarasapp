@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="act_menu_tb_title">RarasNet</string>
+    
+    <string name="act_menu_cv_doencas">Doenças</string>
+    <string name="act_menu_cv_profissionais">Profissionais</string>
+    <string name="act_menu_cv_centros">Centros</string>
+    <string name="act_menu_cv_protocolos">Protocolos</string>
+    <string name="act_menu_cv_legislacao">Legislação</string>
+    <string name="act_menu_cv_dadosUsuario">Meus Dados</string>
+    <string name="act_menu_cv_contato">Entre em Contato</string>
+    <string name="act_menu_cv_sobre">Sobre Nós</string>
+    
+</resources>

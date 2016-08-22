@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RarasNet</string>
+
+    <string name="action_profile">com.rarasnet.rnp.centros.action.PROFILE</string>
+</resources>

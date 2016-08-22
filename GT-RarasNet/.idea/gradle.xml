@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-2.10" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/autenticacao" />
+            <option value="$PROJECT_DIR$/centros" />
+            <option value="$PROJECT_DIR$/controller" />
+            <option value="$PROJECT_DIR$/desordens" />
+            <option value="$PROJECT_DIR$/documentos" />
+            <option value="$PROJECT_DIR$/info_projeto" />
+            <option value="$PROJECT_DIR$/library" />
+            <option value="$PROJECT_DIR$/profissionais" />
+            <option value="$PROJECT_DIR$/shared" />
+            <option value="$PROJECT_DIR$/user" />
+            <option value="$PROJECT_DIR$/usuario" />
+          </set>
+        </option>
+        <option name="myModules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/autenticacao" />
+            <option value="$PROJECT_DIR$/centros" />
+            <option value="$PROJECT_DIR$/controller" />
+            <option value="$PROJECT_DIR$/desordens" />
+            <option value="$PROJECT_DIR$/documentos" />
+            <option value="$PROJECT_DIR$/info_projeto" />
+            <option value="$PROJECT_DIR$/library" />
+            <option value="$PROJECT_DIR$/profissionais" />
+            <option value="$PROJECT_DIR$/shared" />
+            <option value="$PROJECT_DIR$/user" />
+            <option value="$PROJECT_DIR$/usuario" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GT-RarasNet.iml" filepath="$PROJECT_DIR$/GT-RarasNet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/autenticacao/autenticacao.iml" filepath="$PROJECT_DIR$/autenticacao/autenticacao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/centros/centros.iml" filepath="$PROJECT_DIR$/centros/centros.iml" />
+      <module fileurl="file://$PROJECT_DIR$/controller/controller.iml" filepath="$PROJECT_DIR$/controller/controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/desordens/desordens.iml" filepath="$PROJECT_DIR$/desordens/desordens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/documentos/documentos.iml" filepath="$PROJECT_DIR$/documentos/documentos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/info_projeto/info_projeto.iml" filepath="$PROJECT_DIR$/info_projeto/info_projeto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/profissionais/profissionais.iml" filepath="$PROJECT_DIR$/profissionais/profissionais.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shared/shared.iml" filepath="$PROJECT_DIR$/shared/shared.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user/user.iml" filepath="$PROJECT_DIR$/user/user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/usuario/usuario.iml" filepath="$PROJECT_DIR$/usuario/usuario.iml" />
+    </modules>
+  </component>
+</project>

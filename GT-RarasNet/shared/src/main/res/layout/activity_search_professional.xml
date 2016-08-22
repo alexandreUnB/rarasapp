@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SearchDisordersActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/white"
+    android:animateLayoutChanges="true"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/act_search_professional_tb_toolbar"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@color/primary"
+        app:theme="@style/AppTheme.Toolbar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        >
+
+    </android.support.v7.widget.Toolbar>
+
+    <View
+    android:id="@+id/act_search_professional_tb_toolbarElevation"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/toolbarElevation"
+    android:background="@drawable/elevation"
+    android:layout_below="@id/act_search_professional_tb_toolbar"
+    />
+
+    <ProgressBar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/act_search_professional_pb_actionViewSearchProgress"
+        android:visibility="invisible"
+        android:layout_width="@dimen/progressBar_searchEditText_width"
+        android:layout_height="@dimen/progressBar_searchEditText_height"
+        android:layout_centerInParent="true"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/act_search_professional_rl_fadeMenu"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logtes"
+            android:layout_centerInParent="true"/>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/act_search_professional_ti_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="?actionBarSize"
+            >
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/act_search_professional_et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:hint="Pesquisar Profissional"
+                android:completionThreshold="3"
+                android:drawableRight="@drawable/ic_search_white_24dp"
+                />
+
+            <android.support.v7.widget.AppCompatMultiAutoCompleteTextView
+                android:id="@+id/act_search_professional_ac_searchBySigns"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:hint="Busca por Sinais"
+                android:completionThreshold="3"
+                android:drawableRight="@drawable/ic_search_white_24dp"
+                />
+
+            <ProgressBar
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/act_search_professional_pb_searchProgress"
+                android:visibility="invisible"
+                android:layout_width="@dimen/progressBar_searchEditText_width"
+                android:layout_height="@dimen/progressBar_searchEditText_height"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                />
+
+            </RelativeLayout>
+
+        </android.support.design.widget.TextInputLayout>
+
+
+    </RelativeLayout>
+
+    <ListView
+        style="@style/ListView"
+        android:id="@+id/act_search_professional_lv_searchResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/act_search_professional_tb_toolbarElevation"
+        android:background="@drawable/selector_list_item"
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:visibility="invisible"
+        >
+
+    </ListView>
+
+    <ProgressBar
+        android:id="@+id/act_search_professional_pb_loadingDisorderData"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        />
+
+
+</RelativeLayout>

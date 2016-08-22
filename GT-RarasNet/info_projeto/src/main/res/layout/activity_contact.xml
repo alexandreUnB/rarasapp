@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/act_contact_tb_mainToolbar"
+        android:layout_height="@dimen/abc_action_bar_default_height_material"
+        android:layout_width="match_parent"
+        android:background="@color/primary"
+        app:theme="@style/AppTheme.Toolbar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+
+        />
+    <View
+        android:id="@+id/act_center_profile_tb_mainToolbarElevation"
+        android:layout_height="5dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/elevation"
+        android:layout_below="@id/act_center_profile_tb_mainToolbar"
+        />
+
+
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:paddingTop="?android:attr/actionBarSize"
+        android:layout_height="wrap_content"
+       >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <!-->
+            <RelativeLayout
+                android:id="@+id/aboutText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/dialog_holo_light_frame"
+            >
+                <TextView
+                    android:id="@+id/title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:layout_centerInParent="true"
+                    android:text="Formas de Contato"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                />
+
+
+
+            </RelativeLayout>-->
+            <RelativeLayout
+                android:id="@+id/links_frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="25dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:padding="10dp"
+                android:background="@android:drawable/dialog_holo_light_frame">
+
+                <TextView
+                    android:id="@+id/title_links"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:layout_alignParentTop="true"
+                    android:text="Links Úteis"
+                    android:textStyle="bold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/link1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/title_links"
+                    android:layout_marginLeft="6dp"
+                    android:text=""
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/link2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/link1"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:text=""
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/link3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/link2"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:text=""
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sendMailFrame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/links_frame"
+                android:paddingBottom="25dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:padding="10dp"
+                android:background="@android:drawable/dialog_holo_light_frame">
+
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:layout_alignParentTop="true"
+                    android:text="Fale Conosco"
+                    android:textStyle="bold"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/talkWithUs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:layout_below="@id/title2"
+                    android:text="Para sugestões, dúvidas ou críticas,
+                mande-nos um e-mail!"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/sendMail"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sendMailFrame"
+                android:layout_marginTop="10dp"
+                android:layout_centerInParent="true"
+                android:text="Enviar E-mail"
+                android:textSize="15sp"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:background="@drawable/button_style"></Button>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

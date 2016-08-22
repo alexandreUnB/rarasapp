@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingTop="?android:attr/actionBarSize"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+
+        <RelativeLayout
+            android:id="@+id/frame_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="25dp"
+            android:paddingTop="10dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:background="@android:drawable/dialog_holo_light_frame">
+
+            <TextView
+                android:id="@+id/center_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:text="@string/doenca_perfil"
+                android:textStyle="bold"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/center_nameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_below="@id/center_title"
+                android:text="@string/doenca_name"
+                android:textStyle="bold"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/center_dis_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dsdsdsd"
+                android:layout_toRightOf="@id/center_nameLabel"
+                android:layout_below="@id/center_title"
+                android:layout_marginTop="6dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/center_orphanumberLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_below="@id/center_nameLabel"
+                android:text="@string/doenca_orphanumber"
+                android:textStyle="bold"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/center_dis_Orphanum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/center_orphanumberLabel"
+                android:layout_below="@id/center_nameLabel"
+                android:layout_marginTop="6dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/center_expertLinkLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_below="@id/center_orphanumberLabel"
+                android:text="@string/doenca_expertlink"
+                android:textStyle="bold"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/center_dis_Expertlink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/center_expertLinkLabel"
+                android:layout_below="@id/center_orphanumberLabel"
+                android:layout_marginTop="6dp"
+                android:textSize="15sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/profe_label_disease"
+            android:layout_above="@+id/instituicao"
+
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_margin="10dp"
+                android:gravity="center_horizontal"
+                android:background="@drawable/shape_background_black"
+                android:textSize="18dp"
+                android:text="Doenças em que possui especialidade" />
+
+            <ListView
+                android:layout_margin="10dp"
+                android:id="@+id/profe_perfil_listdisease"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/center_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/frame_center"
+            android:layout_margin="10dp"
+
+            android:background="@drawable/shape_background_black">
+
+
+            <TextView
+                android:id="@+id/center_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17sp"
+                android:text="Prof Especializados"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+
+                />
+
+
+            <ListView
+                android:id="@+id/center_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/center_title2"
+
+
+                ></ListView>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

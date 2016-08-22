@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <View
+        android:id="@+id/act_disorder_profile_ll_toolbarElevation"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/elevation"
+        android:layout_alignParentTop="true" />
+
+
+    <TextView
+        android:id="@+id/fragment_page_tv_tst"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/material_blue_grey_800"
+        >
+    </TextView>
+
+</RelativeLayout>
