@@ -259,11 +259,16 @@ public class SearchCentersActivity extends AppCompatActivity {
             String userInput = params[0];
             String searchType = params[1];
             CenterAdpter disorders = new CenterAdpter();
+            CenterAdpter centerFinder = new CenterAdpter();
             List<SearchCentersDataResponse> result = null;
 
 
             try {
-                result = disorders.search(userInput, searchType, "code");
+                if(searchType == "nome"){
+                    result = centerFinder.nameSearch(userInput);
+                }else{
+                    result = disorders.search(userInput, searchType, "code");
+                }
                 //List<Disease> result = disorders.getStaticDisease();
             } catch (Exception e) {
 

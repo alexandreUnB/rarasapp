@@ -2,7 +2,10 @@ package com.rarasnet.rnp.shared.center.controllers.network;
 ;
 import com.rarasnet.rnp.shared.center.controllers.network.requests.SearchCentersRequest;
 import com.rarasnet.rnp.shared.center.controllers.network.responses.SearchCentersDataResponse;
+import com.rarasnet.rnp.shared.center.views.CenterAdpter;
 import com.rarasnet.rnp.shared.network.connections.RarasConnection;
+
+import java.util.List;
 
 /**
  * Created by Ronnyery Barbosa on 04/02/2016.
@@ -11,7 +14,7 @@ public class SugegetionCentersAdapter {
 
     //private String searchURL = "http://192.168.56.2/webservice/rest_profissionais.json";
 
-    public SearchCentersDataResponse[] searchCenter(String userInput, String searchOption) throws Exception {
+    public List<SearchCentersDataResponse> searchCenter(String userInput, String searchOption) throws Exception {
         //byte[] authEncBytes = Base64.encode(userInput.getBytes(), 0);
         //String encond = new String(authEncBytes);
         // byte[] bytes = userInput.getData();
@@ -20,15 +23,17 @@ public class SugegetionCentersAdapter {
         //Log.d("a5", params[0]);
         String searchType = searchOption;
 
-        SearchCentersRequest searchCentersRequest = new SearchCentersRequest(userInput, searchOption);
+//        SearchCentersRequest searchCentersRequest = new SearchCentersRequest(userInput, searchOption);
 
-        SearchCentersDataResponse[] searchCentersDataResponses = null;
+        List<SearchCentersDataResponse> searchCentersDataResponses = null;
 
-        RarasConnection requester = new RarasConnection(RarasConnection.ACTION_SEARCH_CENTERS);
+        CenterAdpter centerFinder = new CenterAdpter();
+        searchCentersDataResponses = centerFinder.nameSearch(userInput);
+//        RarasConnection requester = new RarasConnection(RarasConnection.ACTION_SEARCH_CENTERS);
 
-        requester.sendRequest(searchCentersRequest, SearchCentersRequest.class);
+//        requester.sendRequest(searchCentersRequest, SearchCentersRequest.class);
 
-        searchCentersDataResponses = requester.getResponse(SearchCentersDataResponse[].class);
+//        searchCentersDataResponses = requester.getResponse(SearchCentersDataResponse[].class);
 
 
         return searchCentersDataResponses;

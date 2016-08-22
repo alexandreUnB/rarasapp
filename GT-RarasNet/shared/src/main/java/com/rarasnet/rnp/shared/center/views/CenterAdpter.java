@@ -4,6 +4,9 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.rarasnet.rnp.shared.center.controllers.network.responses.SearchCentersDataResponse;
+import com.rarasnet.rnp.shared.models.Center;
+import com.rarasnet.rnp.shared.models.Disorder;
+import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.ServiceHandler;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -14,6 +17,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -31,6 +35,63 @@ public class CenterAdpter  {
 
     private String searchURL = "http://www.webservice.rederaras.org/rest_instituicoes.json";
     //private String searchURL = "http://192.168.85.1/raras/webservice/rest_desordens.json";
+    private String nameURL = "http://192.168.0.118:8080/api/centerName/";
+
+
+    /**
+     * search centers on server by name
+     * @param userInput
+     * @return
+     * @throws Exception
+     */
+    public List<SearchCentersDataResponse> nameSearch(String userInput) throws Exception {
+        String searchURL = nameURL + userInput.replace(" ", "%20");
+        List<SearchCentersDataResponse> centers = null;
+
+        try {
+            // Creating service handler class instance
+            ServiceHandler sh = new ServiceHandler();
+            // Making a request to url and getting response
+            String jsonStr = sh.makeServiceCall(searchURL, ServiceHandler.GET);
+
+            if(jsonStr != null) {
+                centers = getCenters(jsonStr);
+            }
+
+            return  centers;
+        } catch (Exception e) {
+            throw e;
+        }
+
+    }
+
+    /**
+     * Method responsible for parsing Json response
+     * and get its disorders information
+     * @param jsonString
+     * @return Disorder
+     */
+    private List<SearchCentersDataResponse> getCenters(String jsonString) throws Exception {
+        List<SearchCentersDataResponse> centers = new ArrayList<SearchCentersDataResponse>();
+        Gson gson = new Gson();
+
+        try {
+            JSONObject ob = new JSONObject(jsonString);
+            JSONArray jArray = ob.getJSONArray("centers");
+
+            int i = 0;
+            while (!jArray.isNull(i)) {
+               centers.add(gson.fromJson(jArray.getString(i),
+                       SearchCentersDataResponse.class));
+                i++;
+            }
+        } catch (JSONException e) {
+            Log.d("[Center Search]Error", e.getMessage());
+            throw new Exception();
+        }
+
+        return centers;
+    }
 
     public List<SearchCentersDataResponse> search(String userInput, String searchOption, String code) throws Exception {
 

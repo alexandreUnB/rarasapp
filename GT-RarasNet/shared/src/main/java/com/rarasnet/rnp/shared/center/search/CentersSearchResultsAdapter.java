@@ -94,9 +94,9 @@ public class CentersSearchResultsAdapter extends ArrayAdapter<SearchCentersDataR
         // assign values if the object is not null
         if(professional != null) {
             // get the TextView from the ViewHolder and then set the text (item name) and tag (item ID) values
-            Log.d("o que temos",professional.getNome());
-            viewHolder.tv_nome.setText(professional.getNome());
-            viewHolder.tv_cidade.setText(professional.getCidade() + " - " + professional.getEstado());
+            Log.d("o que temos",professional.getName());
+            viewHolder.tv_nome.setText(professional.getName());
+            viewHolder.tv_cidade.setText(professional.getCity() + " - " + professional.getUf());
             viewHolder.tv_especialidade.setText("CNES : Não Especificado ");
            // viewHolder.tv_uf.setText(professional.getEstado());
 

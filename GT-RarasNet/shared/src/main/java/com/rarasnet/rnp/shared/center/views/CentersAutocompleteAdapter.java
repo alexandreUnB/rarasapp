@@ -95,16 +95,15 @@ public class CentersAutocompleteAdapter extends ArrayAdapter<String> {
             protected FilterResults performFiltering(CharSequence constraint) {
                 mAutocompleteListener.onStartFiltering();
                 FilterResults filterResults = new FilterResults();
-
                 SearchCentersAutocomplete searchCentersAutocomplete = new SearchCentersAutocomplete();
+                CenterAdpter centerFinder = new CenterAdpter();
 
-                SugegetionCentersAdapter sugegetionCentersAdapter = new SugegetionCentersAdapter();
                 //faz pesquisa em tempo de execução após 3 caracteres
                 if (constraint != null) {
                     // cosulta o webservice e retorna uma lista de objetos
                     JSONObject.quote(constraint.toString());
-                    SearchCentersDataResponse[] new_suggestions = null;
-                    searchOption = getSearchType("nome");
+                    List<SearchCentersDataResponse> new_suggestions = null;
+//                    searchOption = getSearchType("nome");
                     //searchOption = nome;
                     //new SearchProfissionaisTask(searchProfissionaisCallback).execute(constraint.toString(),searchOption);
                     try {
@@ -121,7 +120,8 @@ public class CentersAutocompleteAdapter extends ArrayAdapter<String> {
 
                     try {
                         Log.d("task","task");
-                       new_suggestions = sugegetionCentersAdapter.searchCenter(constraint.toString(), "nome");
+
+                       new_suggestions = centerFinder.nameSearch(constraint.toString());
 
                        //new_suggestions = searchProfessioanlsAutocomplete.getSuggestions(constraint.toString(), "nome");
                     } catch (Exception e) {
@@ -130,7 +130,7 @@ public class CentersAutocompleteAdapter extends ArrayAdapter<String> {
                     suggestions.clear();
                     if(new_suggestions != null) {
                         for (SearchCentersDataResponse suggestion : new_suggestions) {
-                            suggestions.add(suggestion.getNome());
+                            suggestions.add(suggestion.getName());
                         }
                     }
 

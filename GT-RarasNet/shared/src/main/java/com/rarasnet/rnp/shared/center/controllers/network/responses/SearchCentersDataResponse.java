@@ -5,6 +5,48 @@ package com.rarasnet.rnp.shared.center.controllers.network.responses;
  */
 public class SearchCentersDataResponse {
 
+//    private String id;
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getUf() {
+        return uf;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+
+    public String getEspecialidades() {
+        return especialidades;
+    }
+
+    public void setEspecialidades(String especialidades) {
+        this.especialidades = especialidades;
+    }
+
+    private String city;
+    private String uf;
+
+
+
+
+
     private String id;
     private String nome;
     private String cidade;
