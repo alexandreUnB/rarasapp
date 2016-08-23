@@ -3,6 +3,7 @@ package com.rarasnet.rnp.shared.profissionais.controllers.network.responses;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.rarasnet.rnp.shared.application.RarasNet;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -31,7 +32,7 @@ import java.util.List;
 
 public class ProfissionaisAdapter {
     /* Laravel api url used to get request response */
-    private String url = "http://192.168.0.118:8080/api/professionalName/";
+    private String url = RarasNet.urlPrefix + "/api/professionalName/";
 
     /**
     * Method that is called after Professional search icon is pressed.

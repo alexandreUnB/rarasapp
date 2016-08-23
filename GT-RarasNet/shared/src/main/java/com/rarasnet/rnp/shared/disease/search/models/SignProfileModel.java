@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import com.rarasnet.rnp.shared.application.RarasNet;
 import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.ServiceHandler;
 
 import org.apache.http.HttpEntity;
@@ -29,7 +30,7 @@ public class SignProfileModel {
     // private String urlPrefix = "http://www.rederaras.unb.br/webservice/rest_signs/";
     private String urlPrefix = "http://www.webservice.rederaras.org/rest_signs/";
     //private String urlPrefix = "http://192.168.85.1/raras/webservice/rest_signs/";
-    private String urlSign = "http://192.168.0.118:8080/api/signLoader/";
+    private String urlSign = RarasNet.urlPrefix  + "/api/signLoader/";
 
 
     Gson gson = new Gson();

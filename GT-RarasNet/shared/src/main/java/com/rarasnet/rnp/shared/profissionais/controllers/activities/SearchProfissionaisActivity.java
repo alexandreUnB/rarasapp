@@ -126,7 +126,8 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
 
 
         // AUTOCOMPLETE
-        ac_searchEditText.setAdapter(new ProfessionalsAutocompleteAdapter(this, new ProfessionalsAutocompleteAdapter.AutocompleteListener() {
+        ac_searchEditText.setAdapter(new ProfessionalsAutocompleteAdapter(this,
+                new ProfessionalsAutocompleteAdapter.AutocompleteListener() {
             @Override
             public void onStartFiltering() {
                 runOnUiThread(new Runnable() {

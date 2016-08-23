@@ -3,6 +3,7 @@ package com.rarasnet.rnp.shared.models;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.rarasnet.rnp.shared.application.RarasNet;
 import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.ServiceHandler;
 
 import org.apache.http.HttpEntity;
@@ -27,7 +28,7 @@ public class CenterProfileModel {
     // private String urlPrefix = "http://www.rederaras.unb.br/webservice/rest_signs/";
     private String urlPrefix = "http://www.rederaras.org/web/webservice/rest_instituicoes/";
     //private String urlPrefix = "http://192.168.85.1/raras/webservice/rest_instituicoes/";
-    private String url = "http://192.168.0.118:8080/api/centerID/";
+    private String url = RarasNet.urlPrefix  + "/api/centerID/";
 
     Gson gson = new Gson();
 

@@ -3,6 +3,7 @@ package com.rarasnet.rnp.shared.center.views;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.rarasnet.rnp.shared.application.RarasNet;
 import com.rarasnet.rnp.shared.center.controllers.network.responses.SearchCentersDataResponse;
 import com.rarasnet.rnp.shared.models.Center;
 import com.rarasnet.rnp.shared.models.Disorder;
@@ -35,7 +36,7 @@ public class CenterAdpter  {
 
     private String searchURL = "http://www.webservice.rederaras.org/rest_instituicoes.json";
     //private String searchURL = "http://192.168.85.1/raras/webservice/rest_desordens.json";
-    private String nameURL = "http://192.168.0.118:8080/api/centerName/";
+    private String nameURL = RarasNet.urlPrefix + "/api/centerName/";
 
 
     /**

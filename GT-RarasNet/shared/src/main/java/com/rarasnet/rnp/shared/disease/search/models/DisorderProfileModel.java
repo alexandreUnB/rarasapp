@@ -3,6 +3,7 @@ package com.rarasnet.rnp.shared.disease.search.models;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.rarasnet.rnp.shared.application.RarasNet;
 import com.rarasnet.rnp.shared.disease.profile.associates.AssociatedProfile;
 import com.rarasnet.rnp.shared.disease.profile.description.Specialty;
 import com.rarasnet.rnp.shared.models.Center;
@@ -35,8 +36,8 @@ public class DisorderProfileModel {
     private String urlPrefix = "http://www.rederaras.org/web/webservice/rest_desordens/";
    //private String urlPrefix = "http://www.webservice.rederaras.org/rest_desordens/";
     //private String urlPrefix = "http://192.168.56.2/webservice/rest_desordens/";
-    private String url = "http://192.168.0.118:8080/api/disorderID/";
-    private String urlProf = "http://192.168.0.118:8080/api/profLoader/";
+    private String url = RarasNet.urlPrefix + "/api/disorderID/";
+    private String urlProf = RarasNet.urlPrefix + "/api/profLoader/";
 
     Gson gson = new Gson();
 

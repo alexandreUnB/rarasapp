@@ -3,6 +3,7 @@ package com.rarasnet.rnp.shared.disease.search.models;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.rarasnet.rnp.shared.application.RarasNet;
 import com.rarasnet.rnp.shared.models.Disorder;
 import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.ServiceHandler;
 
@@ -29,7 +30,7 @@ import java.util.List;
 public class DisordersModel {
     private String searchURL = "http://www.webservice.rederaras.org/rest_desordens.json";
     //private String searchURL = "http://192.168.85.1/raras/webservice/rest_desordens.json";
-    private String nameURL = "http://192.168.0.118:8080/api/disorderName/";
+    private String nameURL = RarasNet.urlPrefix  + "/api/disorderName/";
 
 
     public List<Disorder> nameSearch(String userInput) throws Exception {
