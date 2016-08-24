@@ -85,6 +85,7 @@ public class CenterProfileModel {
         Center center = new Center();
 
         try {
+            Log.d("AI", jString);
             JSONObject jObj = new JSONObject(jString);
             String disorderString = jObj.getString("treatmentCenter");
             Log.d("dados centro:", disorderString);

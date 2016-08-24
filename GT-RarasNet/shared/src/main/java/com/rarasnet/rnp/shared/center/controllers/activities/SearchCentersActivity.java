@@ -170,7 +170,7 @@ public class SearchCentersActivity extends AppCompatActivity {
         mSearchResultsAdapter.setOnItemClickListener(new CentersSearchResultsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(SearchCentersDataResponse professional) {
-                Log.d("Teste prod", "aqui");
+                Log.d("ID CENTRO", professional.getId());
                 //pb_loadingProfissionalsData.setVisibility(View.VISIBLE);
                 SearchProfileTask searchTask = new SearchProfileTask();
               download(false);
@@ -307,7 +307,7 @@ public class SearchCentersActivity extends AppCompatActivity {
             com.rarasnet.rnp.shared.models.CenterProfile result = null;
 
             try {
-                result = professionalProfileModel.getProfile(userInput, searchType);
+                result = professionalProfileModel.getProfileNew(userInput, searchType);
                 //List<Disease> result = disorders.getStaticDisease();
             } catch (Exception e) {
 
@@ -320,7 +320,8 @@ public class SearchCentersActivity extends AppCompatActivity {
         protected void onPostExecute(com.rarasnet.rnp.shared.models.CenterProfile profissionaisDataResponses){
 
             pb_loadingProfissionalsData.setVisibility(View.INVISIBLE);
-            Intent intent = CenterProfile.getIntent(SearchCentersActivity.this, profissionaisDataResponses);
+            Intent intent = CenterProfile.getIntent(SearchCentersActivity.this,
+                    profissionaisDataResponses);
             download(true);
             startActivity(intent);
         }
