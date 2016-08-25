@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
-                android:hint="Busca por Nome da Doença"
+                android:hint="Busca por Nome da Disordem"
                 android:completionThreshold="3"
                 android:drawableRight="@drawable/ic_search_white_24dp"
                 />
@@ -153,12 +153,12 @@
                     android:textColor="@color/white"
                     android:text="CID"
                     android:onClick="onRadioButtonClicked"/>
-                <RadioButton android:id="@+id/radio_sinais"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="Sinais"
-                    android:onClick="onRadioButtonClicked"/>
+                <!--<RadioButton android:id="@+id/radio_sinais"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:text="Sinais"-->
+                    <!--android:onClick="onRadioButtonClicked"/>-->
 
             </RadioGroup>
         </RelativeLayout>

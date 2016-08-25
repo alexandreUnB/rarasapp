@@ -71,7 +71,7 @@ public class DisorderAutocompleteBySignAdapter extends  ArrayAdapter<String>{
                                 e.printStackTrace();
                             }
                             suggestions.clear();
-                            Log.d("new",new_suggestions.get(0).getName());
+
                             for (int i = 0; i < new_suggestions.size(); i++) {
                                 suggestions.add(new_suggestions.get(i).getName());
                                 // Log.d("ArrayAdapterItem", new_suggestions.get(i).getId());

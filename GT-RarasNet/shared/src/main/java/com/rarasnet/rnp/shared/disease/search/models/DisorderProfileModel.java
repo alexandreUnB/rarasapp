@@ -47,7 +47,7 @@ public class DisorderProfileModel {
 
     public DisorderProfile getProfileNew(String diseaseID) {
 
-        String searchURL = url + diseaseID;
+        String searchURL = url + diseaseID.replace(" ","%20");
         Log.d("url",searchURL);
         Disorder disorder = null;
 

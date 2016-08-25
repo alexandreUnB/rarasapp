@@ -35,7 +35,7 @@ public class DisordersModel {
 
     public List<Disorder> nameSearch(String userInput) throws Exception {
 
-        String searchURL = nameURL + userInput;
+        String searchURL = nameURL + userInput.replace(" ", "%20");
         List<Disorder> disorders = null;
 
         try {

@@ -1,4 +1,24 @@
-package com.rarasnet.rnp.shared.protocol;
+package com.rarasnet.rnp.shared.laws;
+
+/**
+ * Created by lucas on 25/08/16.
+ */
+
+import android.util.Log;
+
+import com.google.gson.Gson;
+import com.rarasnet.rnp.shared.application.RarasNet;
+import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.ServiceHandler;
+import com.rarasnet.rnp.shared.protocol.ProtocolModel;
+import com.rarasnet.rnp.shared.protocol.ProtocolProfile;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 import android.util.Log;
 
@@ -16,19 +36,19 @@ import java.util.List;
 /**
  * Created by lucas on 22/08/16.
  */
-public class ProtocolProfileModel {
-    private String url = RarasNet.urlPrefix + "/api/protocolID/";
-    private String urlName = RarasNet.urlPrefix + "/api/protocolName/";
+public class LawProfileModel {
+    private String url = RarasNet.urlPrefix + "/api/lawID/";
+    private String urlName = RarasNet.urlPrefix + "/api/lawName/";
 
 
     Gson gson = new Gson();
-    public ProtocolProfileModel() {
+    public LawProfileModel() {
 
     }
 
     public List<String> autoComplete(String disorderName){
         String searchURL = urlName + disorderName;
-        List<ProtocolModel> protocols = new ArrayList<>();
+        List<LawModel> protocols = new ArrayList<>();
         String jsonResult;
         List<String> suggestions = new ArrayList<>();
 
@@ -42,11 +62,11 @@ public class ProtocolProfileModel {
             // and passed to and equivalent object
             Log.d("[ProPModel]JSON", jsonResult);
             if(jsonResult != null){
-                protocols = getProtocols(jsonResult);
+                protocols = getLaws(jsonResult);
             }
 
-            for (ProtocolModel p : protocols) {
-                suggestions.add(p.getDocument());
+            for (LawModel p : protocols) {
+                suggestions.add(p.getName_law());
             }
 
         } catch (Exception e) {
@@ -58,9 +78,9 @@ public class ProtocolProfileModel {
 
     }
 
-    public List<ProtocolModel> getProtocolList(String disorderName){
+    public List<LawModel> getLawList(String disorderName){
         String searchURL = urlName + disorderName.replace(" ", "%20");
-        List<ProtocolModel> protocols = new ArrayList<>();
+        List<LawModel> protocols = new ArrayList<>();
         String jsonResult;
 
         try {
@@ -76,7 +96,7 @@ public class ProtocolProfileModel {
             // and passed to and equivalent object
             Log.d("[ProPModel]JSON", jsonResult);
             if(jsonResult != null){
-                protocols = getProtocols(jsonResult);
+                protocols = getLaws(jsonResult);
             }
 
 
@@ -96,36 +116,36 @@ public class ProtocolProfileModel {
      * @param jString
      * @return
      */
-    private List<ProtocolModel> getProtocols(String jString) {
+    private List<LawModel> getLaws(String jString) {
 
-        List<ProtocolModel> protocols = new ArrayList<>();
+        List<LawModel> laws = new ArrayList<>();
         Gson g = new Gson();
 
         try {
             JSONObject ob = new JSONObject(jString);
-            JSONArray jArray = ob.getJSONArray("protocols");
+            JSONArray jArray = ob.getJSONArray("laws");
 
             int i = 0;
             while (!jArray.isNull(i)) {
                 String stringSynonym = jArray.getString(i);
-                ProtocolModel dados = g.fromJson(stringSynonym, ProtocolModel.class);
-                protocols.add(dados);
+                LawModel dados = g.fromJson(stringSynonym, LawModel.class);
+                laws.add(dados);
                 i++;
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        return protocols;
+        return laws;
     }
 
 
-    public ProtocolProfile getProfile(String disorderName){
+    public LawProfile getProfile(String disorderName){
         String searchURL = urlName + disorderName;
-        List<ProtocolModel> protocols = new ArrayList<>();
+        List<LawModel> laws = new ArrayList<>();
         String jsonResult;
         List<String> suggestions = new ArrayList<>();
-        ProtocolProfile profile;
+        LawProfile profile;
 
         try {
             // Creating service handler class instance
@@ -137,7 +157,7 @@ public class ProtocolProfileModel {
             // and passed to and equivalent object
             Log.d("[ProPModel]JSON", jsonResult);
             if(jsonResult != null){
-                protocols = getProtocols(jsonResult);
+                laws = getLaws(jsonResult);
             }
 
 
@@ -146,7 +166,7 @@ public class ProtocolProfileModel {
             Log.e("[ProtModel]GET", "error " + e);
         }
 
-        profile = new ProtocolProfile(protocols);
+        profile = new LawProfile(laws);
 
         return profile;
 

@@ -49,7 +49,8 @@ public class MainMenuActivity extends AppCompatActivity {
         mDoencas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainMenuActivity.this, com.rarasnet.rnp.shared.disease.search.controllers.activities.SearchDisordersActivity.class);
+                Intent it = new Intent(MainMenuActivity.this,
+                        com.rarasnet.rnp.shared.disease.search.controllers.activities.SearchDisordersActivity.class);
                 startActivity(it);
             }
         });
@@ -58,7 +59,8 @@ public class MainMenuActivity extends AppCompatActivity {
         mProfissionais.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainMenuActivity.this, com.rarasnet.rnp.shared.profissionais.controllers.activities.SearchProfissionaisActivity.class);
+                Intent it = new Intent(MainMenuActivity.this,
+                        com.rarasnet.rnp.shared.profissionais.controllers.activities.SearchProfissionaisActivity.class);
                 Toast.makeText(MainMenuActivity.this, "Busca por nome do Profissional.",
                         Toast.LENGTH_LONG).show();
                 startActivity(it);
@@ -70,7 +72,8 @@ public class MainMenuActivity extends AppCompatActivity {
         mCentros.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainMenuActivity.this, com.rarasnet.rnp.shared.center.controllers.activities.SearchCentersActivity.class);
+                Intent it = new Intent(MainMenuActivity.this,
+                        com.rarasnet.rnp.shared.center.controllers.activities.SearchCentersActivity.class);
                 Toast.makeText(MainMenuActivity.this, "Busca por nome do Centro de Referência.",
                         Toast.LENGTH_LONG).show();
                 startActivity(it);
@@ -82,7 +85,8 @@ public class MainMenuActivity extends AppCompatActivity {
         mProtocolos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainMenuActivity.this, com.rarasnet.rnp.shared.protocol.ProtocolActivity.class);
+                Intent it = new Intent(MainMenuActivity.this,
+                        com.rarasnet.rnp.shared.protocol.ProtocolActivity.class);
                 startActivity(it);
             }
         });
@@ -91,7 +95,10 @@ public class MainMenuActivity extends AppCompatActivity {
         mLegislacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainMenuActivity.this, com.rarasnet.rnp.info_projeto.MainActivity.class);
+//                Intent it = new Intent(MainMenuActivity.this,
+//                        com.rarasnet.rnp.info_projeto.MainActivity.class);
+                Intent it = new Intent(MainMenuActivity.this,
+                        com.rarasnet.rnp.shared.laws.LawActivity.class);
                 startActivity(it);
             }
         });

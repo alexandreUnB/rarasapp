@@ -104,7 +104,7 @@ private android.app.AlertDialog progress;
                 if (event.getRawX()
                         >= (ac_searchEditText.getRight()
                         - ac_searchEditText.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
-                    Log.d("handle","teste");
+                    Log.d("ESSE handle","teste");
                     handleSearchRequest();
                     return true;
                 }
@@ -157,25 +157,26 @@ private android.app.AlertDialog progress;
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
 
+
                 RadioButton radioButton = (RadioButton) group.findViewById(checkedId);
                 if (null != radioButton && checkedId > -1) {
 
                     if (checkedId == R.id.radio_nome) {
-                    //    tv_searchType.setText("Busca por Sinais");
                         doSignsSearch = false;
                         ac_searchEditText.setHint("Busca por Nome da Disordem");
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         ac_searchByCid.setVisibility(View.INVISIBLE);
                         ac_searchBySigns.setVisibility(View.INVISIBLE);
-                    }else if(checkedId == R.id.radio_sinais) {
-                    //tv_searchType.setText("Busca por Nome, CID e Orphanumber");
-                    doSignsSearch = true;
-
-                    ac_searchEditText.setVisibility(View.INVISIBLE);
-                        ac_searchByCid.setVisibility(View.INVISIBLE);
-                    ac_searchBySigns.setVisibility(View.VISIBLE);
-                        Toast.makeText(SearchDisordersActivity.this, "Os sinais deve ser digitado em Inglês.",
-                                Toast.LENGTH_LONG).show();
+//                    }else if(checkedId == R.id.radio_sinais) {
+//                    //tv_searchType.setText("Busca por Nome, CID e Orphanumber");
+//                    doSignsSearch = true;
+//
+//                    ac_searchEditText.setVisibility(View.INVISIBLE);
+//                        ac_searchByCid.setVisibility(View.INVISIBLE);
+//                    ac_searchBySigns.setVisibility(View.VISIBLE);
+//                        Toast.makeText(SearchDisordersActivity.this,
+//                                "Os sinais deve ser digitado em Inglês.",
+//                                Toast.LENGTH_LONG).show();
                 }else if(checkedId == R.id.radio_cid) {
                         //arrumar depois
                     //tv_searchType.setText("Busca por CID");
@@ -280,7 +281,8 @@ private android.app.AlertDialog progress;
         });*/
 
 
-       ac_searchBySigns.setAdapter(new DisorderAutocompleteBySignAdapter(this, new DisorderAutocompleteBySignAdapter.AutocompleteListener() {
+       ac_searchBySigns.setAdapter(new DisorderAutocompleteBySignAdapter(this,
+               new DisorderAutocompleteBySignAdapter.AutocompleteListener() {
             @Override
             public void onStartFiltering() {
                 runOnUiThread(new Runnable() {
@@ -517,8 +519,10 @@ private android.app.AlertDialog progress;
             String searchType = params[1];
             DisordersModel disorders = new DisordersModel();
             List<Disorder> result = null;
+            Log.d("Search Disorder", searchType);
 
             try {
+
                 if(searchType == TYPE_NAME){
                     Log.d("Search Disorder", "By name");
                     result = disorders.nameSearch(userInput);
@@ -622,112 +626,7 @@ private android.app.AlertDialog progress;
     }
 
 
-    /*public void lerDados(){
 
-        db.abrir();
-        diseases.clear();
-
-        Cursor cursor = db.retornaTodosDiseases();
-        if (cursor.moveToFirst()){
-            do {
-
-                Disorder a= new Disorder();
-
-
-                //Log.d("testando banco1",cursor.getString(cursor.getColumnIndex(BancoDeDados.getKEY_ID())));
-                //Log.d("testando banco",cursor.getString(cursor.getColumnIndex(BancoDeDados.getKEY_ORPHANUMBER())));
-                a.setDiseaseID (cursor.getInt(cursor.getColumnIndex(BancoDeDados.getKEY_ID())));
-                a.setDiseaseName(cursor.getString(cursor.getColumnIndex(BancoDeDados.getKEY_NOME())));
-                a.setDiseaseOrphanumber(cursor.getString(cursor.getColumnIndex(BancoDeDados.getKEY_ORPHANUMBER())));
-                //a.setDiseaseOrphanumber(cursor.getString(cursor.getColumnIndex(BancoDeDados.getKEY_EXPERTLINK())));
-                //a.expertlink = cursor.getString(cursor.getColumnIndex(BancoDeDados.KEY_EXPERTLINK));
-                a.setDescricao(cursor.getString(cursor.getColumnIndex(BancoDeDados.getKEY_DESCRICAO())));
-
-                diseases.add(a);
-            } while (cursor.moveToNext());
-        }
-
-       if (diseases.size() >= 0){
-            if (mSearchResultsAdapter == null){
-
-                listAdapter1 = new DisorderAdapterSqlite(this, R.layout.item_disease,
-                        diseases) {
-                    @Override
-                    public void edita(Disorder disease) {
-                        //Log.d("nome no esdita",disease.getDisorderName());
-                       // TextView t = (TextView) findViewById(R.id.quest);
-                        //t.setText("teste");
-
-
-                        Intent intent = new Intent(SearchDisordersActivity.this, DisorderProfileActivity.class);
-
-
-                            intent.putExtra("id", String.valueOf(disease.getDisorderID()));
-
-
-                       // intent.putExtra("txt","Deseja carregar as informações da doença" + disease.getDisorderName() + "?");
-                        intent.putExtra("visible","1");
-                        startActivity(intent);
-                    }
-
-                    @Override
-                    public void deleta(Disorder disease) {
-                        Intent intent = new Intent(getApplicationContext(), SaveDiseaseActivity.class);
-
-
-                        intent.putExtra("disease", disease);
-                        intent.putExtra("txt","Deseja remover "+ disease.getDisorderName() + " da sua lista de doenças?");
-                        //intent.putExtra("visible",2);
-
-                        startActivity(intent);
-
-                      // Intent i = new Intent(SearchDisordersActivity.this , DisorderProfileActivity.class);
-                        //Log.d("deleta" , String.valueOf(disease.getDisorderID()));
-                        //i.putExtra("diseaseID", String.valueOf(disease.getDisorderID()));
-                       //startActivity(i);
-
-                        //Intent intent = new Intent(getApplicationContext(), DisorderInfoFragment.class);
-                        //DisorderInfoFragment.setDisorder(disease);
-                        //DisorderInfoFragment.setSigns(null);
-                       // DisorderInfoFragment.setReferences(null);
-                       //][ DisorderInfoFragment.setSynonyms(null);
-                        //intent.putExtra("disease", disease);
-                        //startActivity(intent);
-                        //Log.d("deleta" , String.valueOf(disease.getDisorderID()));
-                       // db.abrir();
-                        //db.apagaDisease(disease.getDisorderID());
-                        //db.fechar();
-                        //lerDados();
-
-                    }
-                };
-                ListView listViewItems = (ListView) findViewById(R.id.listteste);
-                //listViewItems.setTextAlignment();
-                listViewItems.setAdapter(listAdapter1);
-                listViewItems.setOnItemClickListener(new OnItemClickListenerListViewItem());
-                listViewItems.setVisibility(View.VISIBLE);
-
-                RelativeLayout frameListView = (RelativeLayout) findViewById(R.id.frame_list_diseases1);
-                frameListView.setVisibility(View.VISIBLE);
-
-                ImageView logoBG = (ImageView) findViewById(R.id.logo_bg);
-                logoBG.setVisibility(View.INVISIBLE);
-
-
-            } else {
-                listAdapter1.novosDados(diseases);
-            }
-        }
-        db.fechar();
-    }*/
-
-/*    @Override
-    public void onBackPressed() {
-        if(MenuItemCompat.isActionViewExpanded(mToolbarSearchItem))
-            MenuItemCompat.collapseActionView(mToolbarSearchItem);
-        else
-            super.onBackPressed();
-    }*/
 
     public void download(Boolean j){
         if(j) {
