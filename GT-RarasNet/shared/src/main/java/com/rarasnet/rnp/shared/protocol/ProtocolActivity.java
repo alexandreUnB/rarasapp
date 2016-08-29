@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -98,12 +99,27 @@ public class ProtocolActivity extends AppCompatActivity {
         }
     };
 
+    private View.OnClickListener show_all_Listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Log.d("Cliquei", "Cliquei");
+            // busca todos
+            new SearchProfissionaisTask().execute("all", "name");
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_protocol);
+
+        // Sets show all button listener
+        ImageButton showAll = (ImageButton) findViewById((R.id.showAllButton));
+        showAll.setOnClickListener(show_all_Listener);
+
         mToolbar = (Toolbar) findViewById(R.id.act_search_protocol_tb_toolbar);
         setSupportActionBar(mToolbar);
+//        getSupportActionBar().setIcon(R.drawable.ic_show_all_white);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
