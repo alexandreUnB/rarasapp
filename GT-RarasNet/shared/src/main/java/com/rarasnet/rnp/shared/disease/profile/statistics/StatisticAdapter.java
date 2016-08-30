@@ -21,6 +21,10 @@ import android.widget.RelativeLayout;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
 import com.rarasnet.rnp.shared.R;
 
 import java.util.ArrayList;
@@ -46,6 +50,7 @@ import com.rarasnet.rnp.shared.models.Indicator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 /**
@@ -57,6 +62,7 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.View
     private String disorderId;
     private OnItemClickListener mOnItemClickListener;
     public int last_loaded = 9;
+    private BarChart sChart;
 
     public interface OnItemClickListener {
         void onItemClick(Sign item);
@@ -66,9 +72,10 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.View
         this.mOnItemClickListener = mOnItemClickListener;
     }
 
-    public StatisticAdapter(ArrayList<Indicator> items, String disorderID) {
+    public StatisticAdapter(ArrayList<Indicator> items, String disorderID, BarChart chart) {
         mItems = items;
         disorderId = disorderID;
+        sChart = chart;
     }
 
     @Override
@@ -90,17 +97,24 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.View
 //        thumbStates.addState(new int[]{-android.R.attr.state_enabled}, new ColorDrawable(colorDisabled));
 //        thumbStates.addState(new int[]{}, new ColorDrawable(colorOff)); // this one has to come last
 //        viewHolder.selector.setThumbDrawable(thumbStates); // only on 16 API and above
-            viewHolder.textViewPrincipal.setText(item.getNameIndicatorType());
+            viewHolder.textViewPrincipal.setText(item.getNameIndicatorType() + " " +
+            item.getGetNameIndicatorSource());
 
         viewHolder.selector.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isClicked) {
                 if(isClicked){
-                    viewHolder.selector.getTrackDrawable().setColorFilter(Color.GREEN,
+                    viewHolder.selector.getTrackDrawable().setColorFilter(viewHolder.color,
                             PorterDuff.Mode.SRC_ATOP);
+                    setBar(mItems.get(position), viewHolder.color);
+                    Log.d("CLIQUEI", "CLIQUEI");
+
                 }else{
                     viewHolder.selector.getTrackDrawable().setColorFilter(Color.GRAY,
                             PorterDuff.Mode.SRC_ATOP);
+                    clearStatistic();
+                    Log.d("NAOCLIQUEI", "NaoCLIQUEI");
+
 
                 }
             }
@@ -118,6 +132,8 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.View
         TextView textViewPrincipal;
         Switch selector;
         TextView textViewInfo1;
+        int color;
+
 //        TextView textViewInfo2;
 
         public ViewHolder(View v) {
@@ -127,9 +143,36 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.View
 //            this.textViewInfo1 = (TextView) v.findViewById(R.id.default_3line_icon_descript_item_tv_info1);
 //            this.textViewInfo2 = (TextView) v.findViewById(R.id.default_3line_icon_descript_item_tv_info2);
 //            foto = (ImageView) v.findViewById(R.id.default_3line_icon_descript_item_iv_icon);
+            Random rnd = new Random();
+            this.color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
             rowFrame = (RelativeLayout) v.findViewById(R.id.default_3line_icon_descript_item_rl_frame);
         }
     }
 
+
+    private void setBar(Indicator info, int color) {
+
+        sChart.clear();
+
+        ArrayList<BarEntry> entries = new ArrayList<>();
+
+        entries.add(new BarEntry(Float.parseFloat(info.getAmount()), 0));
+
+        Log.d("INFO", "Received" + info.getAmount());
+
+        BarDataSet dataset = new BarDataSet(entries, info.getNameIndicatorType());
+
+        ArrayList<String> labels = new ArrayList<String>();
+        labels.add(info.getYear());
+        dataset.setColor(color);
+        BarData data = new BarData(labels, dataset);
+        sChart.setData(data);
+
+
+    }
+
+    private void clearStatistic() {
+        sChart.clear();
+    }
 
 }

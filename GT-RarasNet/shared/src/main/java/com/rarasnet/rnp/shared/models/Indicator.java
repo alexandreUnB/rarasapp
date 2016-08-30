@@ -49,15 +49,15 @@ public class Indicator {
     }
 
     public String getGetNameIndicatorSource() {
-        return getNameIndicatorSource;
+        return nameIndicatorSource;
     }
 
     public void setGetNameIndicatorSource(String getNameIndicatorSource) {
-        this.getNameIndicatorSource = getNameIndicatorSource;
+        this.nameIndicatorSource = getNameIndicatorSource;
     }
 
     private String reference;
     private String nameIndicatorType;
-    private String getNameIndicatorSource;
+    private String nameIndicatorSource;
 
 }

@@ -59,34 +59,48 @@ public class StatisticsFragment extends Fragment {
                         container, false);
         RelativeLayout chartFrame =
                 (RelativeLayout) view.findViewById(R.id.frag_disorder_statistics_rl_mortalidadeGraphFrame);
-        BarDataSet dataset = new BarDataSet(getGraphData(), "Número de óbitos no Brasil");
+//        BarDataSet dataset = new BarDataSet(getGraphData(), "");
 
-        dataset.setColor(getResources().getColor(R.color.material_palette_800));
-        BarData data = new BarData(getGraphLabels(), dataset);
-        dataset.setValueTextColor(getResources().getColor(R.color.material_grey_palette_800));
-        dataset.setHighLightColor(getResources().getColor(R.color.primary_accent));
+//        dataset.setColor(getResources().getColor(R.color.material_palette_800));
+//        ArrayList<BarEntry> entries = new ArrayList<>();
+//        entries.add(new BarEntry(4f, 0));
+//        entries.add(new BarEntry(8f, 1));
+//        entries.add(new BarEntry(6f, 2));
+//        entries.add(new BarEntry(12f, 3));
+//        entries.add(new BarEntry(18f, 4));
+//        entries.add(new BarEntry(9f, 5));
+//        entries.add(new BarEntry(4f, 6));
+//        entries.add(new BarEntry(8f, 7));
+//        entries.add(new BarEntry(6f, 8));
+//        entries.add(new BarEntry(12f, 9));
+//        entries.add(new BarEntry(18f, 10));
+//        BarDataSet dataset = new BarDataSet(entries, "# of Calls");
+
+//        BarData data = new BarData(getGraphLabels(), dataset);
+//        dataset.setValueTextColor(getResources().getColor(R.color.material_grey_palette_800));
+//        dataset.setHighLightColor(getResources().getColor(R.color.primary_accent));
 
         BarChart chart = new BarChart(getActivity());
         chart.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
         chart.setDrawHighlightArrow(true);
-        chart.setData(data);
+//        chart.setData(data);
         chart.setDrawGridBackground(false);
         chart.setDescription("");
         chart.animateY(3000);
 
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setTextColor(getResources().getColor(R.color.material_grey_palette_400));
+//        xAxis.setTextColor(getResources().getColor(R.color.material_grey_palette_400));
         xAxis.setDrawGridLines(false);
         xAxis.setDrawLimitLinesBehindData(true);
 
         YAxis yAxisLeft = chart.getAxisLeft();
-        yAxisLeft.setTextColor(getResources().getColor(R.color.material_grey_palette_400));
+//        yAxisLeft.setTextColor(getResources().getColor(R.color.material_grey_palette_400));
         yAxisLeft.setDrawLimitLinesBehindData(true);
 
         YAxis yAxisRight = chart.getAxisRight();
-        yAxisRight.setTextColor(getResources().getColor(R.color.material_grey_palette_400));
+//        yAxisRight.setTextColor(getResources().getColor(R.color.material_grey_palette_400));
         yAxisRight.setDrawLimitLinesBehindData(true);
 
         chart.getLegend().setPosition(Legend.LegendPosition.ABOVE_CHART_LEFT);
@@ -101,7 +115,7 @@ public class StatisticsFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
 
         mAdapter = new StatisticAdapter(new ArrayList<>(DisorderProfileActivity.mDisorderProfile.getIndicators()),
-                DisorderProfileActivity.mDisorderProfile.getDisorder().getDesorden_id() );
+                DisorderProfileActivity.mDisorderProfile.getDisorder().getDesorden_id(), chart);
 
 
         mRecyclerView.setAdapter(mAdapter);
