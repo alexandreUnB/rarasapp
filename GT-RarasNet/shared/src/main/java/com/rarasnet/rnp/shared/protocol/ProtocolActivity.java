@@ -102,7 +102,6 @@ public class ProtocolActivity extends AppCompatActivity {
     private View.OnClickListener show_all_Listener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Log.d("Cliquei", "Cliquei");
             // busca todos
             new SearchProfissionaisTask().execute("all", "name");
         }

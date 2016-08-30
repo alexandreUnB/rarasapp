@@ -72,155 +72,168 @@
 
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/frag_disorder_statistics_rl_statisticsFrame"
-                android:layout_below="@id/frag_disorder_statistics_rl_mortalidadeGraphFrame"
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/indicators_frag"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@+id/frag_disorder_statistics_rl_mortalidadeGraphFrame"
+                android:background="@drawable/selector_list_item"
                 android:paddingLeft="@dimen/activity_horizontal_margin"
                 android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:layout_marginTop="30dp"
                 >
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/view_dados"
-                    >
+            </android.support.v7.widget.RecyclerView>
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/frag_disorder_statistics_rl_statisticsFrame"-->
+                <!--android:layout_below="@id/frag_disorder_statistics_rl_mortalidadeGraphFrame"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="160dp"-->
+                <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:paddingRight="@dimen/activity_horizontal_margin"-->
+                <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
+                <!--android:layout_marginTop="30dp"-->
+                <!--&gt;-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/view_dados"-->
+                    <!--&gt;-->
 
 
 
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:gravity="center_horizontal"-->
 
-                    android:layout_weight="1">
-                <TextView
-                    android:id="@+id/frag_disorder_statistics_taxaNatalidadeLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Incidência"
-                    android:textSize="14sp"
-                    android:textColor="@color/material_grey_palette_400"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    />
+                    <!--android:layout_weight="1">-->
+                <!--<TextView-->
+                    <!--android:id="@+id/frag_disorder_statistics_taxaNatalidadeLabel"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Incidência"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:textColor="@color/material_grey_palette_400"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--/>-->
 
-                <TextView
-                    android:id="@+id/frag_disorder_statistics_taxaNatalidade"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Não disponivel"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/material_grey_palette_800"
-                    android:layout_below="@id/frag_disorder_statistics_taxaNatalidadeLabel"
-                    android:layout_alignLeft="@id/frag_disorder_statistics_taxaNatalidadeLabel"
-                    />
-                    </RelativeLayout>
+                <!--<TextView-->
+                    <!--android:id="@+id/frag_disorder_statistics_taxaNatalidade"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Não disponivel"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textColor="@color/material_grey_palette_800"-->
+                    <!--android:layout_below="@id/frag_disorder_statistics_taxaNatalidadeLabel"-->
+                    <!--android:layout_alignLeft="@id/frag_disorder_statistics_taxaNatalidadeLabel"-->
+                    <!--/>-->
+                    <!--</RelativeLayout>-->
 
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:layout_weight="1">
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:layout_weight="1">-->
 
-                <TextView
-                    android:id="@+id/frag_disorder_statistics_taxaMortalidadeLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mortalidade"
-                    android:textSize="14sp"
-                    android:textColor="@color/material_grey_palette_400"
-                    />
+                <!--<TextView-->
+                    <!--android:id="@+id/frag_disorder_statistics_taxaMortalidadeLabel"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Mortalidade"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:textColor="@color/material_grey_palette_400"-->
+                    <!--/>-->
 
-                <TextView
-                    android:id="@+id/frag_disorder_statistics_taxaMortalidade"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Não disponivel"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/material_grey_palette_800"
-                    android:layout_below="@id/frag_disorder_statistics_taxaMortalidadeLabel"
+                <!--<TextView-->
+                    <!--android:id="@+id/frag_disorder_statistics_taxaMortalidade"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Não disponivel"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textColor="@color/material_grey_palette_800"-->
+                    <!--android:layout_below="@id/frag_disorder_statistics_taxaMortalidadeLabel"-->
 
-                    />
-                    </RelativeLayout>
-                </LinearLayout>
-
-
-               <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                   android:layout_marginTop="30dp"
-                   android:layout_below="@id/view_dados">
-
-                   <RelativeLayout
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_weight="1"
-                       android:gravity="center_horizontal">
+                    <!--/>-->
+                    <!--</RelativeLayout>-->
+                <!--</LinearLayout>-->
 
 
-                <TextView
-                    android:id="@+id/frag_disorder_statistics_expectativaLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Expectativa"
-                    android:textSize="14sp"
-                    android:textColor="@color/material_grey_palette_400"
-                  />
+               <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                   <!--android:layout_marginTop="30dp"-->
+                   <!--android:layout_below="@id/view_dados">-->
 
-                       <TextView
-                           android:id="@+id/frag_disorder_statistics_expectativa"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:text="Não disponivel"
-                           android:layout_below="@id/frag_disorder_statistics_expectativaLabel"
-                           android:textSize="16sp"
-                           android:textStyle="bold"
-                           android:textColor="@color/material_grey_palette_700"
-
-                           />
-                    </RelativeLayout>
-
-               <RelativeLayout
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:gravity="center"
-                   android:layout_weight="1">
+                   <!--<RelativeLayout-->
+                       <!--android:layout_width="wrap_content"-->
+                       <!--android:layout_height="wrap_content"-->
+                       <!--android:layout_weight="1"-->
+                       <!--android:gravity="center_horizontal">-->
 
 
+                <!--<TextView-->
+                    <!--android:id="@+id/frag_disorder_statistics_expectativaLabel"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Expectativa"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:textColor="@color/material_grey_palette_400"-->
+                  <!--/>-->
+
+                       <!--<TextView-->
+                           <!--android:id="@+id/frag_disorder_statistics_expectativa"-->
+                           <!--android:layout_width="wrap_content"-->
+                           <!--android:layout_height="wrap_content"-->
+                           <!--android:text="Não disponivel"-->
+                           <!--android:layout_below="@id/frag_disorder_statistics_expectativaLabel"-->
+                           <!--android:textSize="16sp"-->
+                           <!--android:textStyle="bold"-->
+                           <!--android:textColor="@color/material_grey_palette_700"-->
+
+                           <!--/>-->
+                    <!--</RelativeLayout>-->
+
+               <!--<RelativeLayout-->
+                   <!--android:layout_width="wrap_content"-->
+                   <!--android:layout_height="wrap_content"-->
+                   <!--android:gravity="center"-->
+                   <!--android:layout_weight="1">-->
 
 
-                <TextView
-                    android:id="@+id/frag_disorder_statistics_morbidadeLabel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:text="Morbidade"
-                    android:textSize="14sp"
-                    android:textColor="@color/material_grey_palette_400"
 
 
-                    />
-                   <TextView
-                       android:id="@+id/frag_disorder_statistics_taxaMorbidade"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="Não disponivel"
-                       android:layout_below="@id/frag_disorder_statistics_morbidadeLabel"
-                       android:textSize="16sp"
-                       android:textStyle="bold"
-                       android:textColor="@color/material_grey_palette_700"
+                <!--<TextView-->
+                    <!--android:id="@+id/frag_disorder_statistics_morbidadeLabel"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
 
-                       />
-            </RelativeLayout>
-                </LinearLayout>
+                    <!--android:text="Morbidade"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:textColor="@color/material_grey_palette_400"-->
 
-            </RelativeLayout>
+
+                    <!--/>-->
+                   <!--<TextView-->
+                       <!--android:id="@+id/frag_disorder_statistics_taxaMorbidade"-->
+                       <!--android:layout_width="wrap_content"-->
+                       <!--android:layout_height="wrap_content"-->
+                       <!--android:text="Não disponivel"-->
+                       <!--android:layout_below="@id/frag_disorder_statistics_morbidadeLabel"-->
+                       <!--android:textSize="16sp"-->
+                       <!--android:textStyle="bold"-->
+                       <!--android:textColor="@color/material_grey_palette_700"-->
+
+                       <!--/>-->
+            <!--</RelativeLayout>-->
+                <!--</LinearLayout>-->
+
+            <!--</RelativeLayout>-->
 
         </RelativeLayout>
         </LinearLayout>

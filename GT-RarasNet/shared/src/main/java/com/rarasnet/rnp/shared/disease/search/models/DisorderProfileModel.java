@@ -9,6 +9,7 @@ import com.rarasnet.rnp.shared.disease.profile.description.Specialty;
 import com.rarasnet.rnp.shared.models.Center;
 import com.rarasnet.rnp.shared.models.DadosNacionais;
 import com.rarasnet.rnp.shared.models.Disorder;
+import com.rarasnet.rnp.shared.models.Indicator;
 import com.rarasnet.rnp.shared.models.Professional;
 import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.LaravelSearchProfissionaisDataResponse;
 import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.ServiceHandler;
@@ -59,6 +60,7 @@ public class DisorderProfileModel {
         List<Reference> references = null;
         List<Professional> professionals = null;
         List<Center> centers = null;
+        List<Indicator> indicators = null;
         DadosNacionais dadosNacionais = null;
         Cid cid = null;
 
@@ -89,6 +91,7 @@ public class DisorderProfileModel {
                 centers = getCenter(jsonStr);
                 professionals = getProfessionais(jsonStr);
                 signsCounter = getSignsCounter(jsonStr);
+                indicators = getIndicators(jsonStr);
 
 //                mortalidade = getMortalidade(jsonResult);
 //                synonyms = getSynonyms(jsonResult);
@@ -105,7 +108,7 @@ public class DisorderProfileModel {
 
 
         profile = new DisorderProfile(disorder, specialties, references, signs, synonyms, professionals,
-                centers, mortalidade, dadosNacionais, cid);
+                centers, mortalidade, dadosNacionais, indicators, cid);
         profile.setSignCounter(signsCounter);
         return profile;
     }
@@ -303,6 +306,32 @@ public class DisorderProfileModel {
 
 
         return associated;
+    }
+
+
+    private List<Indicator> getIndicators(String jString) {
+        List<Indicator> indicators = new ArrayList<Indicator>();
+        Gson gson = new Gson();
+
+        try {
+            JSONObject ob = new JSONObject(jString);
+            JSONArray jArray = ob.getJSONArray("indicators");
+
+            int i = 0;
+            while (!jArray.isNull(i)) {
+                String stringSign = jArray.getString(i);
+                Log.d("indicator:", stringSign);
+
+                Indicator sign = gson.fromJson(stringSign, Indicator.class);
+                indicators.add(sign);
+                i++;
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return indicators;
     }
 
     // CODIGO LEGADO

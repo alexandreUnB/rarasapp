@@ -3,6 +3,7 @@ package com.rarasnet.rnp.shared.disease.search.models;
 import com.rarasnet.rnp.shared.models.Center;
 import com.rarasnet.rnp.shared.models.DadosNacionais;
 import com.rarasnet.rnp.shared.models.Disorder;
+import com.rarasnet.rnp.shared.models.Indicator;
 import com.rarasnet.rnp.shared.models.Professional;
 import com.rarasnet.rnp.shared.disease.profile.description.Specialty;
 
@@ -21,6 +22,16 @@ public class DisorderProfile implements Serializable {
     private List<Synonym> Synonyms;
     private List<Professional> Professional;
     private List<Center> Center;
+
+    public List<Indicator> getIndicators() {
+        return Indicators;
+    }
+
+    public void setIndicators(List<Indicator> indicators) {
+        Indicators = indicators;
+    }
+
+    private List<Indicator> Indicators;
     private Mortalidade Mortalidade;
     private DadosNacionais dadosNacionais;
     private Cid cid;
@@ -37,8 +48,10 @@ public class DisorderProfile implements Serializable {
 
     public DisorderProfile(Disorder disorder,  List<Specialty> specialties, List<Reference> references, List<Sign> signs,
                            List<Synonym> synonyms, List<Professional> professional,
-                           List<Center> center, Mortalidade mortalidade, DadosNacionais dadosNacionais, Cid cid) {
+                           List<Center> center, Mortalidade mortalidade, DadosNacionais dadosNacionais,
+                           List<Indicator> indicators, Cid cid) {
 
+        Indicators = indicators;
         Disorder = disorder;
         Specialties = specialties;
         References = references;

@@ -2,6 +2,9 @@ package com.rarasnet.rnp.shared.disease.profile.statistics;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +30,9 @@ import java.util.Arrays;
 public class StatisticsFragment extends Fragment {
 
     public static final String ARG_PAGE = "ARG_PAGE";
+    private RecyclerView mRecyclerView;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private StatisticAdapter mAdapter;
 
     private int mPage;
     private DisorderProfile disorderProfile = DisorderProfileActivity.mDisorderProfile;
@@ -86,6 +92,21 @@ public class StatisticsFragment extends Fragment {
         chart.getLegend().setPosition(Legend.LegendPosition.ABOVE_CHART_LEFT);
 
         chartFrame.addView(chart);
+
+
+        // sets up recycler viewer
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.indicators_frag);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setHasFixedSize(true);
+
+        mAdapter = new StatisticAdapter(new ArrayList<>(DisorderProfileActivity.mDisorderProfile.getIndicators()),
+                DisorderProfileActivity.mDisorderProfile.getDisorder().getDesorden_id() );
+
+
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
         return view;
     }
 

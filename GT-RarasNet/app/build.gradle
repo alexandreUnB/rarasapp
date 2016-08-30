@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '22.0.1'
-
+    compileSdkVersion 24
+    buildToolsVersion '24.0.1'
     defaultConfig {
         applicationId "com.rarasnet.rnp.app"
-        minSdkVersion 11
-        targetSdkVersion 22
+        minSdkVersion 15
+        targetSdkVersion 24
         versionCode 1
         versionName "1.0"
     }
@@ -17,11 +16,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     lintOptions {
 
         checkReleaseBuilds false
 
+    }
+    productFlavors {
     }
 }
 
@@ -31,19 +31,12 @@ repositories {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project (':shared')
-    compile project (':autenticacao')
-    compile project (':documentos')
-    compile project (':desordens')
-    compile project (':usuario')
-    compile project (':centros')
-    compile project (':info_projeto')
-
-
-
+    compile project(':shared')
+    compile project(':autenticacao')
+    compile project(':documentos')
+    compile project(':desordens')
+    compile project(':usuario')
+    compile project(':centros')
+    compile project(':info_projeto')
     compile 'com.github.satyan:sugar:1.4'
-
-
-
-
 }
