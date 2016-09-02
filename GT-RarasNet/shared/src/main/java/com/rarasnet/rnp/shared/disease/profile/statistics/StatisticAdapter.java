@@ -52,6 +52,8 @@ import com.rarasnet.rnp.shared.models.Indicator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 
 /**
@@ -62,7 +64,7 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.View
     private ArrayList<String> mItems;
     private String disorderId;
     private OnItemClickListener mOnItemClickListener;
-    private Hashtable<String, ArrayList<Hashtable<String, String>>> mInfo;
+    private Hashtable<String, Hashtable<String, String>> mInfo;
     public int last_loaded = 9;
     private BarChart sChart;
 
@@ -75,7 +77,7 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.View
     }
 
     public StatisticAdapter(ArrayList<Indicator> items, String disorderID, BarChart chart,
-                            Hashtable<String, ArrayList<Hashtable<String, String>>> info) {
+                            Hashtable<String, Hashtable<String, String>> info) {
         mItems = new ArrayList<>();
 
         for (Indicator i: items) {
@@ -168,16 +170,16 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.View
 
 
 
-            ArrayList<Hashtable<String, String>>indicatorInfoPrint = mInfo.get(info);
+            Hashtable<String, String> graphInfo = mInfo.get(info);
             int counter = 0;
+            SortedSet<String> keys = new TreeSet<String>(graphInfo.keySet());
 
-            for (Hashtable<String, String> i: indicatorInfoPrint) {
-                for (String year:i.keySet()) {
-                    entries.add(new BarEntry(Float.parseFloat(i.get(year)), counter));
+                for (String year: keys) {
+                    entries.add(new BarEntry(Float.parseFloat(graphInfo.get(year)), counter));
                     labels.add(year);
                     counter++;
                 }
-            }
+
 
 
         BarDataSet dataset = new BarDataSet(entries, info);

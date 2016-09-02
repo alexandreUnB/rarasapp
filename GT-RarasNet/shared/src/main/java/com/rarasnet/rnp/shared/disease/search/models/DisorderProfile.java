@@ -26,7 +26,7 @@ public class DisorderProfile implements Serializable {
     private List<Synonym> Synonyms;
     private List<Professional> Professional;
     private List<Center> Center;
-    public Hashtable<String, ArrayList<Hashtable<String, String>>> unionIndicators;
+    public Hashtable<String, Hashtable<String, String>> unionIndicators;
 
     public List<Indicator> getIndicators() {
         return Indicators;
@@ -71,41 +71,38 @@ public class DisorderProfile implements Serializable {
 
 
         // union of indicators with same name
-        unionIndicators = new Hashtable<String,  ArrayList<Hashtable<String, String>>>();
+        unionIndicators = new Hashtable<String,  Hashtable<String, String>>();
 
 
         for (Indicator i: indicators) {
-            ArrayList<Hashtable<String, String>>indicatorInfo = new ArrayList<Hashtable<String, String>>();
             Hashtable<String, String> aux = new Hashtable<String, String>();
 
             // if we already have the indicator we just append to its values
             if(unionIndicators.containsKey(i.getNameIndicatorType() + " " + i.getGetNameIndicatorSource())){
-                indicatorInfo = unionIndicators.get(i.getNameIndicatorType() + " " +
+                aux = unionIndicators.get(i.getNameIndicatorType() + " " +
                         i.getGetNameIndicatorSource());
                 aux.put(i.getYear(),i.getAmount());
-                indicatorInfo.add(aux);
                 unionIndicators.put(i.getNameIndicatorType() + " " + i.getGetNameIndicatorSource(),
-                        indicatorInfo);
+                        aux);
             }else{
                 aux.put(i.getYear(),i.getAmount());
-                indicatorInfo.add(aux);
                 unionIndicators.put(i.getNameIndicatorType() + " " + i.getGetNameIndicatorSource(),
-                        indicatorInfo);
+                        aux);
             }
 
         }
 
 
-        for (String key: unionIndicators.keySet()) {
-            ArrayList<Hashtable<String, String>>indicatorInfoPrint = unionIndicators.get(key);
-            String printar = "";
-            for (Hashtable<String, String> info: indicatorInfoPrint) {
-                for (String year:info.keySet()) {
-                    Log.d("AQUI["+key+"]", year + " " + info.get(year));
-
-                }
-            }
-        }
+//        for (String key: unionIndicators.keySet()) {
+//            ArrayList<Hashtable<String, String>>indicatorInfoPrint = unionIndicators.get(key);
+//            String printar = "";
+//            for (Hashtable<String, String> info: indicatorInfoPrint) {
+//                for (String year:info.keySet()) {
+//                    Log.d("AQUI["+key+"]", year + " " + info.get(year));
+//
+//                }
+//            }
+//        }
 
     }
 
