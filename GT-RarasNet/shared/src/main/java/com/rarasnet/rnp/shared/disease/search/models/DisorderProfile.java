@@ -1,5 +1,7 @@
 package com.rarasnet.rnp.shared.disease.search.models;
 
+import android.util.Log;
+
 import com.rarasnet.rnp.shared.models.Center;
 import com.rarasnet.rnp.shared.models.DadosNacionais;
 import com.rarasnet.rnp.shared.models.Disorder;
@@ -8,6 +10,8 @@ import com.rarasnet.rnp.shared.models.Professional;
 import com.rarasnet.rnp.shared.disease.profile.description.Specialty;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 
 /**
@@ -22,6 +26,7 @@ public class DisorderProfile implements Serializable {
     private List<Synonym> Synonyms;
     private List<Professional> Professional;
     private List<Center> Center;
+    public Hashtable<String, ArrayList<Hashtable<String, String>>> unionIndicators;
 
     public List<Indicator> getIndicators() {
         return Indicators;
@@ -51,7 +56,7 @@ public class DisorderProfile implements Serializable {
                            List<Center> center, Mortalidade mortalidade, DadosNacionais dadosNacionais,
                            List<Indicator> indicators, Cid cid) {
 
-        Indicators = indicators;
+
         Disorder = disorder;
         Specialties = specialties;
         References = references;
@@ -62,6 +67,46 @@ public class DisorderProfile implements Serializable {
         Mortalidade = mortalidade;
         this.dadosNacionais = dadosNacionais;
         this.cid = cid;
+        Indicators = indicators;
+
+
+        // union of indicators with same name
+        unionIndicators = new Hashtable<String,  ArrayList<Hashtable<String, String>>>();
+
+
+        for (Indicator i: indicators) {
+            ArrayList<Hashtable<String, String>>indicatorInfo = new ArrayList<Hashtable<String, String>>();
+            Hashtable<String, String> aux = new Hashtable<String, String>();
+
+            // if we already have the indicator we just append to its values
+            if(unionIndicators.containsKey(i.getNameIndicatorType() + " " + i.getGetNameIndicatorSource())){
+                indicatorInfo = unionIndicators.get(i.getNameIndicatorType() + " " +
+                        i.getGetNameIndicatorSource());
+                aux.put(i.getYear(),i.getAmount());
+                indicatorInfo.add(aux);
+                unionIndicators.put(i.getNameIndicatorType() + " " + i.getGetNameIndicatorSource(),
+                        indicatorInfo);
+            }else{
+                aux.put(i.getYear(),i.getAmount());
+                indicatorInfo.add(aux);
+                unionIndicators.put(i.getNameIndicatorType() + " " + i.getGetNameIndicatorSource(),
+                        indicatorInfo);
+            }
+
+        }
+
+
+        for (String key: unionIndicators.keySet()) {
+            ArrayList<Hashtable<String, String>>indicatorInfoPrint = unionIndicators.get(key);
+            String printar = "";
+            for (Hashtable<String, String> info: indicatorInfoPrint) {
+                for (String year:info.keySet()) {
+                    Log.d("AQUI["+key+"]", year + " " + info.get(year));
+
+                }
+            }
+        }
+
     }
 
     public com.rarasnet.rnp.shared.models.Disorder getDisorder() {

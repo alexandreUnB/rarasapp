@@ -115,7 +115,8 @@ public class StatisticsFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
 
         mAdapter = new StatisticAdapter(new ArrayList<>(DisorderProfileActivity.mDisorderProfile.getIndicators()),
-                DisorderProfileActivity.mDisorderProfile.getDisorder().getDesorden_id(), chart);
+                DisorderProfileActivity.mDisorderProfile.getDisorder().getDesorden_id(), chart,
+                DisorderProfileActivity.mDisorderProfile.unionIndicators);
 
 
         mRecyclerView.setAdapter(mAdapter);

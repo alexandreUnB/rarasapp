@@ -28,6 +28,7 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.rarasnet.rnp.shared.R;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 
 
@@ -58,9 +59,10 @@ import java.util.Random;
  */
 public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.ViewHolder> {
 
-    private ArrayList<Indicator> mItems;
+    private ArrayList<String> mItems;
     private String disorderId;
     private OnItemClickListener mOnItemClickListener;
+    private Hashtable<String, ArrayList<Hashtable<String, String>>> mInfo;
     public int last_loaded = 9;
     private BarChart sChart;
 
@@ -72,10 +74,18 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.View
         this.mOnItemClickListener = mOnItemClickListener;
     }
 
-    public StatisticAdapter(ArrayList<Indicator> items, String disorderID, BarChart chart) {
-        mItems = items;
+    public StatisticAdapter(ArrayList<Indicator> items, String disorderID, BarChart chart,
+                            Hashtable<String, ArrayList<Hashtable<String, String>>> info) {
+        mItems = new ArrayList<>();
+
+        for (Indicator i: items) {
+            if(!mItems.contains(i.getNameIndicatorType() + " " + i.getGetNameIndicatorSource())){
+                mItems.add(i.getNameIndicatorType() + " " + i.getGetNameIndicatorSource());
+            }
+        }
         disorderId = disorderID;
         sChart = chart;
+        mInfo = info;
     }
 
     @Override
@@ -88,7 +98,7 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.View
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
-        Indicator item = mItems.get(position);
+        String item = mItems.get(position);
 //        int colorOn = 0xFF323E46;
 //        int colorOff = 0xFF666666;
 //        int colorDisabled = 0xFF333333;
@@ -97,8 +107,7 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.View
 //        thumbStates.addState(new int[]{-android.R.attr.state_enabled}, new ColorDrawable(colorDisabled));
 //        thumbStates.addState(new int[]{}, new ColorDrawable(colorOff)); // this one has to come last
 //        viewHolder.selector.setThumbDrawable(thumbStates); // only on 16 API and above
-            viewHolder.textViewPrincipal.setText(item.getNameIndicatorType() + " " +
-            item.getGetNameIndicatorSource());
+            viewHolder.textViewPrincipal.setText(item);
 
         viewHolder.selector.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -150,20 +159,30 @@ public class StatisticAdapter extends RecyclerView.Adapter<StatisticAdapter.View
     }
 
 
-    private void setBar(Indicator info, int color) {
+    private void setBar(String info, int color) {
 
         sChart.clear();
 
         ArrayList<BarEntry> entries = new ArrayList<>();
-
-        entries.add(new BarEntry(Float.parseFloat(info.getAmount()), 0));
-
-        Log.d("INFO", "Received" + info.getAmount());
-
-        BarDataSet dataset = new BarDataSet(entries, info.getNameIndicatorType());
-
         ArrayList<String> labels = new ArrayList<String>();
-        labels.add(info.getYear());
+
+
+
+            ArrayList<Hashtable<String, String>>indicatorInfoPrint = mInfo.get(info);
+            int counter = 0;
+
+            for (Hashtable<String, String> i: indicatorInfoPrint) {
+                for (String year:i.keySet()) {
+                    entries.add(new BarEntry(Float.parseFloat(i.get(year)), counter));
+                    labels.add(year);
+                    counter++;
+                }
+            }
+
+
+        BarDataSet dataset = new BarDataSet(entries, info);
+
+
         dataset.setColor(color);
         BarData data = new BarData(labels, dataset);
         sChart.setData(data);

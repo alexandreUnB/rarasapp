@@ -10,7 +10,7 @@ import android.content.Context;
  *
  */
 public class RarasNet extends Application {
-    public static String urlPrefix = "http://192.168.0.118:8080";
+    public static String urlPrefix = "http://192.168.0.106:8080";
     private static Context context;
 
     @Override
