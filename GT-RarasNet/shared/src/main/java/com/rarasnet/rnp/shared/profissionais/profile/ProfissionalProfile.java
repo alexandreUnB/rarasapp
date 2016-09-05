@@ -29,6 +29,7 @@ import com.rarasnet.rnp.shared.R;
 import com.rarasnet.rnp.shared.center.profile.CenterProfile;
 import com.rarasnet.rnp.shared.disease.profile.DisorderProfileActivity;
 import com.rarasnet.rnp.shared.disease.profile.associates.ExpandableAssociatesListsAdapter;
+import com.rarasnet.rnp.shared.disease.profile.description.Specialty;
 import com.rarasnet.rnp.shared.disease.search.models.DisorderProfile;
 import com.rarasnet.rnp.shared.disease.search.models.DisorderProfileModel;
 import com.rarasnet.rnp.shared.models.Center;
@@ -82,7 +83,9 @@ public class ProfissionalProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mView = (LinearLayout) View.inflate(this, R.layout.activity_profe_profile, null);
+//        mView = (LinearLayout) View.inflate(this, R.layout.activity_profe_profile, null);
+        mView = (LinearLayout) View.inflate(this, R.layout.professional_profile, null);
+
         setContentView(mView);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.act_contact_tb_mainToolbar);
@@ -92,65 +95,68 @@ public class ProfissionalProfile extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TextView nome = (TextView) findViewById(R.id.nome);
-        TextView especialidade = (TextView) findViewById(R.id.especialidade);
-        TextView crm = (TextView) findViewById(R.id.crm);
-        TextView endereco = (TextView) findViewById(R.id.endereco);
-        TextView mail = (TextView) findViewById(R.id.email);
+        TextView nome = (TextView) findViewById(R.id.name);
+        TextView conselho = (TextView) findViewById(R.id.conselho);
+        TextView situacao = (TextView) findViewById(R.id.situacao);
+        TextView specialties = (TextView) findViewById(R.id.specialty);
+        TextView city = (TextView) findViewById(R.id.city);
+        TextView ocupation = (TextView) findViewById(R.id.ocupation);
 
 
-        nome.setText("Dr(a). " + mProfissionalProfile.getProfessional().getName());
+//        TextView especialidade = (TextView) findViewById(R.id.especialidade);
+//        TextView crm = (TextView) findViewById(R.id.crm);
+//        TextView endereco = (TextView) findViewById(R.id.endereco);
+//        TextView mail = (TextView) findViewById(R.id.email);
 
-        especialidade.setText(mProfissionalProfile.getProfessional().getProfession());
 
-        if(mProfissionalProfile.getProfessional().getCouncil_number() != null &&
-                mProfissionalProfile.getProfessional().getCouncil_number().isEmpty()) {
-            crm.setText("Não cadastrado");
+        nome.setText( mProfissionalProfile.getProfessional().getName() +
+                mProfissionalProfile.getProfessional().getSurname());
+
+
+        // Writes Conciul number of the professional
+        if(mProfissionalProfile.getProfessional().getCouncil_number() == null ||
+                mProfissionalProfile.getProfessional().getProfession() != null &&
+                        mProfissionalProfile.getProfessional().getCouncil_number().isEmpty()) {
+            conselho.setText("Não cadastrado");
         }else {
-            crm.setText(mProfissionalProfile.getProfessional().getCouncil_number());
+            conselho.setText(mProfissionalProfile.getProfessional().getCouncil_number());
         }
 
-        endereco.setText(mProfissionalProfile.getProfessional().getCity() + " - " + mProfissionalProfile.getProfessional().getUf());
-        if(mProfissionalProfile.getProfessional().getEmail().isEmpty()){
-            mail.setText("Não Cadastrado");
-
+        // Writes professional status
+        if(mProfissionalProfile.getProfessional().getActive().equals("1")) {
+            situacao.setText("Sim");
         }else {
-            mail.setText(mProfissionalProfile.getProfessional().getEmail());
+            situacao.setText("Não");
         }
 
-               /* CardView mDoencas = (CardView) findViewById(R.id.act_center_profile_cv_disesasesCard);
-            mDoencas.setOnClickListener(new View.OnClickListener() {
-                Uri uri;
-
-                @Override
-                public void onClick(View v) {
-                    Intent it = new Intent(Intent.ACTION_VIEW, uri.parse("geo:-20.194594,-40.249089?z=25"));
-                    startActivity(it);
-                }
-            });
-
-            CardView mLigar = (CardView) findViewById(R.id.act_center_profile_cv_diseasesCard);
-            mLigar.setOnClickListener(new View.OnClickListener() {
+        // Writes profession
+        if(mProfissionalProfile.getProfessional().getProfession() == null ||
+                mProfissionalProfile.getProfessional().getProfession() != null &&
+                mProfissionalProfile.getProfessional().getProfession().isEmpty()) {
+            ocupation.setText("Sem informação");
+        }else {
+            ocupation.setText(mProfissionalProfile.getProfessional().getProfession());
+        }
 
 
-                @Override
-                public void onClick(View v) {
-                    init(v);
-                    show("Fazer Ligação", "Deseja ligar para o centro de referencia", "", "email");
+        // Writes city and uf
+        if(mProfissionalProfile.getProfessional().getCity() == null ||
+                mProfissionalProfile.getProfessional().getProfession() != null &&
+                        mProfissionalProfile.getProfessional().getCity().isEmpty()) {
+            city.setText("Sem informação");
+        }else {
+            city.setText(mProfissionalProfile.getProfessional().getCity() +
+            " - " + mProfissionalProfile.getProfessional().getUf());
+        }
 
-                }
-            });
 
-            CardView mEmail = (CardView) findViewById(R.id.act_center_profile_cv_profsCard);
-            mEmail.setOnClickListener(new View.OnClickListener() {
+        // Writes professional specialties list
+        specialties.setText("");
+        for (Specialty specialty: mProfissionalProfile.getSpecialties()) {
+            specialties.append(specialty.getName());
+        }
 
 
-                @Override
-                public void onClick(View v) {
-                    sendEmail();
-
-                }
-            });*/
 
         final ExpandableListView associatesListGroup =
                 (ExpandableListView) mView.findViewById(R.id.frag_center_associates_el_associatesLists);
