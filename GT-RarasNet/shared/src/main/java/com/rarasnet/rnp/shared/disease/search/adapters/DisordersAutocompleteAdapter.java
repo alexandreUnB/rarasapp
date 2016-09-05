@@ -126,13 +126,20 @@ public class DisordersAutocompleteAdapter extends ArrayAdapter<String> {
                             for(Disorder d: disordersSuggestions){
                                 suggestions.add(d.getName());
                             }
-                        }else{
-                            new_suggestions = searchDisordersAutocomplete.getSuggestions(constraint.toString(), searchOption);
-                            if(new_suggestions != null) {
-                                for (String suggestion : new_suggestions) {
-                                    suggestions.add(suggestion);
-                                }
+                        }else if(searchOption == "icd"){
+                            disordersSuggestions = disorders.cidSearch(constraint.toString());
+                            for(Disorder d: disordersSuggestions){
+                                suggestions.add(d.getName());
                             }
+                        }
+                        else{
+//                            new_suggestions = searchDisordersAutocomplete.getSuggestions(constraint.toString(), searchOption);
+//                            if(new_suggestions != null) {
+//                                for (String suggestion : new_suggestions) {
+//                                    suggestions.add(suggestion);
+//                                }
+//                            }
+                            // not used anymore
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -170,6 +177,7 @@ public class DisordersAutocompleteAdapter extends ArrayAdapter<String> {
             //Toast.makeText(Diseases.this, "TIPO ORPHA" ,Toast.LENGTH_SHORT).show();
             return TYPE_ORPHANUMBER;
         } else if (query.matches(icdPattern)) {
+            Log.d("CID","CID");
             //Toast.makeText(Diseases.this, "TIPO ICD" ,Toast.LENGTH_SHORT).show();
             return TYPE_ICD;
         } else {

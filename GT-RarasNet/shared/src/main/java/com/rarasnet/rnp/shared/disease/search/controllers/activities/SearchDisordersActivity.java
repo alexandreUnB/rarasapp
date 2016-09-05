@@ -524,8 +524,10 @@ private android.app.AlertDialog progress;
             try {
 
                 if(searchType == TYPE_NAME){
-                    Log.d("Search Disorder", "By name");
                     result = disorders.nameSearch(userInput);
+                }else if(searchType == TYPE_ICD){
+                    result = disorders.cidSearch(userInput);
+
                 }else{
                     result = disorders.search(userInput, searchType,"code");
                 }

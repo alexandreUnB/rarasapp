@@ -31,6 +31,7 @@ public class DisordersModel {
     private String searchURL = "http://www.webservice.rederaras.org/rest_desordens.json";
     //private String searchURL = "http://192.168.85.1/raras/webservice/rest_desordens.json";
     private String nameURL = RarasNet.urlPrefix  + "/api/disorderName/";
+    private String cidURL = RarasNet.urlPrefix  + "/api/cidID/";
 
 
     public List<Disorder> nameSearch(String userInput) throws Exception {
@@ -43,6 +44,29 @@ public class DisordersModel {
             ServiceHandler sh = new ServiceHandler();
             // Making a request to url and getting response
             String jsonStr = sh.makeServiceCall(searchURL, ServiceHandler.GET);
+
+            if(jsonStr != null) {
+                disorders = getDisorders(jsonStr);
+            }
+
+            return  disorders;
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    public List<Disorder> cidSearch(String userInput) throws Exception {
+
+        String searchURL = cidURL + userInput.replace(" ", "%20");
+        List<Disorder> disorders = null;
+        Log.d("Search Disorderasddas", "By CID");
+
+        try {
+            // Creating service handler class instance
+            ServiceHandler sh = new ServiceHandler();
+            // Making a request to url and getting response
+            String jsonStr = sh.makeServiceCall(searchURL, ServiceHandler.GET);
+            Log.d("Search Disorderassa", "By CID");
 
             if(jsonStr != null) {
                 disorders = getDisorders(jsonStr);
