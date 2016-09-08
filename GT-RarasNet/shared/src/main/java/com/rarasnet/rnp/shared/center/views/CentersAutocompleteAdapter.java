@@ -37,6 +37,8 @@ public class CentersAutocompleteAdapter extends ArrayAdapter<String> {
     private static final String TYPE_NAME = "nome";
     private static final String TYPE_ORPHANUMBER = "orphanumber";
     private static final String TYPE_ICD = "icd";
+
+
     private String searchOption;
     //Numeric Pattern
     private static final String orphanumberPattern = "[0-9]+";
@@ -55,7 +57,13 @@ public class CentersAutocompleteAdapter extends ArrayAdapter<String> {
         super(context, R.layout.default_autocomplete_item);
         suggestions = new ArrayList<String>();
         mAutocompleteListener = listener;
+        searchOption = "name";
     }
+
+    public void setSearchOption(String sOption) {
+        searchOption = sOption;
+    }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -103,27 +111,28 @@ public class CentersAutocompleteAdapter extends ArrayAdapter<String> {
                     // cosulta o webservice e retorna uma lista de objetos
                     JSONObject.quote(constraint.toString());
                     List<SearchCentersDataResponse> new_suggestions = null;
-//                    searchOption = getSearchType("nome");
-                    //searchOption = nome;
-                    //new SearchProfissionaisTask(searchProfissionaisCallback).execute(constraint.toString(),searchOption);
+
                     try {
                         // Convert from Unicode to UTF-8
                         String string = "\u00f3";
                         byte[] utf8 = constraint.toString().getBytes("UTF-8");
-                        Log.d("veento",string);
 
                         // Convert from UTF-8 to Unicode
                         string = new String(utf8, "UTF-8");
-                        Log.d("veento1",string);
                     } catch (UnsupportedEncodingException e) {
+                        Log.d("[CAA]Autocomplete error", e.toString());
                     }
 
                     try {
-                        Log.d("task","task");
 
-                       new_suggestions = centerFinder.nameSearch(constraint.toString());
+                       if(searchOption == "name"){
+                           new_suggestions = centerFinder.nameSearch(constraint.toString());
+                       }else if(searchOption == "disorder"){
+                           new_suggestions = centerFinder.disorderSearch(constraint.toString());
+                       }else if(searchOption == "specialty"){
+                       }else { // local
+                       }
 
-                       //new_suggestions = searchProfessioanlsAutocomplete.getSuggestions(constraint.toString(), "nome");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

@@ -37,6 +37,8 @@ public class CenterAdpter  {
     private String searchURL = "http://www.webservice.rederaras.org/rest_instituicoes.json";
     //private String searchURL = "http://192.168.85.1/raras/webservice/rest_desordens.json";
     private String nameURL = RarasNet.urlPrefix + "/api/centerName/";
+    private String disorderURL = RarasNet.urlPrefix + "/api/centerDisorder/";
+    private String disorderURL = RarasNet.urlPrefix + "/api/centerDisorder/";
 
 
     /**
@@ -47,6 +49,33 @@ public class CenterAdpter  {
      */
     public List<SearchCentersDataResponse> nameSearch(String userInput) throws Exception {
         String searchURL = nameURL + userInput.replace(" ", "%20");
+        List<SearchCentersDataResponse> centers = null;
+
+        try {
+            // Creating service handler class instance
+            ServiceHandler sh = new ServiceHandler();
+            // Making a request to url and getting response
+            String jsonStr = sh.makeServiceCall(searchURL, ServiceHandler.GET);
+
+            if(jsonStr != null) {
+                centers = getCenters(jsonStr);
+            }
+
+            return  centers;
+        } catch (Exception e) {
+            throw e;
+        }
+
+    }
+
+    /**
+     * search centers on server by disorder name
+     * @param userInput
+     * @return
+     * @throws Exception
+     */
+    public List<SearchCentersDataResponse> disorderSearch(String userInput) throws Exception {
+        String searchURL = disorderURL + userInput.replace(" ", "%20");
         List<SearchCentersDataResponse> centers = null;
 
         try {

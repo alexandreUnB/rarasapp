@@ -193,7 +193,7 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
                 if (null != radioButton && checkedId > -1) {
 
                     if (checkedId == R.id.radio_disorder_professional) {
-                        ac_searchEditText.setHint("Busca por especialidade");
+                        ac_searchEditText.setHint("Buscar por nome da disordem");
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         doNameSearch = false;
                         doDisorderSearch = true;
@@ -201,7 +201,7 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
                                 ac_searchEditText.getAdapter()).setSearchOption("disorder");
 
                     }else if(checkedId == R.id.radio_name_professional) {
-                        ac_searchEditText.setHint("Busca por Nome do profissional");
+                        ac_searchEditText.setHint("Buscar por nome do profissional");
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         doNameSearch = true;
                         doDisorderSearch = false;

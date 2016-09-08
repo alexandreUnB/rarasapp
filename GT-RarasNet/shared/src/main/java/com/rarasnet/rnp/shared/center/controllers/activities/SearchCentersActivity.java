@@ -20,6 +20,8 @@ import android.view.animation.Transformation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -71,7 +73,9 @@ public class SearchCentersActivity extends AppCompatActivity {
     private static final String icdPattern = "[A-Z][0-9][0-9].[0-9]";
 
     private boolean flag = true;
-
+    private RadioGroup radioGroup;
+    private boolean doNameSearch = false;
+    private boolean doDisorderSearch = false;
 
 
    // private ListaCentersAdapter mAdapter;
@@ -186,13 +190,64 @@ public class SearchCentersActivity extends AppCompatActivity {
         pb_loadingProfissionalsData = (ProgressBar) findViewById(R.id.act_search_centers_pb_loadingDisorderData);
 
 
+// Radio button handlers
+        radioGroup = (RadioGroup) findViewById(R.id.radio_group);
+        RadioButton rb = (RadioButton) radioGroup.findViewById(R.id.radio_name_center);
+        rb.toggle();
 
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+
+                RadioButton radioButton = (RadioButton) group.findViewById(checkedId);
+                if (null != radioButton && checkedId > -1) {
+
+                    if (checkedId == R.id.radio_disorder_center) {
+                        ac_searchEditText.setHint("Buscar por nome da Disordem");
+                        ac_searchEditText.setVisibility(View.VISIBLE);
+                        doNameSearch = false;
+                        doDisorderSearch = true;
+                        ((CentersAutocompleteAdapter)
+                                ac_searchEditText.getAdapter()).setSearchOption("disorder");
+
+                    }else if(checkedId == R.id.radio_name_center) {
+                        ac_searchEditText.setHint("Buscar por nome do centro");
+                        ac_searchEditText.setVisibility(View.VISIBLE);
+                        doNameSearch = true;
+                        doDisorderSearch = false;
+                        ((CentersAutocompleteAdapter)
+                                ac_searchEditText.getAdapter()).setSearchOption("name");
+                    }else if(checkedId == R.id.radio_specialty_center) {
+                        ac_searchEditText.setHint("Buscar por especialidade");
+                        ac_searchEditText.setVisibility(View.VISIBLE);
+                        doNameSearch = true;
+                        doDisorderSearch = false;
+                        ((CentersAutocompleteAdapter)
+                                ac_searchEditText.getAdapter()).setSearchOption("specialty");
+                    }else if(checkedId == R.id.radio_uf_center) {
+                        ac_searchEditText.setHint("Buscar por local");
+                        ac_searchEditText.setVisibility(View.VISIBLE);
+                        doNameSearch = true;
+                        doDisorderSearch = false;
+                        ((CentersAutocompleteAdapter)
+                                ac_searchEditText.getAdapter()).setSearchOption("local");
+                    }
+
+
+                }}
+        });
 
 
 
     }
 
 
+
+    // radio button clicked event treatment
+    public void onRadioButtonClicked(View v){
+        // pass, but necessary here
+    }
 
 
     private void handleSearchRequest() {
