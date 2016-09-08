@@ -14,6 +14,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -33,6 +34,8 @@ import java.util.List;
 public class ProfissionaisAdapter {
     /* Laravel api url used to get request response */
     private String url = RarasNet.urlPrefix + "/api/professionalName/";
+    private String urlDisorder = RarasNet.urlPrefix + "/api/profDisorder/";
+
 
     /**
     * Method that is called after Professional search icon is pressed.
@@ -100,7 +103,8 @@ public class ProfissionaisAdapter {
     }
 
 
-    public List<String> autoComplete(String userInput, String searchOption) throws Exception
+    public List<String> autoComplete(String userInput, String searchOption)
+            throws Exception
     {
 
         try
@@ -108,13 +112,32 @@ public class ProfissionaisAdapter {
             // Creating service handler class instance
             ServiceHandler sh = new ServiceHandler();
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(url + userInput.replace(" ","%20"), ServiceHandler.GET);
+            String searchUrl;
+
+            if(searchOption == "name"){
+                searchUrl = url;
+            }else{
+                searchUrl = urlDisorder;
+            }
+
+            Log.d("Search",searchOption);
+            String jsonStr = sh.makeServiceCall(searchUrl +
+                    userInput.replace(" ","%20"), ServiceHandler.GET);
 
             // In case we get a response, the json info received is parsed
             // and passed to and equivalent object
             // and passed to and equivalent object
             if(jsonStr != null){
-                List<LaravelSearchProfissionaisDataResponse> disordersTeste = getDiseasesNew(jsonStr);
+
+                List<LaravelSearchProfissionaisDataResponse> disordersTeste;
+
+                if(searchOption == "name"){
+                    disordersTeste = getDiseasesNew(jsonStr);;
+                }else{
+                    disordersTeste = getByDisorder(jsonStr);;
+                }
+
+
                 List<String> profissionais = new ArrayList<>();
 
                 for (LaravelSearchProfissionaisDataResponse profissional : disordersTeste) {
@@ -130,82 +153,39 @@ public class ProfissionaisAdapter {
         return null;
     }
 
-//
-//    // CODIGO LEGADO -- APAGAR
-//private String searchURL = "http://www.webservice.rederaras.org/rest_profissionais.json";
-////    private String toString(InputStream is) throws IOException {
-//        byte[] bytes = new byte[1024];
-//        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//        int lidos;
-//        while ((lidos = is.read(bytes)) > 0) {
-//            baos.write(bytes, 0, lidos);
-//        }
-//        return new String(baos.toByteArray());
-//    }
-//    public List<SearchProfissionaisDataResponse> search(String userInput, String searchOption) throws Exception {
-//
-//        List<NameValuePair> params = new ArrayList<>();
-//        params.add(new BasicNameValuePair("searchInput", userInput));
-//        params.add(new BasicNameValuePair("searchType", searchOption));
-//        DefaultHttpClient httpClient = new DefaultHttpClient();
-//
-//
-//        try {
-//
-//            HttpPost httpPost = new HttpPost(searchURL);
-//            httpPost.setEntity(new UrlEncodedFormEntity(params));
-//
-//            HttpResponse httpResponse = httpClient.execute(httpPost);
-//
-//            HttpEntity entity = httpResponse.getEntity();
-//
-//            if (entity != null) {
-//                InputStream instream = entity.getContent();
-//                String json = toString(instream);
-//                instream.close();
-//
-//                Log.d("JSON RESPONSE:", json);
-//
-//                List<SearchProfissionaisDataResponse> disorders = getDiseases(json);
-//                return disorders;
-//            }
-//        } catch (Exception e) {
-//            throw e;
-//        }
-//        return null;
-//    }
-//
-//    private List<SearchProfissionaisDataResponse> getDiseases(String jsonString) throws Exception {
-//        List<SearchProfissionaisDataResponse> disorders =  new ArrayList<SearchProfissionaisDataResponse>();
-//        Gson gson = new Gson();
-//
-//        try {
-//            //JSONObject ob = new JSONObject(jsonString);
-//            JSONArray jArray = new JSONArray(jsonString);
-//
-//            int i = 0;
-//            Log.d("aqui", String.valueOf(jArray.length()));
-//            while (!jArray.isNull(i)) {
-//                String stringDisorder = jArray.getString(i);
-//                Log.d("aqui",stringDisorder);
-//                //aux = objTest.getString("name");
-//                //Log.d("gson46.1",aux);
-//
-//                SearchProfissionaisDataResponse dis = gson.fromJson(stringDisorder, SearchProfissionaisDataResponse.class);
-//                Log.d("aqui",dis.getNome());
-//                //Log.d("gson46.2",dis.getOrphanumber());
-//                //Log.d("gson46.2",dia.getExpertlink());
-//                //JSONArray rest = b.getJSONArray("Phone");
-//                disorders.add(dis);
-//                i++;
-//            }
-//        } catch (JSONException e) {
-//            Log.d("ERRO:", e.getMessage());
-//            throw new Exception();
-//        }
-//        Log.d("disorder", String.valueOf(disorders.size()));
-//
-//        return disorders;
-//    }
+
+    /**
+     * This method parsers a json file got by the larevel server response and
+     * parsers it to an equivalent object type.
+     * */
+    private List<LaravelSearchProfissionaisDataResponse> getByDisorder(String jsonString)
+            throws Exception
+    {
+        List<LaravelSearchProfissionaisDataResponse> disorders =  new ArrayList<LaravelSearchProfissionaisDataResponse>();
+        Gson gson = new Gson();
+
+        try {
+
+            JSONObject ob = new JSONObject(jsonString);
+            JSONArray jArray = ob.getJSONArray("professionals");
+
+            int i = 0;
+            while (!jArray.isNull(i)) {
+                String stringDisorder = jArray.getString(i);
+                //Log.d("Got this Information: ",stringDisorder);
+                LaravelSearchProfissionaisDataResponse dis = gson.fromJson(stringDisorder,
+                        LaravelSearchProfissionaisDataResponse.class);
+                disorders.add(dis);
+                i++;
+            }
+
+        } catch (JSONException e) {
+            Log.d("[Professionals] Error:", e.getMessage());
+            throw new Exception();
+        }
+
+        return disorders;
+    }
+
 
 }

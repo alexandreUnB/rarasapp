@@ -291,14 +291,10 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
 
 
             try {
-                if(doNameSearch){
-                    newResult = disorders.searchLaravel(userInput, searchType);
-                }else{ // disorder search
-
-                }
+                newResult = disorders.searchLaravel(userInput, searchType);
 
             } catch (Exception e) {
-                Log.d("[SPA]Autocomplete error", e.toString());
+                Log.d("[SPA]Search error", e.toString());
             }
 
             return newResult;

@@ -38,9 +38,7 @@ public class ProfessionalsAutocompleteAdapter extends ArrayAdapter<String> {
     private static final String TYPE_ORPHANUMBER = "orphanumber";
     private static final String TYPE_ICD = "icd";
 
-    public void setSearchOption(String searchOption) {
-        this.searchOption = searchOption;
-    }
+
 
     private String searchOption;
     //Numeric Pattern
@@ -60,6 +58,13 @@ public class ProfessionalsAutocompleteAdapter extends ArrayAdapter<String> {
         super(context, R.layout.default_autocomplete_item);
         suggestions = new ArrayList<String>();
         mAutocompleteListener = listener;
+        searchOption = "name";
+    }
+
+    public void setSearchOption(String sOption) {
+        searchOption = sOption;
+        Log.d("Entrei", searchOption);
+
     }
 
     @Override
@@ -121,7 +126,8 @@ public class ProfessionalsAutocompleteAdapter extends ArrayAdapter<String> {
                             newSuggestion = professionals.autoComplete(constraint.toString(),
                                     "name");
                         }else{
-                            Log.d("AUTOCOMPLETE","DISORDER");
+                            newSuggestion = professionals.autoComplete(constraint.toString(),
+                                    "disorder");
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
