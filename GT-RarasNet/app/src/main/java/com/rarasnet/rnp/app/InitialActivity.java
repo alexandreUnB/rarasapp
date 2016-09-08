@@ -28,17 +28,21 @@ public class InitialActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(RarasNetPreferenceUtil.getPreference(RarasNetPreferenceUtil.IS_LOGGED, false)) {
-            Log.d("login2",RarasNetPreferenceUtil.getPreference(RarasNetPreferenceUtil.LOGIN,"LOGIN"));
-            Log.d("pass",RarasNetPreferenceUtil.getPreference(RarasNetPreferenceUtil.PASSW,"PASSW"));
-            startUserActivity();
-        } else{
-
-            Log.d("login23",RarasNetPreferenceUtil.getPreference(RarasNetPreferenceUtil.LOGIN,"LOGIN"));
-           // Log.d("login",RarasNetPreferenceUtil.getPreference(RarasNetPreferenceUtil.PASSW,"PASSW"));
-            startLoginActivity();
-        }
-
+//        if(RarasNetPreferenceUtil.getPreference(RarasNetPreferenceUtil.IS_LOGGED, false)) {
+//            Log.d("login2",RarasNetPreferenceUtil.getPreference(RarasNetPreferenceUtil.LOGIN,"LOGIN"));
+//            Log.d("pass",RarasNetPreferenceUtil.getPreference(RarasNetPreferenceUtil.PASSW,"PASSW"));
+//            startUserActivity();
+//        } else{
+//
+//            Log.d("login23",RarasNetPreferenceUtil.getPreference(RarasNetPreferenceUtil.LOGIN,"LOGIN"));
+//           // Log.d("login",RarasNetPreferenceUtil.getPreference(RarasNetPreferenceUtil.PASSW,"PASSW"));
+//            startLoginActivity();
+//        }
+//
+//        finish();
+        Intent it = new Intent("com.rnp.app.action.main_menu");
+        it.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(it);
         finish();
     }
 

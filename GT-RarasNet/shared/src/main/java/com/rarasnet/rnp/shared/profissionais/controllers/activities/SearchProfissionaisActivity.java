@@ -19,6 +19,8 @@ import android.view.animation.Transformation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,20 +49,15 @@ import java.util.List;
 
 public class SearchProfissionaisActivity extends AppCompatActivity {
     private Toolbar mToolbar;
-    private MenuItem mToolbarSearchItem;
     private AppCompatAutoCompleteTextView ac_searchEditText;
-    private AppCompatMultiAutoCompleteTextView ac_searchBySigns;
     private ListView lv_searchResults;
     private ProfessionalsSearchResultsAdapter mSearchResultsAdapter;
     private int et_search_sendButtonResource;
     private ProgressBar pb_searchProgress;
-    private ProgressBar pb_searchViewProgress;
     private ProgressBar pb_loadingProfissionalsData;
     private android.app.AlertDialog progress;
-    private RelativeLayout rl_fadeMenu;
-    private TextView tv_searchType;
-    private RelativeLayout rl_searchType;
-    private boolean doSignsSearch = false;
+    private boolean doNameSearch = false;
+    private boolean doDisorderSearch = false;
     private static final String TYPE_NAME = "nome";
     private static final String TYPE_ORPHANUMBER = "orphanumber";
     private static final String TYPE_ICD = "icd";
@@ -68,10 +65,10 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
     private static final String orphanumberPattern = "[0-9]+";
     private static final String icdPattern = "[A-Z][0-9][0-9].[0-9]";
     private boolean flag = true;
-    //private ListaProfissionaisAdapter mAdapter;
     private RelativeLayout listFrame;
     private ProgressDialog pDialog;
     private ListView mListaProfissionais;
+    private RadioGroup radioGroup;
 
     private View.OnTouchListener et_search_touchListener = new View.OnTouchListener() {
         @Override
@@ -138,6 +135,7 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
                         ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
                         flag = false;
 
+
                     }
                 });
 
@@ -161,8 +159,7 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
 
         }));
 
-      //pb_searchViewProgress  = (ProgressBar) findViewById(R.id.act_search_professional_pb_actionViewSearchProgress);
-        //pb_searchViewProgress.getIndeterminateDrawable().setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
+
         mSearchResultsAdapter.setOnItemClickListener(new ProfessionalsSearchResultsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(LaravelSearchProfissionaisDataResponse professional) {
@@ -178,17 +175,52 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
         });
 
 
-
         pb_loadingProfissionalsData = (ProgressBar) findViewById(R.id.act_search_professional_pb_loadingDisorderData);
 
 
 
+        // Radio button handlers
+        radioGroup = (RadioGroup) findViewById(R.id.radio_group);
+        RadioButton rb = (RadioButton) radioGroup.findViewById(R.id.radio_name_professional);
+        rb.toggle();
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+
+                RadioButton radioButton = (RadioButton) group.findViewById(checkedId);
+                if (null != radioButton && checkedId > -1) {
+
+                    if (checkedId == R.id.radio_disorder_professional) {
+                        ac_searchEditText.setHint("Busca por especialidade");
+                        ac_searchEditText.setVisibility(View.VISIBLE);
+                        doNameSearch = false;
+                        doDisorderSearch = true;
+                        ((ProfessionalsAutocompleteAdapter)
+                                ac_searchEditText.getAdapter()).setSearchOption("disorder");
+
+                    }else if(checkedId == R.id.radio_name_professional) {
+                        ac_searchEditText.setHint("Busca por Nome do profissional");
+                        ac_searchEditText.setVisibility(View.VISIBLE);
+                        doNameSearch = true;
+                        doDisorderSearch = false;
+                        ((ProfessionalsAutocompleteAdapter)
+                                ac_searchEditText.getAdapter()).setSearchOption("name");
+
+                    }
+                }}
+        });
 
 
 
     }
 
 
+    // radio button clicked event treatment
+    public void onRadioButtonClicked(View v){
+        // pass, but necessary here
+    }
 
 
     private void handleSearchRequest() {
@@ -252,24 +284,22 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
         @Override
        // protected List<SearchProfissionaisDataResponse> doInBackground(String... params){
         protected List<LaravelSearchProfissionaisDataResponse> doInBackground(String... params){
-
             String userInput = params[0];
             String searchType = params[1];
             ProfissionaisAdapter disorders = new ProfissionaisAdapter();
-            //List<SearchProfissionaisDataResponse> result = null;
             List<LaravelSearchProfissionaisDataResponse> newResult = null;
 
-                Log.d("profiss",searchType);
 
             try {
-                //result = disorders.search(userInput, searchType);
-                newResult = disorders.searchLaravel(userInput, searchType);
+                if(doNameSearch){
+                    newResult = disorders.searchLaravel(userInput, searchType);
+                }else{ // disorder search
 
-                //List<Disease> result = disorders.getStaticDisease();
+                }
+
             } catch (Exception e) {
-
+                Log.d("[SPA]Autocomplete error", e.toString());
             }
-            Log.d("AQUI1","AQUI1");
 
             return newResult;
         }

@@ -105,7 +105,55 @@
         </android.support.design.widget.TextInputLayout>
 
 
+        <RelativeLayout
+            android:id="@+id/act_search_disorders_rl_searchType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:paddingRight="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_below="@id/act_search_professional_ti_search"
+            android:background="@drawable/tv_selector"
+            android:clickable="true"
+            >
+
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pesquisa por: "/>
+                <RadioButton android:id="@+id/radio_name_professional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Nome"
+
+                    android:onClick="onRadioButtonClicked"/>
+                <RadioButton android:id="@+id/radio_disorder_professional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Doença"
+                    android:onClick="onRadioButtonClicked"/>
+
+
+            </RadioGroup>
+        </RelativeLayout>
+
     </RelativeLayout>
+
+
+
+
+
+
 
     <ListView
         style="@style/ListView"

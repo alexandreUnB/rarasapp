@@ -8,7 +8,9 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -102,18 +104,19 @@ public class ProfissionalProfile extends AppCompatActivity {
         TextView city = (TextView) findViewById(R.id.city);
         TextView ocupation = (TextView) findViewById(R.id.ocupation);
 
+        // Card views
+        CardView faceCard = (CardView) findViewById(R.id.act_face_card);
+        CardView mailCard = (CardView) findViewById(R.id.act_mail_card);
+        CardView phoneCard = (CardView) findViewById(R.id.act_telephone_card);
+        CardView twitterCard = (CardView) findViewById(R.id.act_twitter_card);
 
-//        TextView especialidade = (TextView) findViewById(R.id.especialidade);
-//        TextView crm = (TextView) findViewById(R.id.crm);
-//        TextView endereco = (TextView) findViewById(R.id.endereco);
-//        TextView mail = (TextView) findViewById(R.id.email);
 
 
+        /// Sets text views info
         nome.setText( mProfissionalProfile.getProfessional().getName() +
                 mProfissionalProfile.getProfessional().getSurname());
 
-
-        // Writes Conciul number of the professional
+        // Writes Concil number of the professional
         if(mProfissionalProfile.getProfessional().getCouncil_number() == null ||
                 mProfissionalProfile.getProfessional().getProfession() != null &&
                         mProfissionalProfile.getProfessional().getCouncil_number().isEmpty()) {
@@ -138,7 +141,6 @@ public class ProfissionalProfile extends AppCompatActivity {
             ocupation.setText(mProfissionalProfile.getProfessional().getProfession());
         }
 
-
         // Writes city and uf
         if(mProfissionalProfile.getProfessional().getCity() == null ||
                 mProfissionalProfile.getProfessional().getProfession() != null &&
@@ -149,15 +151,84 @@ public class ProfissionalProfile extends AppCompatActivity {
             " - " + mProfissionalProfile.getProfessional().getUf());
         }
 
-
         // Writes professional specialties list
         specialties.setText("");
         for (Specialty specialty: mProfissionalProfile.getSpecialties()) {
             specialties.append(specialty.getName());
         }
 
+        /// Card views listeners
+        faceCard.setOnClickListener(new View.OnClickListener() {
 
 
+            @Override
+            public void onClick(View v) {
+
+                if(mProfissionalProfile.getProfessional().getFacebook() == null ||
+                        mProfissionalProfile.getProfessional().getFacebook() != null &&
+                                mProfissionalProfile.getProfessional().getFacebook().isEmpty()) {
+
+                    //Toast.makeText(ProfessionalProfile.this, "Facebook não disponível.",
+                     //       Toast.LENGTH_SHORT).show();
+
+                    Snackbar.make(findViewById(R.id.myCoordinatorLayout),"Facebook não disponível.",
+                            Snackbar.LENGTH_SHORT)
+                            .show();
+                }else {
+
+                    // facebook profile intent
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse(mProfissionalProfile.getProfessional().getFacebook())));
+                    } catch(Exception e) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://profile/" +
+                                mProfissionalProfile.getProfessional().getFacebook()));
+                        startActivity(intent);
+                    }                }
+
+            }
+        });
+
+        mailCard.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+
+                    Snackbar.make(findViewById(R.id.myCoordinatorLayout),"Email não disponível.",
+                            Snackbar.LENGTH_SHORT)
+                            .show();
+
+            }
+        });
+
+        twitterCard.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+
+                Snackbar.make(findViewById(R.id.myCoordinatorLayout),"Twitter não disponível.",
+                        Snackbar.LENGTH_SHORT)
+                        .show();
+
+            }
+        });
+
+        phoneCard.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+
+                Snackbar.make(findViewById(R.id.myCoordinatorLayout),"Telefone não disponível.",
+                        Snackbar.LENGTH_SHORT)
+                        .show();
+
+            }
+        });
+
+        /// Diseases expandable view
         final ExpandableListView associatesListGroup =
                 (ExpandableListView) mView.findViewById(R.id.frag_center_associates_el_associatesLists);
         associatesListGroup.setAdapter(new ExpandableProfiListsAdapter(this, getAssociatesModel()));
@@ -227,10 +298,9 @@ public class ProfissionalProfile extends AppCompatActivity {
 
 
 
-
-
-
     }
+
+
 
 
 

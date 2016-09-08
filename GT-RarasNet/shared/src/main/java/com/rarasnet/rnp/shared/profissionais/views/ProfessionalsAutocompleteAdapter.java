@@ -37,6 +37,11 @@ public class ProfessionalsAutocompleteAdapter extends ArrayAdapter<String> {
     private static final String TYPE_NAME = "nome";
     private static final String TYPE_ORPHANUMBER = "orphanumber";
     private static final String TYPE_ICD = "icd";
+
+    public void setSearchOption(String searchOption) {
+        this.searchOption = searchOption;
+    }
+
     private String searchOption;
     //Numeric Pattern
     private static final String orphanumberPattern = "[0-9]+";
@@ -112,11 +117,12 @@ public class ProfessionalsAutocompleteAdapter extends ArrayAdapter<String> {
                     //new SearchProfissionaisTask(searchProfissionaisCallback).execute(constraint.toString(),searchOption);
 
                     try {
-                        newSuggestion = professionals.autoComplete(constraint.toString(), "nome");
-//                        Log.d("task","task");
-//                       new_suggestions = teste.searchProf(constraint.toString(), "nome");
-
-                        //new_suggestions = searchProfessioanlsAutocomplete.getSuggestions(constraint.toString(), "nome");
+                        if(searchOption == "name"){
+                            newSuggestion = professionals.autoComplete(constraint.toString(),
+                                    "name");
+                        }else{
+                            Log.d("AUTOCOMPLETE","DISORDER");
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
