@@ -30,7 +30,7 @@ import com.rarasnet.rnp.shared.R;
 import com.rarasnet.rnp.shared.center.controllers.network.responses.SearchCentersDataResponse;
 import com.rarasnet.rnp.shared.center.profile.CenterProfile;
 import com.rarasnet.rnp.shared.center.search.CentersSearchResultsAdapter;
-import com.rarasnet.rnp.shared.center.views.CenterAdpter;
+import com.rarasnet.rnp.shared.center.views.CenterAdapter;
 import com.rarasnet.rnp.shared.center.views.CentersAutocompleteAdapter;
 import com.rarasnet.rnp.shared.models.CenterProfileModel;
 import com.rarasnet.rnp.shared.util.UIUtils;
@@ -76,7 +76,7 @@ public class SearchCentersActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private boolean doNameSearch = false;
     private boolean doDisorderSearch = false;
-
+    private String searchOption = "name";
 
    // private ListaCentersAdapter mAdapter;
     private RelativeLayout listFrame;
@@ -133,7 +133,8 @@ public class SearchCentersActivity extends AppCompatActivity {
         ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, et_search_sendButtonResource, 0);
         pb_searchProgress = (ProgressBar) findViewById(R.id.act_search_centers_pb_searchProgress);
 
-        ac_searchEditText.setAdapter(new CentersAutocompleteAdapter(this, new CentersAutocompleteAdapter.AutocompleteListener() {
+        ac_searchEditText.setAdapter(new CentersAutocompleteAdapter(this,
+                new CentersAutocompleteAdapter.AutocompleteListener() {
             @Override
             public void onStartFiltering() {
                 runOnUiThread(new Runnable() {
@@ -206,32 +207,29 @@ public class SearchCentersActivity extends AppCompatActivity {
                     if (checkedId == R.id.radio_disorder_center) {
                         ac_searchEditText.setHint("Buscar por nome da Disordem");
                         ac_searchEditText.setVisibility(View.VISIBLE);
-                        doNameSearch = false;
-                        doDisorderSearch = true;
+                        searchOption = "disorder";
                         ((CentersAutocompleteAdapter)
                                 ac_searchEditText.getAdapter()).setSearchOption("disorder");
 
                     }else if(checkedId == R.id.radio_name_center) {
                         ac_searchEditText.setHint("Buscar por nome do centro");
                         ac_searchEditText.setVisibility(View.VISIBLE);
-                        doNameSearch = true;
-                        doDisorderSearch = false;
                         ((CentersAutocompleteAdapter)
                                 ac_searchEditText.getAdapter()).setSearchOption("name");
+                        searchOption = "name";
                     }else if(checkedId == R.id.radio_specialty_center) {
                         ac_searchEditText.setHint("Buscar por especialidade");
                         ac_searchEditText.setVisibility(View.VISIBLE);
-                        doNameSearch = true;
-                        doDisorderSearch = false;
                         ((CentersAutocompleteAdapter)
                                 ac_searchEditText.getAdapter()).setSearchOption("specialty");
+                        searchOption = "specialty";
                     }else if(checkedId == R.id.radio_uf_center) {
                         ac_searchEditText.setHint("Buscar por local");
                         ac_searchEditText.setVisibility(View.VISIBLE);
-                        doNameSearch = true;
-                        doDisorderSearch = false;
                         ((CentersAutocompleteAdapter)
                                 ac_searchEditText.getAdapter()).setSearchOption("local");
+                        searchOption = "local";
+
                     }
 
 
@@ -277,7 +275,7 @@ public class SearchCentersActivity extends AppCompatActivity {
     private boolean inputIsValid(String userInput, String searchType) {
         int minLength = 0;
         String message = null;
-        if (searchType == "nome") {
+        if (searchOption == "name") {
             message = "Digite mais que dois caracteres";
             minLength = 3;
         } else if (searchType== "orphanumber") {
@@ -313,8 +311,8 @@ public class SearchCentersActivity extends AppCompatActivity {
         protected List<SearchCentersDataResponse> doInBackground(String... params){
             String userInput = params[0];
             String searchType = params[1];
-            CenterAdpter disorders = new CenterAdpter();
-            CenterAdpter centerFinder = new CenterAdpter();
+            CenterAdapter disorders = new CenterAdapter();
+            CenterAdapter centerFinder = new CenterAdapter();
             List<SearchCentersDataResponse> result = null;
 
 

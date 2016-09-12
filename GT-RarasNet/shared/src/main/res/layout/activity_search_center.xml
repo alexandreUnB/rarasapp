@@ -76,9 +76,9 @@
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
                 android:hint="Pesquisar Centro de Referência "
-                android:completionThreshold="3"
+                android:completionThreshold="2"
                 android:drawableRight="@drawable/ic_search_white_24dp"
-                />
+                />df
 
             <android.support.v7.widget.AppCompatMultiAutoCompleteTextView
                 android:id="@+id/act_search_centers_ac_searchBySigns"
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
                 android:hint="Busca por Sinais"
-                android:completionThreshold="3"
+                android:completionThreshold="2"
                 android:drawableRight="@drawable/ic_search_white_24dp"
                 />
 

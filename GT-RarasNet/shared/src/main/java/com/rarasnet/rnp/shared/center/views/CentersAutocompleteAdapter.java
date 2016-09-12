@@ -10,8 +10,6 @@ import android.widget.Filter;
 import android.widget.TextView;
 
 import com.rarasnet.rnp.shared.R;
-import com.rarasnet.rnp.shared.center.controllers.network.SearchCentersAutocomplete;
-import com.rarasnet.rnp.shared.center.controllers.network.SugegetionCentersAdapter;
 import com.rarasnet.rnp.shared.center.controllers.network.responses.SearchCentersDataResponse;
 import com.rarasnet.rnp.shared.center.controllers.tasks.SearchCentersTask;
 
@@ -103,14 +101,16 @@ public class CentersAutocompleteAdapter extends ArrayAdapter<String> {
             protected FilterResults performFiltering(CharSequence constraint) {
                 mAutocompleteListener.onStartFiltering();
                 FilterResults filterResults = new FilterResults();
-                SearchCentersAutocomplete searchCentersAutocomplete = new SearchCentersAutocomplete();
-                CenterAdpter centerFinder = new CenterAdpter();
+//                SearchCentersAutocomplete searchCentersAutocomplete = new SearchCentersAutocomplete();
+                CenterAdapter centerFinder = new CenterAdapter();
+                Log.d("ESTOU", "AQUI");
 
                 //faz pesquisa em tempo de execução após 3 caracteres
                 if (constraint != null) {
                     // cosulta o webservice e retorna uma lista de objetos
                     JSONObject.quote(constraint.toString());
                     List<SearchCentersDataResponse> new_suggestions = null;
+                    Log.d("ESTOU", "AQUI2");
 
                     try {
                         // Convert from Unicode to UTF-8
@@ -124,15 +124,8 @@ public class CentersAutocompleteAdapter extends ArrayAdapter<String> {
                     }
 
                     try {
-
-                       if(searchOption == "name"){
-                           new_suggestions = centerFinder.nameSearch(constraint.toString());
-                       }else if(searchOption == "disorder"){
-                           new_suggestions = centerFinder.disorderSearch(constraint.toString());
-                       }else if(searchOption == "specialty"){
-                       }else { // local
-                       }
-
+                         new_suggestions = centerFinder.autoComplete(constraint.toString(),
+                                   searchOption);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

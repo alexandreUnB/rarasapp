@@ -1,9 +1,7 @@
 package com.rarasnet.rnp.shared.center.controllers.network;
 ;
-import com.rarasnet.rnp.shared.center.controllers.network.requests.SearchCentersRequest;
 import com.rarasnet.rnp.shared.center.controllers.network.responses.SearchCentersDataResponse;
-import com.rarasnet.rnp.shared.center.views.CenterAdpter;
-import com.rarasnet.rnp.shared.network.connections.RarasConnection;
+import com.rarasnet.rnp.shared.center.views.CenterAdapter;
 
 import java.util.List;
 
@@ -27,7 +25,7 @@ public class SugegetionCentersAdapter {
 
         List<SearchCentersDataResponse> searchCentersDataResponses = null;
 
-        CenterAdpter centerFinder = new CenterAdpter();
+        CenterAdapter centerFinder = new CenterAdapter();
         searchCentersDataResponses = centerFinder.nameSearch(userInput);
 //        RarasConnection requester = new RarasConnection(RarasConnection.ACTION_SEARCH_CENTERS);
 

@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Created by Ronnyery Barbosa on 05/02/2016.
  */
-public class CenterAdpter  {
+public class CenterAdapter {
 
 //private String searchURL = "http://192.168.56.2/webservice/rest_profissionais.json";
 
@@ -38,7 +38,8 @@ public class CenterAdpter  {
     //private String searchURL = "http://192.168.85.1/raras/webservice/rest_desordens.json";
     private String nameURL = RarasNet.urlPrefix + "/api/centerName/";
     private String disorderURL = RarasNet.urlPrefix + "/api/centerDisorder/";
-    private String disorderURL = RarasNet.urlPrefix + "/api/centerDisorder/";
+    private String specialtyURL = RarasNet.urlPrefix + "/api/centerSpecialty/";
+    private String localURL = RarasNet.urlPrefix + "/api/centerLocal/";
 
 
     /**
@@ -69,14 +70,31 @@ public class CenterAdpter  {
     }
 
     /**
-     * search centers on server by disorder name
-     * @param userInput
+     * autocomplete search method
+     * @param userInput, option
+     *
      * @return
      * @throws Exception
      */
-    public List<SearchCentersDataResponse> disorderSearch(String userInput) throws Exception {
-        String searchURL = disorderURL + userInput.replace(" ", "%20");
+    public List<SearchCentersDataResponse> autoComplete(String userInput, String option) throws Exception {
+        String searchURL;
         List<SearchCentersDataResponse> centers = null;
+
+        switch (option)
+        {
+            case "local":
+                searchURL = localURL + userInput.replace(" ", "%20");
+            break;
+            case "disorder":
+                searchURL = disorderURL + userInput.replace(" ", "%20");
+            break;
+            case "specialty":
+                searchURL = specialtyURL + userInput.replace(" ", "%20");
+            break;
+            default:
+                searchURL = nameURL + userInput.replace(" ", "%20");
+            break;
+        }
 
         try {
             // Creating service handler class instance
@@ -94,6 +112,9 @@ public class CenterAdpter  {
         }
 
     }
+
+
+
 
     /**
      * Method responsible for parsing Json response
