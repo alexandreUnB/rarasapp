@@ -122,13 +122,8 @@ public class ProfessionalsAutocompleteAdapter extends ArrayAdapter<String> {
                     //new SearchProfissionaisTask(searchProfissionaisCallback).execute(constraint.toString(),searchOption);
 
                     try {
-                        if(searchOption == "name"){
                             newSuggestion = professionals.autoComplete(constraint.toString(),
-                                    "name");
-                        }else{
-                            newSuggestion = professionals.autoComplete(constraint.toString(),
-                                    "disorder");
-                        }
+                                    searchOption);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }

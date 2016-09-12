@@ -33,9 +33,10 @@ import java.util.List;
 
 public class ProfissionaisAdapter {
     /* Laravel api url used to get request response */
-    private String url = RarasNet.urlPrefix + "/api/professionalName/";
-    private String urlDisorder = RarasNet.urlPrefix + "/api/profDisorder/";
-
+    private String nameURL = RarasNet.urlPrefix + "/api/professionalName/";
+    private String disorderURL = RarasNet.urlPrefix + "/api/profDisorder/";
+    private String specialtyURL = RarasNet.urlPrefix + "/api/centerSpecialty/";
+    private String localURL = RarasNet.urlPrefix + "/api/professionalLocal/";
 
     /**
     * Method that is called after Professional search icon is pressed.
@@ -51,7 +52,7 @@ public class ProfissionaisAdapter {
             // Creating service handler class instance
             ServiceHandler sh = new ServiceHandler();
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(url + userInput.replace(" ","%20"), ServiceHandler.GET);
+            String jsonStr = sh.makeServiceCall(nameURL + userInput.replace(" ","%20"), ServiceHandler.GET);
 
             Log.d("Entrei no nome", "ENTREI");
 
@@ -59,7 +60,8 @@ public class ProfissionaisAdapter {
             // and passed to and equivalent object
             // and passed to and equivalent object
             if(jsonStr != null){
-                List<LaravelSearchProfissionaisDataResponse> disordersTeste = getDiseasesNew(jsonStr);
+                List<LaravelSearchProfissionaisDataResponse> disordersTeste =
+                        getProfessionals(jsonStr);
                 return disordersTeste;
             }
         }catch (Exception e)
@@ -112,17 +114,28 @@ public class ProfissionaisAdapter {
             // Creating service handler class instance
             ServiceHandler sh = new ServiceHandler();
             // Making a request to url and getting response
-            String searchUrl;
+            String searchURL;
 
-            if(searchOption == "name"){
-                searchUrl = url;
-            }else{
-                searchUrl = urlDisorder;
+            switch (searchOption)
+            {
+                case "local":
+                    searchURL = localURL + userInput.replace(" ", "%20");
+                    break;
+                case "disorder":
+                    searchURL = disorderURL + userInput.replace(" ", "%20");
+                    break;
+                case "specialty":
+                    searchURL = specialtyURL + userInput.replace(" ", "%20");
+                    break;
+                default:
+                    searchURL = nameURL + userInput.replace(" ", "%20");
+                    break;
             }
 
-            Log.d("Search",searchOption);
-            String jsonStr = sh.makeServiceCall(searchUrl +
-                    userInput.replace(" ","%20"), ServiceHandler.GET);
+            Log.d("URL", searchURL);
+
+
+            String jsonStr = sh.makeServiceCall(searchURL, ServiceHandler.GET);
 
             // In case we get a response, the json info received is parsed
             // and passed to and equivalent object
@@ -131,11 +144,8 @@ public class ProfissionaisAdapter {
 
                 List<LaravelSearchProfissionaisDataResponse> disordersTeste;
 
-                if(searchOption == "name"){
-                    disordersTeste = getDiseasesNew(jsonStr);;
-                }else{
-                    disordersTeste = getByDisorder(jsonStr);;
-                }
+                disordersTeste = getProfessionals(jsonStr);
+
 
 
                 List<String> profissionais = new ArrayList<>();
@@ -185,6 +195,36 @@ public class ProfissionaisAdapter {
         }
 
         return disorders;
+    }
+
+
+    /**
+     * Method responsible for parsing Json response
+     * and get its disorders information
+     * @param jsonString
+     * @return Disorder
+     */
+    private List<LaravelSearchProfissionaisDataResponse> getProfessionals(String jsonString) throws Exception {
+        List<LaravelSearchProfissionaisDataResponse> professionals =
+                new ArrayList<LaravelSearchProfissionaisDataResponse>();
+        Gson gson = new Gson();
+        try {
+            JSONObject ob = new JSONObject(jsonString);
+            JSONArray jArray = ob.getJSONArray("professionals");
+
+            int i = 0;
+            while (!jArray.isNull(i)) {
+
+                professionals.add(gson.fromJson(jArray.getString(i),
+                        LaravelSearchProfissionaisDataResponse.class));
+                i++;
+            }
+        } catch (JSONException e) {
+            Log.d("[Prof Search]Error", e.getMessage());
+            throw new Exception();
+        }
+
+        return professionals;
     }
 
 

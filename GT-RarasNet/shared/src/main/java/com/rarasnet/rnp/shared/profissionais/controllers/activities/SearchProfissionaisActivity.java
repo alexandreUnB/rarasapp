@@ -69,6 +69,7 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
     private ProgressDialog pDialog;
     private ListView mListaProfissionais;
     private RadioGroup radioGroup;
+    private String searchOption = "name";
 
     private View.OnTouchListener et_search_touchListener = new View.OnTouchListener() {
         @Override
@@ -195,18 +196,26 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
                     if (checkedId == R.id.radio_disorder_professional) {
                         ac_searchEditText.setHint("Buscar por nome da disordem");
                         ac_searchEditText.setVisibility(View.VISIBLE);
-                        doNameSearch = false;
-                        doDisorderSearch = true;
                         ((ProfessionalsAutocompleteAdapter)
                                 ac_searchEditText.getAdapter()).setSearchOption("disorder");
 
                     }else if(checkedId == R.id.radio_name_professional) {
                         ac_searchEditText.setHint("Buscar por nome do profissional");
                         ac_searchEditText.setVisibility(View.VISIBLE);
-                        doNameSearch = true;
-                        doDisorderSearch = false;
                         ((ProfessionalsAutocompleteAdapter)
                                 ac_searchEditText.getAdapter()).setSearchOption("name");
+
+                    }else if(checkedId == R.id.radio_specialty_professional){
+                        ac_searchEditText.setHint("Buscar por especialidade");
+                        ac_searchEditText.setVisibility(View.VISIBLE);
+                        ((ProfessionalsAutocompleteAdapter)
+                                ac_searchEditText.getAdapter()).setSearchOption("specialty");
+
+                    }else{ //local
+                        ac_searchEditText.setHint("Buscar por local");
+                        ac_searchEditText.setVisibility(View.VISIBLE);
+                        ((ProfessionalsAutocompleteAdapter)
+                                ac_searchEditText.getAdapter()).setSearchOption("local");
 
                     }
                 }}
@@ -248,7 +257,7 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
     private boolean inputIsValid(String userInput, String searchType) {
         int minLength = 0;
         String message = null;
-        if (searchType == "nome") {
+        if (searchOption == "nome") {
             message = "Digite mais que dois caracteres";
             minLength = 3;
         } else if (searchType== "orphanumber") {

@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textCapWords"
                 android:hint="Pesquisar Profissional"
-                android:completionThreshold="3"
+                android:completionThreshold="2"
                 android:drawableRight="@drawable/ic_search_white_24dp"
                 />
 
@@ -125,24 +125,56 @@
                 android:layout_height="wrap_content"
 
                 android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pesquisa por: "/>
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Pesquisa por: "/>-->
+                <!--<RadioButton android:id="@+id/radio_name_professional"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:text="Nome"-->
+                    <!--android:onClick="onRadioButtonClicked"/>-->
+
+                <!--<RadioButton android:id="@+id/radio_disorder_professional"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:text="Disordem"-->
+                    <!--android:onClick="onRadioButtonClicked"/>-->
+
                 <RadioButton android:id="@+id/radio_name_professional"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:text="Nome"
-
-                    android:onClick="onRadioButtonClicked"/>
+                    android:textSize="11dp"
+                    android:onClick="onRadioButtonClicked"
+                    android:layout_weight="0.2" />
                 <RadioButton android:id="@+id/radio_disorder_professional"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:text="Disordem"
-                    android:onClick="onRadioButtonClicked"/>
-
+                    android:textSize="11dp"
+                    android:onClick="onRadioButtonClicked"
+                    android:layout_weight="0.25"/>
+                <RadioButton android:id="@+id/radio_uf_professional"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Local"
+                    android:textSize="11dp"
+                    android:onClick="onRadioButtonClicked"
+                    android:layout_weight="0.2" />
+                <RadioButton android:id="@+id/radio_specialty_professional"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:text="Especialidade"
+                    android:textSize="11dp"
+                    android:onClick="onRadioButtonClicked"
+                    android:layout_weight="0.35" />
 
             </RadioGroup>
         </RelativeLayout>
