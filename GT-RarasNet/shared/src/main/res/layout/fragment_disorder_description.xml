@@ -188,29 +188,30 @@
             />
 
             <TextView
-                android:id="@+id/frag_disorder_description_tv_download"
+                android:id="@+id/frag_disorder_view_protocol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:layout_marginTop="12dp"
                 android:layout_below="@id/frag_disorder_description_tv_especialidadesValue"
                 android:layout_toLeftOf="@id/frag_disorder_description_iv_downloadIcon"
-                android:text="Baixar Protocolo"
+                android:text="Visualizar Protocolo"
                 android:textColor="@color/primary_accent"
+                android:layout_alignParentBottom="true"
             />
 
-            <TextView
-                android:id="@+id/frag_disorder_description_tv_expertlink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:layout_below="@id/frag_disorder_description_tv_download"
-                android:layout_alignLeft="@id/frag_disorder_description_tv_download"
-                android:singleLine="true"
-                android:layout_marginTop="12dp"
-                android:text="Consultar Orpha"
-                android:textColor="@color/primary_accent"
-                />
+            <!--<TextView-->
+                <!--android:id="@+id/frag_disorder_description_tv_expertlink"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="14sp"-->
+                <!--android:layout_below="@id/frag_disorder_description_tv_download"-->
+                <!--android:layout_alignLeft="@id/frag_disorder_description_tv_download"-->
+                <!--android:singleLine="true"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:text="Consultar Orpha"-->
+                <!--android:textColor="@color/primary_accent"-->
+                <!--/>-->
 
         </RelativeLayout>
 

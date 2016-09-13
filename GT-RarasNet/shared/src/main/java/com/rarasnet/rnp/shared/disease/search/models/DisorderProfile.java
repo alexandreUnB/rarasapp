@@ -8,6 +8,7 @@ import com.rarasnet.rnp.shared.models.Disorder;
 import com.rarasnet.rnp.shared.models.Indicator;
 import com.rarasnet.rnp.shared.models.Professional;
 import com.rarasnet.rnp.shared.disease.profile.description.Specialty;
+import com.rarasnet.rnp.shared.protocol.ProtocolModel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,6 +27,16 @@ public class DisorderProfile implements Serializable {
     private List<Synonym> Synonyms;
     private List<Professional> Professional;
     private List<Center> Center;
+
+    public ProtocolModel getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(ProtocolModel protocol) {
+        this.protocol = protocol;
+    }
+
+    private ProtocolModel protocol;
     public Hashtable<String, Hashtable<String, String>> unionIndicators;
 
     public List<Indicator> getIndicators() {
@@ -54,7 +65,7 @@ public class DisorderProfile implements Serializable {
     public DisorderProfile(Disorder disorder,  List<Specialty> specialties, List<Reference> references, List<Sign> signs,
                            List<Synonym> synonyms, List<Professional> professional,
                            List<Center> center, Mortalidade mortalidade, DadosNacionais dadosNacionais,
-                           List<Indicator> indicators, Cid cid) {
+                           List<Indicator> indicators, ProtocolModel protocol, Cid cid) {
 
 
         Disorder = disorder;
@@ -68,7 +79,7 @@ public class DisorderProfile implements Serializable {
         this.dadosNacionais = dadosNacionais;
         this.cid = cid;
         Indicators = indicators;
-
+        this.protocol = protocol;
 
         // union of indicators with same name
         unionIndicators = new Hashtable<String,  Hashtable<String, String>>();

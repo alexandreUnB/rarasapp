@@ -13,6 +13,7 @@ import com.rarasnet.rnp.shared.models.Indicator;
 import com.rarasnet.rnp.shared.models.Professional;
 import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.LaravelSearchProfissionaisDataResponse;
 import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.ServiceHandler;
+import com.rarasnet.rnp.shared.protocol.ProtocolModel;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -63,7 +64,7 @@ public class DisorderProfileModel {
         List<Indicator> indicators = null;
         DadosNacionais dadosNacionais = null;
         Cid cid = null;
-
+        ProtocolModel protocol = null;
         String jsonResult;
         DisorderProfile profile;
 
@@ -92,6 +93,7 @@ public class DisorderProfileModel {
                 professionals = getProfessionais(jsonStr);
                 signsCounter = getSignsCounter(jsonStr);
                 indicators = getIndicators(jsonStr);
+                protocol = getProtocol(jsonStr);
 
 //                mortalidade = getMortalidade(jsonResult);
 //                synonyms = getSynonyms(jsonResult);
@@ -108,7 +110,7 @@ public class DisorderProfileModel {
 
 
         profile = new DisorderProfile(disorder, specialties, references, signs, synonyms, professionals,
-                centers, mortalidade, dadosNacionais, indicators, cid);
+                centers, mortalidade, dadosNacionais, indicators, protocol, cid);
         profile.setSignCounter(signsCounter);
         return profile;
     }
@@ -133,6 +135,7 @@ public class DisorderProfileModel {
         }
         return disorder;
     }
+
 
     /**
      * Method responsible for parsing Json response
@@ -334,198 +337,28 @@ public class DisorderProfileModel {
         return indicators;
     }
 
-    // CODIGO LEGADO
-//    public DisorderProfile getProfile(String diseaseID) {
-//
-//        String searchURL = urlPrefix + diseaseID + ".json";
-//        Log.d("url",searchURL);
-//        DefaultHttpClient httpClient = new DefaultHttpClient();
-//        Disorder disorder = null;
-//
-//        Mortalidade mortalidade = null;
-//        List<Synonym> synonyms = null;
-//        List<Sign> signs = null;
-//        List<Reference> references = null;
-//        List<Professional> professionals = null;
-//        List<Center> centers = null;
-//        DadosNacionais dadosNacionais = null;
-//        Cid cid = null;
-//
-//        String jsonResult;
-//        DisorderProfile profile;
-//
-//
-//        try {
-//
-//
-//            HttpResponse response = httpClient.execute(new HttpGet(searchURL));
-//            HttpEntity entity = response.getEntity();
-//
-//            if (entity != null) {
-//                InputStream instream = entity.getContent();
-//                jsonResult = toString(instream);
-//                Log.d("JSON_STRING_RESULT:", jsonResult);
-//                instream.close();
-//
-//                disorder = getDisorder(jsonResult);
-//                mortalidade = getMortalidade(jsonResult);
-//                synonyms = getSynonyms(jsonResult);
-//                signs = getSigns(jsonResult);
-//                references = getReferences(jsonResult);
-//                professionals = getProfessionais(jsonResult);
-//                centers = getCenter(jsonResult);
-//                dadosNacionais = getDadosNacionais(jsonResult);
-//                cid = getCid(jsonResult);
-//            }
-//
-//        } catch (Exception e) {
-//
-//            Log.e("IHHHH", "falhou: " + e);
-//        }
-//
-//
-//        profile = new DisorderProfile(disorder, references, signs, synonyms, professionals,
-//                centers, mortalidade, dadosNacionais, cid);
-//        return profile;
-//    }
-//
-//
-//
-//    private List<Synonym> getSynonyms(String jString) {
-//        List<Synonym> synonyms = new ArrayList<Synonym>();
-//
-//        try {
-//
-//
-//            JSONObject ob = new JSONObject(jString).getJSONObject("desorden");
-//            JSONArray jArray = ob.getJSONArray("Sinonimo");
-//
-//            int i = 0;
-//            while (!jArray.isNull(i)) {
-//                String stringSynonym = jArray.getString(i);
-//                //Log.d("SYNONYM_STRING:", stringSynonym);
-//
-//                Synonym syn = gson.fromJson(stringSynonym, Synonym.class);
-//                synonyms.add(syn);
-//                i++;
-//            }
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return synonyms;
-//    }
-//
-//
-//
-//    private List<Reference> getReferences(String jString) {
-//        List<Reference> references = new ArrayList<Reference>();
-//
-//        try {
-//
-//            JSONObject ob = new JSONObject(jString).getJSONObject("desorden");
-//            JSONArray jArray = ob.getJSONArray("Referencia");
-//
-//            int i = 0;
-//            while (!jArray.isNull(i)) {
-//                String stringReference = jArray.getString(i);
-//                //Log.d("REFERENCE_STRING:", stringReference);
-//                //aux = objTest.getString("name");
-//                //Log.d("gson46.1",aux);
-//
-//                Reference reference = gson.fromJson(stringReference, Reference.class);
-//                //Log.d("gson46.1",aux);
-//                references.add(reference);
-//                i++;
-//            }
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return references;
-//    }
-//
-//
-//
-//
-//
-//
-//    private Mortalidade getMortalidade(String jString) {
-//
-//        Gson gson = new Gson();
-//        Mortalidade mortalidade = null;
-//
-//
-//
-//            try {
-//
-//                JSONObject ob = new JSONObject(jString).getJSONObject("desorden");
-//                JSONArray jArray = ob.getJSONArray("Mortalidade");
-//                int i=0;
-//                while (!jArray.isNull(i)) {
-//                    String stringSign = jArray.getString(i);
-//                    //Log.d("SIGN_STRING:", stringSign);
-//                    //aux = objTest.getString("name");
-//                    Log.d("json", stringSign);
-//
-//                    mortalidade = gson.fromJson(stringSign, Mortalidade.class);
-//                    Log.d("Teste", mortalidade.getAno2004());
-//                    //mortalidade.add(mortalit);
-//                    i++;
-//                }
-//
-//        } catch (JSONException e) {
-//
-//            e.printStackTrace();
-//        }
-//        return mortalidade;
-//    }
-//
-//    private DadosNacionais getDadosNacionais(String jsonResult) {
-//
-//        DadosNacionais dadosNacionais = null;
-//
-//        try {
-//            JSONObject jObj = new JSONObject(jsonResult);
-//            String dadosNacionaisString = jObj.getJSONObject("desorden").getString("DadosNacionai");
-//            Log.d("PMODEL: ", dadosNacionaisString);
-//            dadosNacionais = gson.fromJson(dadosNacionaisString, DadosNacionais.class);
-//        } catch (JSONException e) {
-//            Log.d("PMODEL: ", "Erro na conversão dos dados nacionais");
-//            e.printStackTrace();
-//        }
-//
-//        return dadosNacionais;
-//    }
-//
-//    private Cid getCid(String jsonResult) {
-//
-//        Cid cid = null;
-//
-//        try {
-//            JSONObject jObj = new JSONObject(jsonResult);
-//            String cidString = jObj.getJSONObject("desorden").getString("cids");
-//            Log.d("CIDMODEL: ", cidString);
-//            cid = gson.fromJson(cidString, Cid.class);
-//            //Log.d("CIDMODEL: ", cidString);
-//            //Log.d("CIDMODELid: ", cid.getId());
-//        } catch (JSONException e) {
-//            Log.d("cidODEL: ", "Erro na conversão dos dados nacionais");
-//            e.printStackTrace();
-//        }
-//
-//        return cid;
-//    }
-//
-//
-//    private String toString(InputStream is) throws IOException {
-//        byte[] bytes = new byte[1024];
-//        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-//        int lidos;
-//        while ((lidos = is.read(bytes)) > 0) {
-//            baos.write(bytes, 0, lidos);
-//        }
-//        return new String(baos.toByteArray());
-//    }
+
+    /**
+     * Method responsible for parsing Json response
+     * and get its protocols information
+     * @param jString
+     * @return Disorder
+     */
+    private ProtocolModel getProtocol(String jString) {
+
+        ProtocolModel protocol = null;
+
+        try {
+            JSONObject jObj = new JSONObject(jString);
+            String string =  jObj.getString("protocol");
+
+            protocol = gson.fromJson(string, ProtocolModel.class);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return protocol;
+    }
+
+
+
 }

@@ -91,15 +91,15 @@ public class DescriptionFragment  extends Fragment {
             tv_cid.setText("Não cadastrado.");
         }
 
-        tv_expertlink = (TextView) view.findViewById(R.id.frag_disorder_description_tv_expertlink);
-        tv_expertlink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                init(v);
-                show("Consultar Orphanet", "Deseja consulta doença " +disorderProfile.getDadosNacionais().getDoenca()+ " no Orphanet","","");
-
-            }
-        });
+//        tv_expertlink = (TextView) view.findViewById(R.id.frag_disorder_description_tv_expertlink);
+//        tv_expertlink.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                init(v);
+//                show("Consultar Orphanet", "Deseja consulta doença " +disorderProfile.getDadosNacionais().getDoenca()+ " no Orphanet","","");
+//
+//            }
+//        });
 
         tv_descricao = (TextView) view.findViewById(R.id.frag_disorder_description_tv_descricao);
 
@@ -109,27 +109,27 @@ public class DescriptionFragment  extends Fragment {
             tv_descricao.setText(descricao);
         }
 
-        tv_protocolo = (TextView) view.findViewById(R.id.frag_disorder_description_tv_download);
-        tv_protocolo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                init(v);
-              show("Baixar Protocolo","Deseja Baixar protocolo de",disorderProfile.getDadosNacionais().getDoenca(),"pdf");
-               /* if(disorderProfile.getDadosNacionais().getProtocolo() == null){
-
-                }else {
-                    if(PDFManager.hasFileInLocal(disorderProfile.getDadosNacionais().getProtocolo())) {
-                        openPDF(Uri.parse(pManager.getLocalPDFPath(disorderProfile.getDadosNacionais().getProtocolo())));
-                    } else {
-                        Log.d("nome",disorderProfile.getDadosNacionais().getProtocolo());
-                        Log.d("id",disorderProfile.getDadosNacionais().getId());
-                        downloadedPdfName = disorderProfile.getDadosNacionais().getProtocolo();
-                        Log.d("nome",downloadedPdfName);
-                        pManager.downloadPDF(disorderProfile.getDadosNacionais().getProtocolo(), disorderProfile.getDadosNacionais().getId());
-                    }
-                }*/
-            }
-        });
+//        tv_protocolo = (TextView) view.findViewById(R.id.frag_disorder_description_tv_download);
+//        tv_protocolo.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                init(v);
+//              show("Baixar Protocolo","Deseja Baixar protocolo de",disorderProfile.getDadosNacionais().getDoenca(),"pdf");
+//               /* if(disorderProfile.getDadosNacionais().getProtocolo() == null){
+//
+//                }else {
+//                    if(PDFManager.hasFileInLocal(disorderProfile.getDadosNacionais().getProtocolo())) {
+//                        openPDF(Uri.parse(pManager.getLocalPDFPath(disorderProfile.getDadosNacionais().getProtocolo())));
+//                    } else {
+//                        Log.d("nome",disorderProfile.getDadosNacionais().getProtocolo());
+//                        Log.d("id",disorderProfile.getDadosNacionais().getId());
+//                        downloadedPdfName = disorderProfile.getDadosNacionais().getProtocolo();
+//                        Log.d("nome",downloadedPdfName);
+//                        pManager.downloadPDF(disorderProfile.getDadosNacionais().getProtocolo(), disorderProfile.getDadosNacionais().getId());
+//                    }
+//                }*/
+//            }
+//        });
 
 
 

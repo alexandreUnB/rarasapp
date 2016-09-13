@@ -35,7 +35,7 @@ public class ProfissionaisAdapter {
     /* Laravel api url used to get request response */
     private String nameURL = RarasNet.urlPrefix + "/api/professionalName/";
     private String disorderURL = RarasNet.urlPrefix + "/api/profDisorder/";
-    private String specialtyURL = RarasNet.urlPrefix + "/api/centerSpecialty/";
+    private String specialtyURL = RarasNet.urlPrefix + "/api/professionalSpecialty/";
     private String localURL = RarasNet.urlPrefix + "/api/professionalLocal/";
 
     /**

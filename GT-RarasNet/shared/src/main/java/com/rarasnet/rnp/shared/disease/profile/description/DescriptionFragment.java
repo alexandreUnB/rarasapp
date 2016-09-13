@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.ronnyerybarbosa.library.MaterialDialog;
 import com.rarasnet.rnp.shared.R;
+import com.rarasnet.rnp.shared.application.RarasNet;
 import com.rarasnet.rnp.shared.disease.profile.DisorderProfileActivity;
 import com.rarasnet.rnp.shared.disease.search.models.DisorderProfile;
 import com.rarasnet.rnp.shared.util.managers.PDFManager;
@@ -43,6 +44,7 @@ public class DescriptionFragment  extends Fragment {
     private String downloadedPdfId;
     private PDFReceiver pdfBroadcastReceiver;
     private ProtocolsManager pManager;
+    private String pdf_url = RarasNet.urlPrefix + "/protocols/";
 
     private DisorderProfile disorderProfile = DisorderProfileActivity.mDisorderProfile;
 
@@ -105,15 +107,15 @@ public class DescriptionFragment  extends Fragment {
             tv_cid.setText("Não cadastrado.");
         }
 
-        tv_expertlink = (TextView) view.findViewById(R.id.frag_disorder_description_tv_expertlink);
-        tv_expertlink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                init(v);
-                show("Consultar Orphanet", "Deseja consulta doença " +disorderProfile.getDisorder().getName()+ " no Orphanet","","");
-
-            }
-        });
+//        tv_expertlink = (TextView) view.findViewById(R.id.frag_disorder_description_tv_expertlink);
+//        tv_expertlink.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                init(v);
+//                show("Consultar Orphanet", "Deseja consulta doença " +disorderProfile.getDisorder().getName()+ " no Orphanet","","");
+//
+//            }
+//        });
 
         tv_descricao = (TextView) view.findViewById(R.id.frag_disorder_description_tv_descricao);
 
@@ -123,16 +125,21 @@ public class DescriptionFragment  extends Fragment {
             tv_descricao.setText(descricao);
         }
 
-        tv_protocolo = (TextView) view.findViewById(R.id.frag_disorder_description_tv_download);
+        tv_protocolo = (TextView) view.findViewById(R.id.frag_disorder_view_protocol);
         tv_protocolo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (disorderProfile.getDadosNacionais().getProtocolo() == null){
-                    Toast.makeText(getActivity(),"Não existe protocolo no Brasil para essa doença.",Toast.LENGTH_LONG).show();
+                if (disorderProfile.getProtocol() == null ||
+                        disorderProfile.getProtocol().getId()  == null){
+                    Toast.makeText(getActivity(),"Não existe protocolo para essa doença.",
+                            Toast.LENGTH_LONG).show();
                 }else {
 
                     init(v);
-                    show2("Visualizar Protocolo", "Deseja  visualizar protocolo(pdf) de " + disorderProfile.getDadosNacionais().getDoenca(), "", disorderProfile.getDadosNacionais().getProtocolo(), disorderProfile.getDadosNacionais().getId());
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                            Uri.parse(pdf_url + disorderProfile.getProtocol().getName_pdf()));
+                    startActivity(browserIntent);
+//                    show2("Visualizar Protocolo", "Deseja  visualizar protocolo(pdf) de " + disorderProfile.getDadosNacionais().getDoenca(), "", disorderProfile.getDadosNacionais().getProtocolo(), disorderProfile.getDadosNacionais().getId());
 
                     //show("Baixar Protocolo", "Deseja Baixar protocolo de", disorderProfile.getDisorder().getName(), "pdf");
                 }
