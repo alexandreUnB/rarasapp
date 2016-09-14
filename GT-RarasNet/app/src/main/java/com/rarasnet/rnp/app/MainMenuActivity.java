@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.rarasnet.rnp.documentos.MainActivity;
@@ -43,7 +44,8 @@ public class MainMenuActivity extends AppCompatActivity {
         Log.d("pass main", RarasNetPreferenceUtil.getPreference(RarasNetPreferenceUtil.PASSW, "PASSW"));
 
 
-
+        ImageButton settings = (ImageButton) findViewById(R.id.showAllButton);
+        settings.setOnClickListener(show_all_Listener);
 
         CardView mDoencas = (CardView) findViewById(R.id.act_menu_cv_doencas);
         mDoencas.setOnClickListener(new View.OnClickListener() {
@@ -132,6 +134,17 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
     }
+
+    private View.OnClickListener show_all_Listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent it = new Intent(MainMenuActivity.this,
+                    com.rarasnet.rnp.shared.settings.SettingsActivity.class);
+            Toast.makeText(MainMenuActivity.this, "Configurações.",
+                    Toast.LENGTH_LONG).show();
+            startActivity(it);
+        }
+    };
 
 
     @Override
