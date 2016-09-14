@@ -461,17 +461,13 @@ private android.app.AlertDialog progress;
 
 
     private void renderDisordersList(List<Disorder> disorders) {
-//        Log.d("TEste", disorders.get(1).getName());
         mSearchResultsAdapter.clear();
         mSearchResultsAdapter.addAll(disorders);
         mSearchResultsAdapter.notifyDataSetChanged();
         lv_searchResults.setVisibility(View.VISIBLE);
-        Log.d("TEste", "aqui2");
         float actionBarSize = getResources().getDimension(R.dimen.abc_action_bar_default_height_material);
         ac_searchEditText.setVisibility(View.GONE);
-        Log.d("TEste", "aqui3");
         shrink(mToolbar, Math.round(actionBarSize), disorders.size());
-        Log.d("TEste", "aqui4");
     }
 
 
@@ -507,7 +503,7 @@ private android.app.AlertDialog progress;
     }
 
  /*
-*Inner Class responsável pela criação da Thread que fará a consulta ao BD,
+* Inner Class responsável pela criação da Thread que fará a consulta ao BD,
 * seus resultados
 */
 

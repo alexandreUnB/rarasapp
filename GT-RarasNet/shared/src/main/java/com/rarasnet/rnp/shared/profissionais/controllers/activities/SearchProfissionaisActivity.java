@@ -149,7 +149,8 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         pb_searchProgress.setVisibility(View.INVISIBLE);
-                        ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, et_search_sendButtonResource, 0);
+                        ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0,
+                                et_search_sendButtonResource, 0);
                         ac_searchEditText.setOnTouchListener(et_search_touchListener);
                     }
                 });

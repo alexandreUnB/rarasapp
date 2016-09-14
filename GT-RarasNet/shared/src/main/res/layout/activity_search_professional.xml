@@ -72,7 +72,7 @@
             <android.support.v7.widget.AppCompatAutoCompleteTextView
                 android:id="@+id/act_search_professional_et_search"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="42dp"
                 android:inputType="textCapWords"
                 android:hint="Pesquisar Profissional"
                 android:completionThreshold="2"
@@ -83,7 +83,7 @@
                 android:id="@+id/act_search_professional_ac_searchBySigns"
                 android:visibility="invisible"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="42dp"
                 android:inputType="textCapWords"
                 android:hint="Busca por Sinais"
                 android:completionThreshold="3"
