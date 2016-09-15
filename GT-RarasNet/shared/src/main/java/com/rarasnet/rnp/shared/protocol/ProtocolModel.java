@@ -11,6 +11,16 @@ public class ProtocolModel {
     private String id;
     private String document;
 
+    public String getDisorder_name() {
+        return disorder_name;
+    }
+
+    public void setDisorder_name(String disorder_name) {
+        this.disorder_name = disorder_name;
+    }
+
+    private String disorder_name;
+
     public String getId() {
         return id;
     }

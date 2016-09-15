@@ -89,7 +89,8 @@ public class ProtocolSearchResultsAdapter extends ArrayAdapter<ProtocolModel> {
             // CODIGO NOVO
             // Gets professional info returned by laravel api and
             // displays it on a new screen
-            viewHolder.tv_nome.setText(professional.getDocument());
+            viewHolder.tv_nome.setText("[" + professional.getDisorder_name() + "] "
+                    + professional.getDocument());
             viewHolder.tv_cidade.setText("");
             viewHolder.tv_profissao.setText("");
             viewHolder.imagem.setImageResource(R.mipmap.pdf_icon);

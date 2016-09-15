@@ -46,7 +46,9 @@ public class ProtocolProfileModel {
             }
 
             for (ProtocolModel p : protocols) {
-                suggestions.add(p.getDocument());
+//                suggestions.add("[" + p.getDisorder_name() + "] " + p.getDocument());
+                suggestions.add(p.getDisorder_name());
+
             }
 
         } catch (Exception e) {
