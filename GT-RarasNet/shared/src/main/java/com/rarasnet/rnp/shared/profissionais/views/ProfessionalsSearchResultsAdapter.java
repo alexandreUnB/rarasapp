@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -65,6 +66,7 @@ public class ProfessionalsSearchResultsAdapter extends ArrayAdapter<LaravelSearc
             // well set up the ViewHolder
             viewHolder = new ViewHolder();
 
+            viewHolder.loadButton = (ImageButton) convertView.findViewById(R.id.loadButton);
             viewHolder.tv_nome = (TextView) convertView.findViewById(R.id.default_search_item_tv_principal);
             viewHolder.tv_cidade = (TextView) convertView.findViewById(R.id.default_search_item_tv_info1);
             viewHolder.tv_profissao = (TextView) convertView.findViewById(R.id.default_search_item_tv_info2);
@@ -99,6 +101,9 @@ public class ProfessionalsSearchResultsAdapter extends ArrayAdapter<LaravelSearc
             viewHolder.tv_nome.setText(professional.getName() + professional.getSurname());
             viewHolder.tv_cidade.setText(professional.getCity()+ " - " + professional.getUf());
             viewHolder.tv_profissao.setText(professional.getProfession());
+            viewHolder.loadButton.setClickable(false);
+            viewHolder.loadButton.setEnabled(false);
+            viewHolder.loadButton.setVisibility(View.INVISIBLE);
         }
 
         return convertView;
@@ -117,5 +122,7 @@ public class ProfessionalsSearchResultsAdapter extends ArrayAdapter<LaravelSearc
         TextView tv_cidade;
         TextView tv_uf;
         ImageView iv_isFavoriteDoenca;
+        ImageButton loadButton;
+
     }
 }
