@@ -5,13 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="100dp">
 
-    <ImageView
-        android:id="@+id/default_3line_icon_descript_item_iv_icon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true" />
+    <!--<ImageView-->
+        <!--android:id="@+id/default_3line_icon_descript_item_iv_icon"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_alignParentBottom="true" />-->
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/loadButton"
+        android:clickable="true"
+        android:src="@drawable/ic_load_items"
+        android:scaleType="fitCenter"
+        android:background="?android:selectableItemBackground"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
     <!--        android:background="@drawable/menu_round_icon_bg"
 -->
 

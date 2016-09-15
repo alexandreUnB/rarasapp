@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -54,19 +55,14 @@ public class SignsAdapter extends RecyclerView.Adapter<SignsAdapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         Sign item = mItems.get(position);
         if(position == last_loaded){
-            viewHolder.foto.setImageResource(R.mipmap.ic_add_load);
             viewHolder.textViewPrincipal.setText("");
             viewHolder.textViewInfo1.setText("");
-        }else{
-            viewHolder.foto.setImageResource(0);
-            viewHolder.textViewPrincipal.setText(item.getName());
-            viewHolder.textViewInfo1.setText(item.getFrequency());
-        }
-        //viewHolder.foto.setImageResource(item.getPhotoID());
 
-//        viewHolder.textViewInfo2.setText(item.getDescricao());
-
-        viewHolder.rowFrame.setOnClickListener(new View.OnClickListener() {
+            // load buttom
+            viewHolder.loadButton.setClickable(true);
+            viewHolder.loadButton.setEnabled(true);
+            viewHolder.loadButton.setVisibility(View.VISIBLE);
+            viewHolder.loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(position == last_loaded){
@@ -84,6 +80,12 @@ public class SignsAdapter extends RecyclerView.Adapter<SignsAdapter.ViewHolder> 
                                 mItems.add(newSing);
                             }
                             last_loaded += newSigns.size();
+
+                            // no new signs
+                            if(newSigns.isEmpty()){
+                                // hide the button, because we loaded all signs
+                                last_loaded = -1;
+                            }
                             return "some message";
                         }
 
@@ -100,6 +102,13 @@ public class SignsAdapter extends RecyclerView.Adapter<SignsAdapter.ViewHolder> 
             }
         });
 
+        }else{
+            viewHolder.loadButton.setClickable(false);
+            viewHolder.loadButton.setEnabled(false);
+            viewHolder.loadButton.setVisibility(View.INVISIBLE);
+            viewHolder.textViewPrincipal.setText(item.getName());
+            viewHolder.textViewInfo1.setText(item.getFrequency());
+        }
 
 
     }
@@ -111,7 +120,7 @@ public class SignsAdapter extends RecyclerView.Adapter<SignsAdapter.ViewHolder> 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout rowFrame;
-        ImageView foto;
+        ImageButton loadButton;
         TextView textViewPrincipal;
         TextView textViewInfo1;
 //        TextView textViewInfo2;
@@ -121,7 +130,7 @@ public class SignsAdapter extends RecyclerView.Adapter<SignsAdapter.ViewHolder> 
             this.textViewPrincipal = (TextView) v.findViewById(R.id.default_3line_icon_descript_item_tv_principal);
             this.textViewInfo1 = (TextView) v.findViewById(R.id.default_3line_icon_descript_item_tv_info1);
 //            this.textViewInfo2 = (TextView) v.findViewById(R.id.default_3line_icon_descript_item_tv_info2);
-            foto = (ImageView) v.findViewById(R.id.default_3line_icon_descript_item_iv_icon);
+            loadButton = (ImageButton) v.findViewById(R.id.loadButton);
             rowFrame = (RelativeLayout) v.findViewById(R.id.default_3line_icon_descript_item_rl_frame);
         }
     }
