@@ -28,6 +28,16 @@ public class DisorderProfile implements Serializable {
     private List<Professional> Professional;
     private List<Center> Center;
 
+    public List<String> getCids() {
+        return Cids;
+    }
+
+    public void setCids(List<String> cids) {
+        Cids = cids;
+    }
+
+    private List<String> Cids;
+
     public ProtocolModel getProtocol() {
         return protocol;
     }
@@ -65,7 +75,7 @@ public class DisorderProfile implements Serializable {
     public DisorderProfile(Disorder disorder,  List<Specialty> specialties, List<Reference> references, List<Sign> signs,
                            List<Synonym> synonyms, List<Professional> professional,
                            List<Center> center, Mortalidade mortalidade, DadosNacionais dadosNacionais,
-                           List<Indicator> indicators, ProtocolModel protocol, Cid cid) {
+                           List<Indicator> indicators, ProtocolModel protocol, List<String> cids) {
 
 
         Disorder = disorder;
@@ -77,7 +87,7 @@ public class DisorderProfile implements Serializable {
         Center = center;
         Mortalidade = mortalidade;
         this.dadosNacionais = dadosNacionais;
-        this.cid = cid;
+        Cids = cids;
         Indicators = indicators;
         this.protocol = protocol;
 

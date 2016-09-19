@@ -93,6 +93,8 @@ public class DisordersSearchResultsAdapter extends ArrayAdapter<Disorder> {
             viewHolder.tv_orphanumberDoenca.setText("Orphanumber: " + disorder.getOrphanumber());
             String link = String.format("<a href=\"%s\">%s/>", disorder.getExpertlink(), disorder.getExpertlink());
 //            viewHolder.tv_cidDoenca.setText("CID: Não Especificado");
+            viewHolder.tv_cidDoenca.setText("");
+
             viewHolder.tv_cidDoenca.setMovementMethod(LinkMovementMethod.getInstance());
             viewHolder.tv_cidDoenca.setClickable(true);
         }

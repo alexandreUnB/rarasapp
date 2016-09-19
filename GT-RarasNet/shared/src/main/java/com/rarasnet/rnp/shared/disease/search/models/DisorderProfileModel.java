@@ -67,6 +67,8 @@ public class DisorderProfileModel {
         ProtocolModel protocol = null;
         String jsonResult;
         DisorderProfile profile;
+        List<String> cids = null;
+
 
 //        String searchURL2 = urlPrefix + diseaseID + ".json";
 //        Log.d("url",searchURL);
@@ -94,6 +96,7 @@ public class DisorderProfileModel {
                 signsCounter = getSignsCounter(jsonStr);
                 indicators = getIndicators(jsonStr);
                 protocol = getProtocol(jsonStr);
+                cids = getCids(jsonStr);
 
 //                mortalidade = getMortalidade(jsonResult);
 //                synonyms = getSynonyms(jsonResult);
@@ -110,7 +113,7 @@ public class DisorderProfileModel {
 
 
         profile = new DisorderProfile(disorder, specialties, references, signs, synonyms, professionals,
-                centers, mortalidade, dadosNacionais, indicators, protocol, cid);
+                centers, mortalidade, dadosNacionais, indicators, protocol, cids);
         profile.setSignCounter(signsCounter);
         return profile;
     }
@@ -360,5 +363,25 @@ public class DisorderProfileModel {
     }
 
 
+
+    private List<String> getCids(String jString) {
+        List<String> cids = new ArrayList<String>();
+
+        try {
+            JSONObject ob = new JSONObject(jString);
+            JSONArray jArray = ob.getJSONArray("icds");
+
+            int i = 0;
+            while (!jArray.isNull(i)) {
+                String stringCid= jArray.getString(i);
+                cids.add(stringCid);
+                i++;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return cids;
+    }
 
 }

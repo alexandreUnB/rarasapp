@@ -74,10 +74,8 @@ public class DescriptionFragment  extends Fragment {
 
         final String cid;
 
-        if(disorderProfile.getCid() != null)
-            cid = disorderProfile.getCid().getCid();
-        else
-            cid = "";
+
+
 
 
         //private DadosNacionais dadosNacionais;
@@ -101,12 +99,13 @@ public class DescriptionFragment  extends Fragment {
         tv_orpha.setText(diseaseOrphanumber);
 
         tv_cid = (TextView) view.findViewById(R.id.frag_disorder_description_tv_cidValue);
-        if(cid != null) {
-            tv_cid.setText(cid);
-        }else {
-            tv_cid.setText("Não cadastrado.");
-        }
+        tv_cid.setText("");
 
+        if(disorderProfile.getCids() != null) {
+            for (String cidString: disorderProfile.getCids()) {
+                tv_cid.append(cidString);
+            }
+        }
 //        tv_expertlink = (TextView) view.findViewById(R.id.frag_disorder_description_tv_expertlink);
 //        tv_expertlink.setOnClickListener(new View.OnClickListener() {
 //            @Override
