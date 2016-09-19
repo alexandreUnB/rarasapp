@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -58,7 +59,8 @@ public class ProtocolSearchResultsAdapter extends ArrayAdapter<ProtocolModel> {
             // well set up the ViewHolder
             viewHolder = new ViewHolder();
 
-            viewHolder.imagem = (ImageView) convertView.findViewById(R.id.avatar);
+//            viewHolder.imagem = (ImageView) convertView.findViewById(R.id.avatar);
+            viewHolder.loadButton = (ImageButton) convertView.findViewById(R.id.loadButton);
             viewHolder.tv_nome = (TextView) convertView.findViewById(R.id.default_search_item_tv_principal);
             viewHolder.tv_cidade = (TextView) convertView.findViewById(R.id.default_search_item_tv_info1);
             viewHolder.tv_profissao = (TextView) convertView.findViewById(R.id.default_search_item_tv_info2);
@@ -93,7 +95,11 @@ public class ProtocolSearchResultsAdapter extends ArrayAdapter<ProtocolModel> {
                     + professional.getDocument());
             viewHolder.tv_cidade.setText("");
             viewHolder.tv_profissao.setText("");
-            viewHolder.imagem.setImageResource(R.mipmap.pdf_icon);
+
+            // load button disabled
+            viewHolder.loadButton.setClickable(false);
+            viewHolder.loadButton.setEnabled(false);
+            viewHolder.loadButton.setVisibility(View.INVISIBLE);
 
         }
 
@@ -113,6 +119,7 @@ public class ProtocolSearchResultsAdapter extends ArrayAdapter<ProtocolModel> {
         TextView tv_cidade;
         TextView tv_uf;
         ImageView imagem;
+        ImageButton loadButton;
         ImageView iv_isFavoriteDoenca;
     }
 }
