@@ -2,6 +2,7 @@ package com.rarasnet.rnp.shared.profissionais.views;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.rarasnet.rnp.shared.R;
 import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.LaravelSearchProfissionaisDataResponse;
+import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.ProfissionaisAdapter;
 import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.SearchProfissionaisDataResponse;
 
 import java.util.ArrayList;
@@ -31,6 +33,26 @@ public class ProfessionalsSearchResultsAdapter extends ArrayAdapter<LaravelSearc
 
     private List<LaravelSearchProfissionaisDataResponse> mDisorders;
     private int mLayoutResourceId;
+    private int last_loaded;
+
+    public String getSearchtype() {
+        return searchtype;
+    }
+
+    public void setSearchtype(String searchtype) {
+        this.searchtype = searchtype;
+    }
+
+    public String getQuery() {
+        return query;
+    }
+
+    public void setQuery(String query) {
+        this.query = query;
+    }
+
+    private String searchtype;
+    private String query;
 
     public interface OnItemClickListener {
         void onItemClick(LaravelSearchProfissionaisDataResponse professional);
@@ -47,6 +69,9 @@ public class ProfessionalsSearchResultsAdapter extends ArrayAdapter<LaravelSearc
         super(context, resource, professionals);
         mDisorders = professionals;
         mLayoutResourceId = resource;
+        last_loaded = 9;
+        searchtype = "name";
+        query = "whatever";
     }
 
     @Override
@@ -58,7 +83,7 @@ public class ProfessionalsSearchResultsAdapter extends ArrayAdapter<LaravelSearc
     public View getView(final int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
 
-        if(convertView==null){
+        if(convertView == null){
             // inflate the layout
             LayoutInflater inflater = ((Activity) getContext()).getLayoutInflater();
             convertView = inflater.inflate(mLayoutResourceId, parent, false);
@@ -78,7 +103,7 @@ public class ProfessionalsSearchResultsAdapter extends ArrayAdapter<LaravelSearc
                     mOnItemClickListener.onItemClick(mDisorders.get(position));
                 }
             });
-            //viewHolder.iv_isFavoriteDoenca = (ImageView) convertView.findViewById(R.id.default_search_item_iv_iconRight);
+            viewHolder.iv_isFavoriteDoenca = (ImageView) convertView.findViewById(R.id.default_search_item_iv_iconRight);
 
             // store the holder with the view.
             convertView.setTag(viewHolder);
@@ -92,18 +117,74 @@ public class ProfessionalsSearchResultsAdapter extends ArrayAdapter<LaravelSearc
         // Object item based on the position
         LaravelSearchProfissionaisDataResponse professional = mDisorders.get(position);
 
-        // Assign values if the object is not null
-        if(professional != null) {
-            // CODIGO NOVO
-            // Gets professional info returned by laravel api and
-            // displays it on a new screen
-            Log.d("Nome do Cara", professional.getName());
-            viewHolder.tv_nome.setText(professional.getName() + professional.getSurname());
-            viewHolder.tv_cidade.setText(professional.getCity()+ " - " + professional.getUf());
-            viewHolder.tv_profissao.setText(professional.getProfession());
-            viewHolder.loadButton.setClickable(false);
-            viewHolder.loadButton.setEnabled(false);
-            viewHolder.loadButton.setVisibility(View.INVISIBLE);
+        if( position == last_loaded){
+            viewHolder.tv_nome.setText("");
+            viewHolder.tv_cidade.setText("");
+            viewHolder.tv_profissao.setText("");
+            viewHolder.loadButton.setClickable(true);
+            viewHolder.loadButton.setEnabled(true);
+            viewHolder.loadButton.setVisibility(View.VISIBLE);
+            viewHolder.iv_isFavoriteDoenca.setVisibility(View.INVISIBLE);
+
+            viewHolder.loadButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(position == last_loaded){
+
+                        class SendfeedbackJob extends AsyncTask<String, Void, String> {
+
+                            @Override
+                            protected String doInBackground(String[] params) {
+                                List<LaravelSearchProfissionaisDataResponse> newResult = null;
+                                ProfissionaisAdapter disorders = new ProfissionaisAdapter();
+
+                                try {
+                                    newResult = disorders.searchLaravel(query,
+                                            Integer.toString(last_loaded) ,searchtype);
+
+                                } catch (Exception e) {
+                                    Log.d("[PSRA]Search error", e.toString());
+                                }
+
+                                for(LaravelSearchProfissionaisDataResponse prof: newResult){
+                                    mDisorders.add(prof);
+                                }
+                                last_loaded += newResult.size();
+
+                                // no new signs
+                                if(newResult.isEmpty()){
+                                    // hide the button, because we loaded all signs
+                                    last_loaded = -1;
+                                }
+                                return "some message";
+                            }
+
+                            @Override
+                            protected void onPostExecute(String message) {
+                                notifyDataSetChanged();
+                            }
+                        }
+
+                        SendfeedbackJob job = new SendfeedbackJob();
+                        job.execute();
+                    }
+                }
+            });
+
+        }else{
+            // Assign values if the object is not null
+            if(professional != null) {
+                // Gets professional info returned by laravel api and
+                // displays it on a new screen
+                viewHolder.tv_nome.setText(professional.getName() + professional.getSurname());
+                viewHolder.tv_cidade.setText(professional.getCity()+ " - " + professional.getUf());
+                viewHolder.tv_profissao.setText(professional.getProfession());
+                viewHolder.loadButton.setClickable(false);
+                viewHolder.loadButton.setEnabled(false);
+                viewHolder.loadButton.setVisibility(View.INVISIBLE);
+                viewHolder.iv_isFavoriteDoenca.setVisibility(View.VISIBLE);
+
+            }
         }
 
         return convertView;

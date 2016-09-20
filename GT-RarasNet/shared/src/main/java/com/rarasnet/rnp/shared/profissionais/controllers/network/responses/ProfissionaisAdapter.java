@@ -44,17 +44,42 @@ public class ProfissionaisAdapter {
     * and returns t
      * he professional type with its info filled, in case it was found.
     */
-    public List<LaravelSearchProfissionaisDataResponse> searchLaravel(String userInput, String searchOption) throws Exception
+    public List<LaravelSearchProfissionaisDataResponse> searchLaravel(String userInput, String pos,
+                                                                      String searchOption) throws Exception
     {
+        // Making a request to url and getting response
+        String searchURL;
+
+        switch (searchOption)
+        {
+            case "local":
+                searchURL = localURL + userInput.replace(" ", "%20") + "," + pos;
+                break;
+            case "disorder":
+                searchURL = disorderURL + userInput.replace(" ", "%20") + "," + pos;
+                break;
+            case "specialty":
+                searchURL = specialtyURL + userInput.replace(" ", "%20") + "," + pos;
+                break;
+            case "all":
+                searchURL = nameURL +"%25" + "," + pos;
+                break;
+            default:
+                searchURL = nameURL + userInput.replace(" ", "%20") + "," + pos;
+                break;
+        }
 
         try
         {
             // Creating service handler class instance
             ServiceHandler sh = new ServiceHandler();
             // Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(nameURL + userInput.replace(" ","%20"), ServiceHandler.GET);
+            String jsonStr = sh.makeServiceCall(searchURL,
+                    ServiceHandler.GET);
 
             Log.d("Entrei no nome", "ENTREI");
+            Log.d("Entrei no nome", searchURL);
+            Log.d("Entrei no nome", searchOption);
 
             // In case we get a response, the json info received is parsed
             // and passed to and equivalent object
@@ -119,16 +144,16 @@ public class ProfissionaisAdapter {
             switch (searchOption)
             {
                 case "local":
-                    searchURL = localURL + userInput.replace(" ", "%20");
+                    searchURL = localURL + userInput.replace(" ", "%20") + ",0";
                     break;
                 case "disorder":
-                    searchURL = disorderURL + userInput.replace(" ", "%20");
+                    searchURL = disorderURL + userInput.replace(" ", "%20") + ",0";
                     break;
                 case "specialty":
-                    searchURL = specialtyURL + userInput.replace(" ", "%20");
+                    searchURL = specialtyURL + userInput.replace(" ", "%20") + ",0";
                     break;
                 default:
-                    searchURL = nameURL + userInput.replace(" ", "%20");
+                    searchURL = nameURL + userInput.replace(" ", "%20") + ",0";
                     break;
             }
 

@@ -315,6 +315,18 @@ private android.app.AlertDialog progress;
 
     }
 
+    ///------------------------------------------------------------------------///
+    /// Menu handlers
+    ///------------------------------------------------------------------------///
+
+    // Menu icons are inflated just as they were with actionbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_show_all, menu);
+        return true;
+    }
+
 
 
     public void onRadioButtonClicked(View v){
@@ -375,9 +387,9 @@ private android.app.AlertDialog progress;
         v.startAnimation(a);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);}
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        return super.onCreateOptionsMenu(menu);}
 
     /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -450,7 +462,9 @@ private android.app.AlertDialog progress;
             Intent intent = new Intent(this,SearchDisordersActivity.class);
             startActivity(intent);
             finish();
-        }else
+        }else if(id == R.id.menu_show){
+            // show all button selected
+        }
 
         if(id == android.R.id.home){
             finish();

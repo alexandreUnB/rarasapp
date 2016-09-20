@@ -18,6 +18,16 @@ public class LaravelSearchProfissionaisDataResponse
     private String ddd;
     private String facebook;
 
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
+    }
+
+    private String count;
+
     public String getSurname() {
         return surname;
     }

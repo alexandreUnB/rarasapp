@@ -70,6 +70,7 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
     private ListView mListaProfissionais;
     private RadioGroup radioGroup;
     private String searchOption = "name";
+    private int numResultados = 0;
 
     private View.OnTouchListener et_search_touchListener = new View.OnTouchListener() {
         @Override
@@ -199,24 +200,29 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         ((ProfessionalsAutocompleteAdapter)
                                 ac_searchEditText.getAdapter()).setSearchOption("disorder");
+                        searchOption = "disorder";
 
                     }else if(checkedId == R.id.radio_name_professional) {
                         ac_searchEditText.setHint("Buscar por nome do profissional");
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         ((ProfessionalsAutocompleteAdapter)
                                 ac_searchEditText.getAdapter()).setSearchOption("name");
+                        searchOption = "name";
+
 
                     }else if(checkedId == R.id.radio_specialty_professional){
                         ac_searchEditText.setHint("Buscar por especialidade");
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         ((ProfessionalsAutocompleteAdapter)
                                 ac_searchEditText.getAdapter()).setSearchOption("specialty");
+                        searchOption = "specialty";
 
                     }else{ //local
                         ac_searchEditText.setHint("Buscar por local");
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         ((ProfessionalsAutocompleteAdapter)
                                 ac_searchEditText.getAdapter()).setSearchOption("local");
+                        searchOption = "local";
 
                     }
                 }}
@@ -301,7 +307,16 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
 
 
             try {
-                newResult = disorders.searchLaravel(userInput, searchType);
+                Log.d("type", searchOption);
+                newResult = disorders.searchLaravel(userInput, "0", searchOption);
+
+                // sets number of results
+                if(newResult != null && !newResult.isEmpty()){
+                    numResultados = Integer.parseInt(newResult.get(0).getCount());
+                }
+
+                mSearchResultsAdapter.setQuery(userInput);
+                mSearchResultsAdapter.setSearchtype(searchOption);
 
             } catch (Exception e) {
                 Log.d("[SPA]Search error", e.toString());
@@ -350,6 +365,8 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
                 Log.d("PROFESSIONAL TYPE",searchType);
 //                result = professionalProfileModel.getProfile(userInput, searchType);
                 result = professionalProfileModel.getProfileNew(userInput, searchType);
+
+
                 //List<Disease> result = disorders.getStaticDisease();
             } catch (Exception e) {
 
@@ -379,7 +396,7 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
 
         float actionBarSize = getResources().getDimension(R.dimen.abc_action_bar_default_height_material);
         ac_searchEditText.setVisibility(View.GONE);
-        shrink(mToolbar, Math.round(actionBarSize), professionals.size());
+        shrink(mToolbar, Math.round(actionBarSize), numResultados);
     }
 
     public void shrink(final View v, final int newSize, final int numResultados) {
@@ -415,10 +432,10 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
         v.startAnimation(a);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        return super.onCreateOptionsMenu(menu);
+//    }
 
     /* @Override
         public boolean onCreateOptionsMenu(Menu menu) {
@@ -464,6 +481,19 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
 
             return super.onCreateOptionsMenu(menu);
         }*/
+
+    /// Menu handlers
+    ///------------------------------------------------------------------------///
+
+    // Menu icons are inflated just as they were with actionbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_show_all, menu);
+        return true;
+    }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -475,6 +505,13 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
             finish();
         }else if(id == android.R.id.home){
             finish();
+        }else if(id == R.id.menu_show){
+            pb_searchProgress.setVisibility(View.VISIBLE);
+            ac_searchEditText.setOnTouchListener(null);
+            ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+            searchOption = "all";
+
+            new SearchProfissionaisTask().execute("whatever", "all");
         }
         return true;
 
