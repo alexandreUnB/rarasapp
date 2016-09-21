@@ -51,6 +51,16 @@ public class Disorder {
     private String drugs;
     private String procedures;
     private String references;
+
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
+    }
+
+    private String count;
 //    private String tipo = "doença";
 
     // CODIGO LEGADO

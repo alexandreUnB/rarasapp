@@ -56,17 +56,16 @@
             android:layout_below="@id/default_search_item_tv_principal"
             android:textColor="@color/text_primary_dark_color" />
 
-        <TextView
-            android:id="@+id/default_search_item_tv_info2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="info2"
-            android:textSize="14sp"
-            android:ellipsize="end"
-            android:singleLine="true"
-            android:layout_below="@id/default_search_item_tv_info1"
-            android:textColor="@color/text_primary_dark_color" />
 
     </RelativeLayout>
-
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/loadButton"
+        android:clickable="true"
+        android:src="@drawable/ic_load_items"
+        android:scaleType="fitCenter"
+        android:background="?android:selectableItemBackground"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

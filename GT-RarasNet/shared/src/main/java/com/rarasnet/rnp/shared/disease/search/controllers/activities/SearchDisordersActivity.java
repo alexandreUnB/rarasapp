@@ -62,6 +62,7 @@ private android.app.AlertDialog progress;
     private static final String icdPattern = "[A-Z][0-9][0-9].[0-9]";
 
     private boolean flag=true;
+    private int numResultados;
 
    // private BancoDeDados db;
    // private List<Disease> diseases = new ArrayList<Disease>();
@@ -84,7 +85,7 @@ private android.app.AlertDialog progress;
     private ProgressBar pb_searchProgress;
     private ProgressBar pb_searchViewProgress;
     private ProgressBar pb_loadingDisorderData;
-
+    private String searchOption = "name";
 
 
     private RelativeLayout rl_fadeMenu;
@@ -167,27 +168,21 @@ private android.app.AlertDialog progress;
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         ac_searchByCid.setVisibility(View.INVISIBLE);
                         ac_searchBySigns.setVisibility(View.INVISIBLE);
-//                    }else if(checkedId == R.id.radio_sinais) {
-//                    //tv_searchType.setText("Busca por Nome, CID e Orphanumber");
-//                    doSignsSearch = true;
-//
-//                    ac_searchEditText.setVisibility(View.INVISIBLE);
-//                        ac_searchByCid.setVisibility(View.INVISIBLE);
-//                    ac_searchBySigns.setVisibility(View.VISIBLE);
-//                        Toast.makeText(SearchDisordersActivity.this,
-//                                "Os sinais deve ser digitado em Inglês.",
-//                                Toast.LENGTH_LONG).show();
-                }else if(checkedId == R.id.radio_cid) {
-                        //arrumar depois
-                    //tv_searchType.setText("Busca por CID");
-                    doSignsSearch = false;
-                        ac_searchEditText.setHint("Busca por CID");
-                    ac_searchEditText.setVisibility(View.VISIBLE);
-                    ac_searchBySigns.setVisibility(View.INVISIBLE);
-                        ac_searchByCid.setVisibility(View.INVISIBLE);
+                        searchOption = "name";
+                        ((DisordersAutocompleteAdapter)
+                                ac_searchEditText.getAdapter()).setSearchOption(searchOption);
 
-                    //Toast.makeText(SearchDisordersActivity.this, radioButton.getText(), Toast.LENGTH_SHORT).show();
-                }
+                    }else if(checkedId == R.id.radio_cid) {
+                        doSignsSearch = false;
+                        ac_searchEditText.setHint("Busca por CID");
+                        ac_searchEditText.setVisibility(View.VISIBLE);
+                        ac_searchBySigns.setVisibility(View.INVISIBLE);
+                        ac_searchByCid.setVisibility(View.INVISIBLE);
+                        searchOption = "cid";
+                        ((DisordersAutocompleteAdapter)
+                                ac_searchEditText.getAdapter()).setSearchOption(searchOption);
+
+                    }
             }}
         });
 
@@ -387,57 +382,6 @@ private android.app.AlertDialog progress;
         v.startAnimation(a);
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        return super.onCreateOptionsMenu(menu);}
-
-    /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        /*MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu_search_disorders, menu);
-
-        mToolbarSearchItem = menu.findItem(R.id.action_search);
-        mToolbarSearchItem.setVisible(false);
-
-        SearchManager searchManager = (SearchManager) this.getSystemService(Context.SEARCH_SERVICE);
-
-        SearchView searchView = null;
-        if ( mToolbarSearchItem  != null) {
-            searchView = (SearchView)  mToolbarSearchItem.getActionView();
-            View.OnClickListener handler = new View.OnClickListener() {
-                public void onClick(View v) {
-                    SearchDisordersActivity.this.registerForContextMenu(v);
-                    openContextMenu(v);
-                }
-            };
-            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-
-                @Override
-                public boolean onQueryTextChange(String newText) {
-                    return false;
-                }
-
-
-                @Override
-                public boolean onQueryTextSubmit(String query) {
-                    hideKeyboard();
-                    pb_searchViewProgress.setVisibility(View.VISIBLE);
-                    if(inputIsValid(query, getSearchType(query))) {
-                        new SearchDiseasesTask().execute(query, getSearchType(query));
-                    }
-                    return false;
-                }
-            });
-            searchView.setOnSearchClickListener(handler);
-        }
-        if (searchView != null) {
-            searchView.setSearchableInfo(searchManager.getSearchableInfo(this.getComponentName()));
-        }
-
-
-        return super.onCreateOptionsMenu(menu);
-    }*/
-
 
     private String getSearchType(String query) {
         if (query.matches(orphanumberPattern)) {
@@ -463,7 +407,11 @@ private android.app.AlertDialog progress;
             startActivity(intent);
             finish();
         }else if(id == R.id.menu_show){
-            // show all button selected
+            pb_searchProgress.setVisibility(View.VISIBLE);
+            ac_searchEditText.setOnTouchListener(null);
+            ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+            searchOption = "all";
+            new SearchDiseasesTask().execute("%25", "all");
         }
 
         if(id == android.R.id.home){
@@ -481,7 +429,7 @@ private android.app.AlertDialog progress;
         lv_searchResults.setVisibility(View.VISIBLE);
         float actionBarSize = getResources().getDimension(R.dimen.abc_action_bar_default_height_material);
         ac_searchEditText.setVisibility(View.GONE);
-        shrink(mToolbar, Math.round(actionBarSize), disorders.size());
+        shrink(mToolbar, Math.round(actionBarSize), numResultados);
     }
 
 
@@ -500,12 +448,12 @@ private android.app.AlertDialog progress;
     private boolean inputIsValid(String userInput, String searchType) {
         int minLength = 0;
         String message = null;
-        if (searchType == "name") {
+        if (searchOption == "name") {
             message = "Digite mais que dois caracteres";
             minLength = 3;
-        } else if (searchType== "orphanumber") {
+        } else if (searchOption == "orphanumber") {
             message = "Digite mais que um caractere";
-            minLength = 2;
+            minLength = 1;
         }
         if (userInput.length() < minLength) {
             Toast.makeText(SearchDisordersActivity.this, message
@@ -533,15 +481,23 @@ private android.app.AlertDialog progress;
 
             try {
 
-                if(searchType == TYPE_NAME){
-                    result = disorders.nameSearch(userInput);
-                }else if(searchType == TYPE_ICD){
-                    result = disorders.cidSearch(userInput);
-
+                if(searchOption == "name"){
+                    result = disorders.nameSearch(userInput, "0");
+                    mSearchResultsAdapter.setQuery(userInput);
+                    mSearchResultsAdapter.setSearchType(searchOption);
+                }else if(searchOption == "cid"){
+                    result = disorders.cidSearch(userInput, "0");
+                    mSearchResultsAdapter.setQuery(userInput);
+                    mSearchResultsAdapter.setSearchType(searchOption);
                 }else{
-                    result = disorders.search(userInput, searchType,"code");
+                    result = disorders.nameSearch("%25", "0");
+                    mSearchResultsAdapter.setQuery(userInput);
+                    mSearchResultsAdapter.setSearchType(searchOption);
                 }
-                //List<Disease> result = disorders.getStaticDisease();
+
+
+
+
             } catch (Exception e) {
 
             }
@@ -562,8 +518,13 @@ private android.app.AlertDialog progress;
             else if(disorders.isEmpty())
                 Toast.makeText(SearchDisordersActivity.this, "Nenhuma Disordem foi encontrada"
                         , Toast.LENGTH_LONG).show();
-            else
+            else{
+                Log.d("PORRA", disorders.get(0).getName() + disorders.get(0).getCount() );
+                numResultados = Integer.parseInt(disorders.get(0).getCount());
+
                 SearchDisordersActivity.this.renderDisordersList(disorders);
+
+            }
         }
     }
 

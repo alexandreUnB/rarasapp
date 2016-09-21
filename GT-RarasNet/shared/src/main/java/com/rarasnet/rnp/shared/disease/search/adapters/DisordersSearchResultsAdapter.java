@@ -2,20 +2,23 @@ package com.rarasnet.rnp.shared.disease.search.adapters;
 
 import android.app.Activity;
 import android.content.Context;
-import android.text.method.LinkMovementMethod;
+import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.rarasnet.rnp.shared.R;
+import com.rarasnet.rnp.shared.disease.search.models.DisordersModel;
 import com.rarasnet.rnp.shared.models.Disorder;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Farina on 16/11/2015.
@@ -24,6 +27,26 @@ public class DisordersSearchResultsAdapter extends ArrayAdapter<Disorder> {
 
     private ArrayList<Disorder> mDisorders;
     private int mLayoutResourceId;
+
+    public String getSearchType() {
+        return searchType;
+    }
+
+    public void setSearchType(String searchType) {
+        this.searchType = searchType;
+    }
+
+    public String getQuery() {
+        return query;
+    }
+
+    public void setQuery(String query) {
+        this.query = query;
+    }
+
+    private String searchType;
+    private String query;
+    private int last_loaded;
 
     public interface OnItemClickListener {
         void onItemClick(Disorder disorder);
@@ -39,6 +62,9 @@ public class DisordersSearchResultsAdapter extends ArrayAdapter<Disorder> {
         super(context, resource, disorders);
         mDisorders = disorders;
         mLayoutResourceId = resource;
+        searchType = "name";
+        query = "whatever";
+        last_loaded = 9;
     }
 
     @Override
@@ -53,7 +79,6 @@ public class DisordersSearchResultsAdapter extends ArrayAdapter<Disorder> {
 
 
         if(convertView==null){
-            Log.d("o que temos","temos");
             // inflate the layout
             LayoutInflater inflater = ((Activity) getContext()).getLayoutInflater();
             convertView = inflater.inflate(mLayoutResourceId, parent, false);
@@ -61,9 +86,10 @@ public class DisordersSearchResultsAdapter extends ArrayAdapter<Disorder> {
             // well set up the ViewHolder
             viewHolder = new ViewHolder();
 
+            viewHolder.loadButton = (ImageButton) convertView.findViewById(R.id.loadButton);
             viewHolder.tv_domeDoenca = (TextView) convertView.findViewById(R.id.default_search_item_tv_principal);
             viewHolder.tv_orphanumberDoenca = (TextView) convertView.findViewById(R.id.default_search_item_tv_info1);
-            viewHolder.tv_cidDoenca = (TextView) convertView.findViewById(R.id.default_search_item_tv_info2);
+//            viewHolder.tv_cidDoenca = (TextView) convertView.findViewById(R.id.default_search_item_tv_info2);
             viewHolder.rl_itemFrame = (RelativeLayout) convertView.findViewById(R.id.default_search_item_rl_frame);
             viewHolder.rl_itemFrame.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -71,7 +97,7 @@ public class DisordersSearchResultsAdapter extends ArrayAdapter<Disorder> {
                     mOnItemClickListener.onItemClick(mDisorders.get(position));
                 }
             });
-            //viewHolder.iv_isFavoriteDoenca = (ImageView) convertView.findViewById(R.id.default_search_item_iv_iconRight);
+            viewHolder.iv_isFavoriteDoenca = (ImageView) convertView.findViewById(R.id.default_search_item_iv_iconRight);
 
             // store the holder with the view.
             convertView.setTag(viewHolder);
@@ -87,16 +113,77 @@ public class DisordersSearchResultsAdapter extends ArrayAdapter<Disorder> {
 
         // assign values if the object is not null
         if(disorder != null) {
-            // get the TextView from the ViewHolder and then set the text (item name) and tag (item ID) values
-            //Log.d("o que temos",);
-            viewHolder.tv_domeDoenca.setText(disorder.getName());
-            viewHolder.tv_orphanumberDoenca.setText("Orphanumber: " + disorder.getOrphanumber());
-            String link = String.format("<a href=\"%s\">%s/>", disorder.getExpertlink(), disorder.getExpertlink());
-//            viewHolder.tv_cidDoenca.setText("CID: Não Especificado");
-            viewHolder.tv_cidDoenca.setText("");
 
-            viewHolder.tv_cidDoenca.setMovementMethod(LinkMovementMethod.getInstance());
-            viewHolder.tv_cidDoenca.setClickable(true);
+            if( position == last_loaded) {
+                viewHolder.tv_domeDoenca.setText("");
+                viewHolder.tv_orphanumberDoenca.setText("");
+                viewHolder.loadButton.setClickable(true);
+                viewHolder.loadButton.setEnabled(true);
+                viewHolder.loadButton.setVisibility(View.VISIBLE);
+                viewHolder.iv_isFavoriteDoenca.setVisibility(View.INVISIBLE);
+
+                viewHolder.loadButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(position == last_loaded){
+
+                            class SendfeedbackJob extends AsyncTask<String, Void, String> {
+
+                                @Override
+                                protected String doInBackground(String[] params) {
+                                    List<Disorder> result = null;
+                                    DisordersModel disorders = new DisordersModel();
+
+                                    try {
+                                            if(searchType == "name"){
+                                                result = disorders.nameSearch(query, Integer.toString(last_loaded));
+                                            }else if(searchType == "cid"){
+                                                result = disorders.cidSearch(query, Integer.toString(last_loaded));
+                                            }else{
+                                                result = disorders.nameSearch("%25", Integer.toString(last_loaded));
+                                            }
+
+
+                                    } catch (Exception e) {
+                                        Log.d("[DSRA]Search error", e.toString());
+                                    }
+
+                                    Log.d("Search", searchType + " " + query);
+
+                                    for(Disorder disorder: result){
+                                        mDisorders.add(disorder);
+                                    }
+                                    last_loaded += result.size();
+
+                                    // no new signs
+                                    if(result.isEmpty()){
+                                        // hide the button, because we loaded all signs
+                                        last_loaded = -1;
+                                    }
+                                    return "some message";
+                                }
+
+                                @Override
+                                protected void onPostExecute(String message) {
+                                    notifyDataSetChanged();
+                                }
+                            }
+
+                            SendfeedbackJob job = new SendfeedbackJob();
+                            job.execute();
+                        }
+                    }
+                });
+
+            }else {
+                // get the TextView from the ViewHolder and then set the text (item name) and tag (item ID) values
+                viewHolder.tv_domeDoenca.setText(disorder.getName());
+                viewHolder.tv_orphanumberDoenca.setText("Orphanumber: " + disorder.getOrphanumber());
+                viewHolder.loadButton.setClickable(false);
+                viewHolder.loadButton.setEnabled(false);
+                viewHolder.loadButton.setVisibility(View.INVISIBLE);
+                viewHolder.iv_isFavoriteDoenca.setVisibility(View.VISIBLE);
+            }
         }
 
         return convertView;
@@ -114,5 +201,6 @@ public class DisordersSearchResultsAdapter extends ArrayAdapter<Disorder> {
         TextView tv_cidDoenca;
         TextView tv_orphanumberDoenca;
         ImageView iv_isFavoriteDoenca;
+        ImageButton loadButton;
     }
 }

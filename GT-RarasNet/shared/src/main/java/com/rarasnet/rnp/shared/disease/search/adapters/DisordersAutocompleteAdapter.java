@@ -33,6 +33,15 @@ public class DisordersAutocompleteAdapter extends ArrayAdapter<String> {
     private static final String TYPE_NAME = "name";
     private static final String TYPE_ORPHANUMBER = "orphanumber";
     private static final String TYPE_ICD = "icd";
+
+    public String getSearchOption() {
+        return searchOption;
+    }
+
+    public void setSearchOption(String searchOption) {
+        this.searchOption = searchOption;
+    }
+
     private String searchOption;
     //Numeric Pattern
     private static final String orphanumberPattern = "[0-9]+";
@@ -51,6 +60,7 @@ public class DisordersAutocompleteAdapter extends ArrayAdapter<String> {
         super(context, R.layout.default_autocomplete_item);
         suggestions = new ArrayList<String>();
         mAutocompleteListener = listener;
+        searchOption = "name";
     }
 
     @Override
@@ -103,7 +113,7 @@ public class DisordersAutocompleteAdapter extends ArrayAdapter<String> {
 
                     List<String> new_suggestions = null;
                     List<Disorder> disordersSuggestions = null;
-                    searchOption = getSearchType(constraint.toString());
+//                    searchOption = getSearchType(constraint.toString());
 
                     try {
                         // Convert from Unicode to UTF-8
@@ -122,12 +132,12 @@ public class DisordersAutocompleteAdapter extends ArrayAdapter<String> {
                     try {
                         Log.d("Type of search", searchOption);
                         if(searchOption == "name"){
-                            disordersSuggestions = disorders.nameSearch(constraint.toString());
+                            disordersSuggestions = disorders.nameSearch(constraint.toString(), "0");
                             for(Disorder d: disordersSuggestions){
                                 suggestions.add(d.getName());
                             }
-                        }else if(searchOption == "icd"){
-                            disordersSuggestions = disorders.cidSearch(constraint.toString());
+                        }else if(searchOption == "cid"){
+                            disordersSuggestions = disorders.cidSearch(constraint.toString(), "0");
                             for(Disorder d: disordersSuggestions){
                                 suggestions.add(d.getName());
                             }
