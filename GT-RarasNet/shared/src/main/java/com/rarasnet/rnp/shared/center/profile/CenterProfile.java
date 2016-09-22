@@ -41,6 +41,7 @@ import com.rarasnet.rnp.shared.util.UIUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 //import com.rarasnet.rnp.shared.models.profile.ProfissionalProfile;
 
@@ -125,10 +126,23 @@ public class CenterProfile extends AppCompatActivity {
 
 
 
-                        Intent it = new Intent(Intent.ACTION_VIEW, uri.parse("geo:"+mProfissionalProfile.getCenter().getLatitude() + "," + mProfissionalProfile.getCenter().getLongetude() + "?q=("+
-                        mProfissionalProfile.getCenter().getName()+")@"+
-                        mProfissionalProfile.getCenter().getLatitude() + "," +
-                                mProfissionalProfile.getCenter().getLongitude()));
+//                        Intent it = new Intent(Intent.ACTION_VIEW, uri.parse("geo:"+mProfissionalProfile.getCenter().getLatitude() + "," + mProfissionalProfile.getCenter().getLongetude() + "?q=("+
+//                        mProfissionalProfile.getCenter().getName()+")@"+
+//                        mProfissionalProfile.getCenter().getLatitude() + "," +
+//                                mProfissionalProfile.getCenter().getLongitude()));
+
+                        String latitude = mProfissionalProfile.getCenter().getLatitude().replace(".", "");
+                        String longitude = mProfissionalProfile.getCenter().getLongitude().replace(".", "");
+
+                        latitude = latitude.substring(0, latitude.length() + -7) +
+                                "." + latitude.substring(latitude.length() + -7);
+                        longitude = longitude.substring(0, longitude.length() + -7) +
+                                "." + longitude.substring(longitude.length() + -7);
+
+                        Intent it = new Intent(Intent.ACTION_VIEW, uri.parse("geo:"+ latitude
+                                + "," +longitude + "?q=("+
+                                mProfissionalProfile.getCenter().getName()+")@"+
+                                latitude + "," + longitude));
                         startActivity(it);
                     }
                 }
