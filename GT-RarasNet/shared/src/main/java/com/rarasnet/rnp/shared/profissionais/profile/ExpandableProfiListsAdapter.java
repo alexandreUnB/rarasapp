@@ -72,7 +72,8 @@ public class ExpandableProfiListsAdapter extends BaseExpandableListAdapter {
             info1.setText("Orphanumber: "+ associatesListItemModel.getInfo1());
 
 
-            info2.setText("Cid: "+associatesListItemModel.getInfo2());
+//            info2.setText("Cid: "+associatesListItemModel.getInfo2());
+            info2.setText("");
 
             //ImageView photo = (ImageView) convertView.findViewById(R.id.default_3line_fav_item_iv_icon);
             //Settar foto depois

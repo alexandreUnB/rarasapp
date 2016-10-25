@@ -323,7 +323,7 @@ public class ProfissionalProfile extends AppCompatActivity {
 
         ArrayList<AssociatesListItemModel> profissionaisList = new ArrayList<>();
         for(DadosNacionais p : dados){
-            AssociatesListItemModel i = new AssociatesListItemModel(p.getName(),p.getOrphanumber(),p.getId(),p.getId(),p.getTipo());
+            AssociatesListItemModel i = new AssociatesListItemModel(p.getName(),p.getOrphanumber(),"",p.getId(),p.getTipo());
             profissionaisList.add(i);
 
         }

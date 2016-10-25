@@ -37,6 +37,7 @@ public class ProfissionaisAdapter {
     private String disorderURL = RarasNet.urlPrefix + "/api/profDisorder/";
     private String specialtyURL = RarasNet.urlPrefix + "/api/professionalSpecialty/";
     private String localURL = RarasNet.urlPrefix + "/api/professionalLocal/";
+    private String ufURL = RarasNet.urlPrefix + "/api/professionalUF/";
 
     /**
     * Method that is called after Professional search icon is pressed.
@@ -63,6 +64,9 @@ public class ProfissionaisAdapter {
                 break;
             case "all":
                 searchURL = nameURL +"%25" + "," + pos;
+                break;
+            case "uf":
+                searchURL = ufURL + userInput.replace(" ", "%20") + "," + pos;
                 break;
             default:
                 searchURL = nameURL + userInput.replace(" ", "%20") + "," + pos;

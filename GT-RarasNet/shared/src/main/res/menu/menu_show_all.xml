@@ -4,9 +4,47 @@
     <item
         android:id="@+id/menu_show"
         android:icon="@drawable/ic_show_all_white"
-        android:title="abc"
+        android:title="All"
         sord.ids_connect:showAsAction="ifRoom">
     </item>
+
+    <item
+        android:id="@+id/uf_filter"
+        android:icon="@drawable/ic_uf_filter"
+        android:title="abc"
+        sord.ids_connect:showAsAction="ifRoom">
+        <menu>
+            <item android:id="@+id/AC"  android:title="AC" android:onClick="searchLocal" />
+            <item android:id="@+id/AL"  android:title="AL" android:onClick="searchLocal" />
+            <item android:id="@+id/AP"  android:title="AP" android:onClick="searchLocal" />
+            <item android:id="@+id/AM"  android:title="AM" android:onClick="searchLocal" />
+            <item android:id="@+id/BA"  android:title="BA" android:onClick="searchLocal" />
+            <item android:id="@+id/CE"  android:title="CE" android:onClick="searchLocal" />
+            <item android:id="@+id/DF"  android:title="DF" android:onClick="searchLocal" />
+            <item android:id="@+id/ES"  android:title="ES" android:onClick="searchLocal" />
+            <item android:id="@+id/GO"  android:title="GO" android:onClick="searchLocal" />
+            <item android:id="@+id/MA"  android:title="MA" android:onClick="searchLocal" />
+            <item android:id="@+id/MT"  android:title="MT" android:onClick="searchLocal" />
+            <item android:id="@+id/MS"  android:title="MS" android:onClick="searchLocal" />
+            <item android:id="@+id/MG"  android:title="MG" android:onClick="searchLocal" />
+            <item android:id="@+id/PA"  android:title="PA" android:onClick="searchLocal" />
+            <item android:id="@+id/PB"  android:title="PB" android:onClick="searchLocal" />
+            <item android:id="@+id/PR"  android:title="PR" android:onClick="searchLocal" />
+            <item android:id="@+id/PE"  android:title="PE" android:onClick="searchLocal" />
+            <item android:id="@+id/PI"  android:title="PI" android:onClick="searchLocal" />
+            <item android:id="@+id/RJ"  android:title="RJ" android:onClick="searchLocal" />
+            <item android:id="@+id/RN"  android:title="RN" android:onClick="searchLocal" />
+            <item android:id="@+id/RS"  android:title="RS" android:onClick="searchLocal" />
+            <item android:id="@+id/RO"  android:title="RO" android:onClick="searchLocal" />
+            <item android:id="@+id/RR"  android:title="RR" android:onClick="searchLocal" />
+            <item android:id="@+id/SC"  android:title="SC" android:onClick="searchLocal" />
+            <item android:id="@+id/SP"  android:title="SP" android:onClick="searchLocal" />
+            <item android:id="@+id/SE"  android:title="SE" android:onClick="searchLocal" />
+            <item android:id="@+id/TO"  android:title="TO" android:onClick="searchLocal" />
+
+        </menu>
+    </item>
+
 
 
 </menu>

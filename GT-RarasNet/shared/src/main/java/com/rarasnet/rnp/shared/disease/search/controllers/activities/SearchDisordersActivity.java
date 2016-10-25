@@ -319,9 +319,15 @@ private android.app.AlertDialog progress;
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_show_all, menu);
+        MenuItem item = menu.findItem(R.id.uf_filter);
+        item.setVisible(false);
         return true;
     }
 
+
+    public void searchLocal(MenuItem item){
+        // pass
+    }
 
 
     public void onRadioButtonClicked(View v){

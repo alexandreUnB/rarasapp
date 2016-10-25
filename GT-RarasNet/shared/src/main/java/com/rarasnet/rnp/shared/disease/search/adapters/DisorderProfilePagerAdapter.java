@@ -16,7 +16,7 @@ import com.rarasnet.rnp.shared.disease.profile.statistics.StatisticsFragment;
  * Created by Farina on 14/10/2015.
  */
 public class DisorderProfilePagerAdapter extends FragmentPagerAdapter {
-    final int PAGE_COUNT = 5;
+    final int PAGE_COUNT = 3;
     private Context context;
 
     public DisorderProfilePagerAdapter(FragmentManager fm, Context context) {
@@ -39,11 +39,11 @@ public class DisorderProfilePagerAdapter extends FragmentPagerAdapter {
                 return DescriptionFragment.newInstance(position);
             case 1:
                 return DisorderSignsFragment.newInstance(position);
+//            case 2:
+//                return AssociatedCentersFragment.newInstance(position);
+//            case 3:
+//                return AssociatesFragment.newInstance(position);
             case 2:
-                return AssociatedCentersFragment.newInstance(position);
-            case 3:
-                return AssociatesFragment.newInstance(position);
-            case 4:
                 return StatisticsFragment.newInstance(position);
             default:
                 return null;

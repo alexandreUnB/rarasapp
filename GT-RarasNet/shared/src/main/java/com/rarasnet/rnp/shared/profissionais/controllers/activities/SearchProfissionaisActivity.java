@@ -17,11 +17,14 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,6 +74,9 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private String searchOption = "name";
     private int numResultados = 0;
+    private RelativeLayout mapLayout;
+    private Spinner stateSpinner;
+    ArrayAdapter<String> adapter;
 
     private View.OnTouchListener et_search_touchListener = new View.OnTouchListener() {
         @Override
@@ -111,10 +117,10 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
 
         et_search_sendButtonResource = R.drawable.ic_search_white_36dp;
 
-       lv_searchResults = (ListView) findViewById(R.id.act_search_professional_lv_searchResult);
+        lv_searchResults = (ListView) findViewById(R.id.act_search_professional_lv_searchResult);
 
-       mSearchResultsAdapter = new ProfessionalsSearchResultsAdapter(this, R.layout.default_result_profe_item,
-               new ArrayList<LaravelSearchProfissionaisDataResponse>());
+        mSearchResultsAdapter = new ProfessionalsSearchResultsAdapter(this, R.layout.default_result_profe_item,
+                new ArrayList<LaravelSearchProfissionaisDataResponse>());
         lv_searchResults.setAdapter(mSearchResultsAdapter);
 
 
@@ -127,40 +133,40 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
         // AUTOCOMPLETE
         ac_searchEditText.setAdapter(new ProfessionalsAutocompleteAdapter(this,
                 new ProfessionalsAutocompleteAdapter.AutocompleteListener() {
-            @Override
-            public void onStartFiltering() {
-                runOnUiThread(new Runnable() {
                     @Override
-                    public void run() {
-                        pb_searchProgress.setVisibility(View.VISIBLE);
-                        ac_searchEditText.setOnTouchListener(null);
-                        ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-                        flag = false;
+                    public void onStartFiltering() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                pb_searchProgress.setVisibility(View.VISIBLE);
+                                ac_searchEditText.setOnTouchListener(null);
+                                ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+                                flag = false;
+
+
+                            }
+                        });
 
 
                     }
-                });
 
-
-            }
-
-            @Override
-            public void onStopFiltering() {
-                runOnUiThread(new Runnable() {
                     @Override
-                    public void run() {
-                        pb_searchProgress.setVisibility(View.INVISIBLE);
-                        ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0,
-                                et_search_sendButtonResource, 0);
-                        ac_searchEditText.setOnTouchListener(et_search_touchListener);
+                    public void onStopFiltering() {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                pb_searchProgress.setVisibility(View.INVISIBLE);
+                                ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0,
+                                        et_search_sendButtonResource, 0);
+                                ac_searchEditText.setOnTouchListener(et_search_touchListener);
+                            }
+                        });
+
+
                     }
-                });
 
 
-            }
-
-
-        }));
+                }));
 
 
         mSearchResultsAdapter.setOnItemClickListener(new ProfessionalsSearchResultsAdapter.OnItemClickListener() {
@@ -170,7 +176,7 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
                 //pb_loadingProfissionalsData.setVisibility(View.VISIBLE);
                 SearchProfileTask searchTask = new SearchProfileTask();
                 download(false);
-                searchTask.execute(professional.getId(),"id");
+                searchTask.execute(professional.getId(), "id");
 
 
             }
@@ -179,7 +185,6 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
 
 
         pb_loadingProfissionalsData = (ProgressBar) findViewById(R.id.act_search_professional_pb_loadingDisorderData);
-
 
 
         // Radio button handlers
@@ -202,7 +207,7 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
                                 ac_searchEditText.getAdapter()).setSearchOption("disorder");
                         searchOption = "disorder";
 
-                    }else if(checkedId == R.id.radio_name_professional) {
+                    } else if (checkedId == R.id.radio_name_professional) {
                         ac_searchEditText.setHint("Buscar por nome do profissional");
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         ((ProfessionalsAutocompleteAdapter)
@@ -210,14 +215,14 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
                         searchOption = "name";
 
 
-                    }else if(checkedId == R.id.radio_specialty_professional){
+                    } else if (checkedId == R.id.radio_specialty_professional) {
                         ac_searchEditText.setHint("Buscar por especialidade");
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         ((ProfessionalsAutocompleteAdapter)
                                 ac_searchEditText.getAdapter()).setSearchOption("specialty");
                         searchOption = "specialty";
 
-                    }else{ //local
+                    } else { //local
                         ac_searchEditText.setHint("Buscar por local");
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         ((ProfessionalsAutocompleteAdapter)
@@ -225,13 +230,62 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
                         searchOption = "local";
 
                     }
-                }}
+                }
+            }
         });
 
 
+        // map handler
 
+//        mapLayout = (RelativeLayout) findViewById(R.id.map_layout);
+//        mapLayout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d("NMAE", Integer.toString(v.getId()));
+//            }
+//
+//        });
+
+//        stateSpinner = (Spinner) findViewById(R.id.stateSpinner);
+//        String businessType[] = { "Automobile", "Food", "Computers", "Education",
+//                "Personal", "Travel" };
+//
+////        // Create an ArrayAdapter using the string array and a default spinner layout
+//        adapter = new ArrayAdapter<String>(this,
+//                android.R.layout.simple_spinner_item,  businessType);
+//        stateSpinner.setAdapter(adapter);
+
+
+//        stateSpinner.setPrompt("Select your favorite Planet!");
+
+
+//        stateSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view,
+//                                       int pos, long id) {
+//                String option = parent.getItemAtPosition(pos).toString();
+//                Log.d("SELECIONADO", option);
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> arg0) {
+//                // TODO Auto-generated method stub
+//
+//            }
+//        });
     }
 
+    public void searchLocal(MenuItem item){
+
+        pb_searchProgress.setVisibility(View.VISIBLE);
+        ac_searchEditText.setOnTouchListener(null);
+        ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+        searchOption = "uf";
+        Log.d("ai", item.getTitle().toString());
+        new SearchProfissionaisTask().execute(item.getTitle().toString().toLowerCase(),
+                searchOption);
+    }
 
     // radio button clicked event treatment
     public void onRadioButtonClicked(View v){
@@ -308,6 +362,8 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
 
             try {
                 Log.d("type", searchOption);
+                Log.d("userInput", userInput);
+
                 newResult = disorders.searchLaravel(userInput, "0", searchOption);
 
                 // sets number of results

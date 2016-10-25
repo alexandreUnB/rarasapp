@@ -48,8 +48,8 @@ public class DisorderProfileActivity extends AppCompatActivity implements Google
     private int [] tabIcons = {
             R.drawable.ic_description_white_24dp,
             R.drawable.ic_event_note_white_24dp,
-            R.drawable.ic_business_white_24dp,
-            R.drawable.ic_view_list_white_24dp,
+//            R.drawable.ic_business_white_24dp,
+//            R.drawable.ic_view_list_white_24dp,
             R.drawable.ic_poll_white_24dp
     };
 

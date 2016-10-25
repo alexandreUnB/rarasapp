@@ -28,6 +28,9 @@ import android.widget.Toast;
 
 import com.rarasnet.rnp.shared.R;
 import com.rarasnet.rnp.shared.application.RarasNet;
+import com.rarasnet.rnp.shared.disease.profile.DisorderProfileActivity;
+import com.rarasnet.rnp.shared.disease.search.models.DisorderProfile;
+import com.rarasnet.rnp.shared.disease.search.models.DisorderProfileModel;
 import com.rarasnet.rnp.shared.models.ProfessionalProfile;
 import com.rarasnet.rnp.shared.models.ProfessionalProfileModel;
 import com.rarasnet.rnp.shared.profissionais.controllers.network.responses.LaravelSearchProfissionaisDataResponse;
@@ -176,11 +179,19 @@ public class ProtocolActivity extends AppCompatActivity {
             mSearchResultsAdapter.setOnItemClickListener(new ProtocolSearchResultsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(ProtocolModel professional) {
-                Log.d("CLICOU NO", professional.getName_pdf());
+//                Log.d("CLICOU NO", professional.getName_pdf());
+//
+//                Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+//                        Uri.parse(pdf_url + professional.getName_pdf()));
+//                startActivity(browserIntent);
+                //  pb_loadingDisorderData.setVisibility(View.VISIBLE);
+                //pb_loadingDisorderData.getIndeterminateDrawable().setColorFilter(Color.GREEN, PorterDuff.Mode.SRC_IN);
+                //UIUtils.getProgressDialog(SearchDisordersActivity.this);
+                SearchProfileTask searchTask = new SearchProfileTask();
+                //UIUtils.getProgressDialog(SearchDisordersActivity.this).dismiss();
 
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(pdf_url + professional.getName_pdf()));
-                startActivity(browserIntent);
+
+                searchTask.execute(professional.getDisorder_id());
             }
 
         });
@@ -188,10 +199,41 @@ public class ProtocolActivity extends AppCompatActivity {
         pb_loadingProfissionalsData = (ProgressBar)
                 findViewById(R.id.act_search_protocol_pb_loadingDisorderData);
 
+        new SearchProfissionaisTask().execute("all", "name");
+
     }
 
 
 
+    class SearchProfileTask extends AsyncTask<String, String, DisorderProfile> {
+
+
+        @Override
+        protected DisorderProfile doInBackground(String... params) {
+            // UIUtils.getProgressDialog(SearchDisordersActivity.this);
+            Log.d("Estou aqui","aqui");
+            String diseaseId = params[0];
+            DisorderProfileModel diseaseProfileModel = new DisorderProfileModel();
+            DisorderProfile profile = null;
+
+            try {
+                profile = diseaseProfileModel.getProfileNew(diseaseId);
+            } catch (Exception e) {
+
+            }
+
+            return profile;
+        }
+
+        protected void onPostExecute(DisorderProfile profile) {
+
+            Intent it = DisorderProfileActivity.getIntent(ProtocolActivity.this, profile);
+
+
+
+            startActivity(it);
+        }
+    }
 
     private void handleSearchRequest() {
         hideKeyboard();
@@ -363,6 +405,8 @@ public class ProtocolActivity extends AppCompatActivity {
         return true;
 
     }
+
+
 
 
 
