@@ -284,7 +284,7 @@ public class CenterProfile extends AppCompatActivity {
     private ArrayList<CenterModel> getAssociatesModel() {
         ArrayList<CenterModel> associatesModel = new ArrayList<>();
 
-        associatesModel.add(getDoenca());
+//        associatesModel.add(getDoenca());
 //        associatesModel.add(getCentros());
         // associatesModel.add(getPesquisadores());
         //associatesModel.add(getAssocPacientes());

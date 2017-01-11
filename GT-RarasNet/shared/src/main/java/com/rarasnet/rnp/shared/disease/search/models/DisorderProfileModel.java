@@ -89,7 +89,7 @@ public class DisorderProfileModel {
 
             if(jsonStr != null){
                 disorder = getDisorder(jsonStr);
-                specialties = getSpecialties(jsonStr);
+//                specialties = getSpecialties(jsonStr);
                 signs = getSigns(jsonStr);
                 centers = getCenter(jsonStr);
                 professionals = getProfessionais(jsonStr);

@@ -203,15 +203,16 @@ public class SearchCentersActivity extends AppCompatActivity {
 
                 RadioButton radioButton = (RadioButton) group.findViewById(checkedId);
                 if (null != radioButton && checkedId > -1) {
-
-                    if (checkedId == R.id.radio_disorder_center) {
-                        ac_searchEditText.setHint("Buscar por nome da Disordem");
-                        ac_searchEditText.setVisibility(View.VISIBLE);
-                        searchOption = "disorder";
-                        ((CentersAutocompleteAdapter)
-                                ac_searchEditText.getAdapter()).setSearchOption("disorder");
-
-                    }else if(checkedId == R.id.radio_name_center) {
+//
+//                    if (checkedId == R.id.radio_disorder_center) {
+//                        ac_searchEditText.setHint("Buscar por nome da Disordem");
+//                        ac_searchEditText.setVisibility(View.VISIBLE);
+//                        searchOption = "disorder";
+//                        ((CentersAutocompleteAdapter)
+//                                ac_searchEditText.getAdapter()).setSearchOption("disorder");
+//
+//                    }else
+                    if(checkedId == R.id.radio_name_center) {
                         ac_searchEditText.setHint("Buscar por nome do centro");
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         ((CentersAutocompleteAdapter)

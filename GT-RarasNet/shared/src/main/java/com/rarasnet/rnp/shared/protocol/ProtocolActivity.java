@@ -116,8 +116,8 @@ public class ProtocolActivity extends AppCompatActivity {
         setContentView(R.layout.list_protocol);
 
         // Sets show all button listener
-        ImageButton showAll = (ImageButton) findViewById((R.id.showAllButton));
-        showAll.setOnClickListener(show_all_Listener);
+//        ImageButton showAll = (ImageButton) findViewById((R.id.showAllButton));
+//        showAll.setOnClickListener(show_all_Listener);
 
         mToolbar = (Toolbar) findViewById(R.id.act_search_protocol_tb_toolbar);
         setSupportActionBar(mToolbar);
@@ -135,46 +135,46 @@ public class ProtocolActivity extends AppCompatActivity {
         lv_searchResults.setAdapter(mSearchResultsAdapter);
 
 
-        ac_searchEditText = (AppCompatAutoCompleteTextView)
-                findViewById(R.id.act_search_protocol_et_search);
-        ac_searchEditText.setOnTouchListener(et_search_touchListener);
-        ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0,
-                et_search_sendButtonResource, 0);
+//        ac_searchEditText = (AppCompatAutoCompleteTextView)
+//                findViewById(R.id.act_search_protocol_et_search);
+//        ac_searchEditText.setOnTouchListener(et_search_touchListener);
+//        ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0,
+//                et_search_sendButtonResource, 0);
         pb_searchProgress = (ProgressBar)
                 findViewById(R.id.act_search_protocol_pb_searchProgress);
 
 
-        // AUTOCOMPLETE
-        ac_searchEditText.setAdapter(new ProtocolAutocompleteAdapter(this,
-                new ProtocolAutocompleteAdapter.AutocompleteListener() {
-                    @Override
-                    public void onStartFiltering() {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                pb_searchProgress.setVisibility(View.VISIBLE);
-                                ac_searchEditText.setOnTouchListener(null);
-                                ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-                                flag = false;
-
-                            }
-                        });
-
-
-                    }
-
-                    @Override
-                    public void onStopFiltering() {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                pb_searchProgress.setVisibility(View.INVISIBLE);
-                                ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, et_search_sendButtonResource, 0);
-                                ac_searchEditText.setOnTouchListener(et_search_touchListener);
-                            }
-                        });
-                    }
-                }));
+//        // AUTOCOMPLETE
+//        ac_searchEditText.setAdapter(new ProtocolAutocompleteAdapter(this,
+//                new ProtocolAutocompleteAdapter.AutocompleteListener() {
+//                    @Override
+//                    public void onStartFiltering() {
+//                        runOnUiThread(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                pb_searchProgress.setVisibility(View.VISIBLE);
+//                                ac_searchEditText.setOnTouchListener(null);
+//                                ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+//                                flag = false;
+//
+//                            }
+//                        });
+//
+//
+//                    }
+//
+//                    @Override
+//                    public void onStopFiltering() {
+//                        runOnUiThread(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                pb_searchProgress.setVisibility(View.INVISIBLE);
+//                                ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, et_search_sendButtonResource, 0);
+//                                ac_searchEditText.setOnTouchListener(et_search_touchListener);
+//                            }
+//                        });
+//                    }
+//                }));
 
             mSearchResultsAdapter.setOnItemClickListener(new ProtocolSearchResultsAdapter.OnItemClickListener() {
             @Override
@@ -198,6 +198,8 @@ public class ProtocolActivity extends AppCompatActivity {
 
         pb_loadingProfissionalsData = (ProgressBar)
                 findViewById(R.id.act_search_protocol_pb_loadingDisorderData);
+
+        pb_searchProgress.setVisibility(View.VISIBLE);
 
         new SearchProfissionaisTask().execute("all", "name");
 
@@ -318,8 +320,8 @@ public class ProtocolActivity extends AppCompatActivity {
 
             //MenuItemCompat.collapseActionView(mToolbarSearchItem);
             pb_searchProgress.setVisibility(View.INVISIBLE);
-            ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, et_search_sendButtonResource, 0);
-            ac_searchEditText.setOnTouchListener(et_search_touchListener);
+//            ac_searchEditText.setCompoundDrawablesWithIntrinsicBounds(0, 0, et_search_sendButtonResource, 0);
+//            ac_searchEditText.setOnTouchListener(et_search_touchListener);
 
 //            pb_searchViewProgress.setVisibility(View.INVISIBLE);
 
@@ -348,7 +350,7 @@ public class ProtocolActivity extends AppCompatActivity {
 
 
         float actionBarSize = getResources().getDimension(R.dimen.abc_action_bar_default_height_material);
-        ac_searchEditText.setVisibility(View.GONE);
+//        ac_searchEditText.setVisibility(View.GONE);
         shrink(mToolbar, Math.round(actionBarSize), professionals.size());
     }
 

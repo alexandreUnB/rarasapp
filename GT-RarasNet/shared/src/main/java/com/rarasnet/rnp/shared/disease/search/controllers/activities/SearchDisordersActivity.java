@@ -172,17 +172,18 @@ private android.app.AlertDialog progress;
                         ((DisordersAutocompleteAdapter)
                                 ac_searchEditText.getAdapter()).setSearchOption(searchOption);
 
-                    }else if(checkedId == R.id.radio_cid) {
-                        doSignsSearch = false;
-                        ac_searchEditText.setHint("Busca por CID");
-                        ac_searchEditText.setVisibility(View.VISIBLE);
-                        ac_searchBySigns.setVisibility(View.INVISIBLE);
-                        ac_searchByCid.setVisibility(View.INVISIBLE);
-                        searchOption = "cid";
-                        ((DisordersAutocompleteAdapter)
-                                ac_searchEditText.getAdapter()).setSearchOption(searchOption);
-
                     }
+//                    else if(checkedId == R.id.radio_cid) {
+//                        doSignsSearch = false;
+//                        ac_searchEditText.setHint("Busca por CID");
+//                        ac_searchEditText.setVisibility(View.VISIBLE);
+//                        ac_searchBySigns.setVisibility(View.INVISIBLE);
+//                        ac_searchByCid.setVisibility(View.INVISIBLE);
+//                        searchOption = "cid";
+//                        ((DisordersAutocompleteAdapter)
+//                                ac_searchEditText.getAdapter()).setSearchOption(searchOption);
+//
+//                    }
             }}
         });
 

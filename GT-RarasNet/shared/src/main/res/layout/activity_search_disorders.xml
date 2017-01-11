@@ -147,12 +147,12 @@
                     android:text="Nome"
 
                     android:onClick="onRadioButtonClicked"/>
-                <RadioButton android:id="@+id/radio_cid"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:text="CID"
-                    android:onClick="onRadioButtonClicked"/>
+                <!--<RadioButton android:id="@+id/radio_cid"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:text="CID"-->
+                    <!--android:onClick="onRadioButtonClicked"/>-->
                 <!--<RadioButton android:id="@+id/radio_sinais"-->
                     <!--android:layout_width="wrap_content"-->
                     <!--android:layout_height="wrap_content"-->

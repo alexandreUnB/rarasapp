@@ -49,7 +49,7 @@ public class CenterAdapter {
      * @throws Exception
      */
     public List<SearchCentersDataResponse> nameSearch(String userInput) throws Exception {
-        String searchURL = nameURL + userInput.replace(" ", "%20");
+        String searchURL = nameURL + userInput.replace(" ", "%20")+ ",0";
         List<SearchCentersDataResponse> centers = null;
 
         try {
@@ -83,16 +83,16 @@ public class CenterAdapter {
         switch (option)
         {
             case "local":
-                searchURL = localURL + userInput.replace(" ", "%20");
+                searchURL = localURL + userInput.replace(" ", "%20") + ",0";
             break;
             case "disorder":
-                searchURL = disorderURL + userInput.replace(" ", "%20");
+                searchURL = disorderURL + userInput.replace(" ", "%20") + ",0";
             break;
             case "specialty":
-                searchURL = specialtyURL + userInput.replace(" ", "%20");
+                searchURL = specialtyURL + userInput.replace(" ", "%20") + ",0";
             break;
             default:
-                searchURL = nameURL + userInput.replace(" ", "%20");
+                searchURL = nameURL + userInput.replace(" ", "%20") + ",0";
             break;
         }
 

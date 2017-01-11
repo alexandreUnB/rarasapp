@@ -105,36 +105,36 @@
 
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/frag_disorder_description_tv_especialidades"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/frag_disorder_Lawer_Value"
-                android:textColor="@color/material_blue_grey_950"
-                android:layout_marginTop="12dp"
-                android:textSize="14sp"
-                android:text="Especialidade(s): "
-                android:textStyle="bold"
-                />
+            <!--<TextView-->
+                <!--android:id="@+id/frag_disorder_description_tv_especialidades"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/frag_disorder_Lawer_Value"-->
+                <!--android:textColor="@color/material_blue_grey_950"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:textSize="14sp"-->
+                <!--android:text="Especialidade(s): "-->
+                <!--android:textStyle="bold"-->
+                <!--/>-->
 
 
-            <TextView
-                android:id="@+id/frag_disorder_description_tv_especialidadesValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:layout_below="@id/frag_disorder_Lawer_Value"
-                android:layout_toRightOf="@id/frag_disorder_description_tv_especialidades"
-                android:textColor="@color/material_blue_grey_950"
-                android:textSize="14sp"
-            />
+            <!--<TextView-->
+                <!--android:id="@+id/frag_disorder_description_tv_especialidadesValue"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="12dp"-->
+                <!--android:layout_below="@id/frag_disorder_Lawer_Value"-->
+                <!--android:layout_toRightOf="@id/frag_disorder_description_tv_especialidades"-->
+                <!--android:textColor="@color/material_blue_grey_950"-->
+                <!--android:textSize="14sp"-->
+            <!--/>-->
 
 
             <TextView
                 android:id="@+id/frag_disorder_description_tv_orpha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/frag_disorder_description_tv_especialidadesValue"
+                android:layout_below="@id/frag_disorder_Lawer_Value"
                 android:textColor="@color/material_blue_grey_950"
                 android:layout_marginTop="12dp"
                 android:textSize="14sp"
@@ -148,7 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:layout_below="@id/frag_disorder_description_tv_especialidadesValue"
+                android:layout_below="@id/frag_disorder_Lawer_Value"
                 android:layout_toRightOf="@id/frag_disorder_description_tv_orpha"
                 android:textColor="@color/material_blue_grey_950"
                 android:textSize="14sp"
@@ -193,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 android:layout_marginTop="12dp"
-                android:layout_below="@id/frag_disorder_description_tv_especialidadesValue"
+                android:layout_below="@id/frag_disorder_Lawer_Value"
                 android:layout_toLeftOf="@id/frag_disorder_description_iv_downloadIcon"
                 android:text="Visualizar Protocolo"
                 android:textColor="@color/primary_accent"

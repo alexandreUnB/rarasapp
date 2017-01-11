@@ -87,13 +87,13 @@ public class DescriptionFragment  extends Fragment {
 
         // Loops through specialties and print them
         // on the device, adding an extra break line at the end
-        tv_especialidades = (TextView) view.findViewById(R.id.frag_disorder_description_tv_especialidadesValue);
-        for (int i=0; i< disorderProfile.getSpecialties().size(); i++) {
-            tv_especialidades.append(disorderProfile.getSpecialties().get(i).getName());
-            tv_especialidades.append(" ");
-            tv_especialidades.append(disorderProfile.getSpecialties().get(i).getCbo());
-            tv_especialidades.append("\n");
-        }
+//        tv_especialidades = (TextView) view.findViewById(R.id.frag_disorder_description_tv_especialidadesValue);
+//        for (int i=0; i< disorderProfile.getSpecialties().size(); i++) {
+//            tv_especialidades.append(disorderProfile.getSpecialties().get(i).getName());
+//            tv_especialidades.append(" ");
+//            tv_especialidades.append(disorderProfile.getSpecialties().get(i).getCbo());
+//            tv_especialidades.append("\n");
+//        }
 
         tv_orpha = (TextView) view.findViewById(R.id.frag_disorder_description_tv_orphaValue);
         tv_orpha.setText(diseaseOrphanumber);
@@ -101,9 +101,19 @@ public class DescriptionFragment  extends Fragment {
         tv_cid = (TextView) view.findViewById(R.id.frag_disorder_description_tv_cidValue);
         tv_cid.setText("");
 
+        int breakLine = 0;
         if(disorderProfile.getCids() != null) {
             for (String cidString: disorderProfile.getCids()) {
+                breakLine += 1;
                 tv_cid.append(cidString);
+                if(breakLine < 3){
+                    tv_cid.append(" ");
+                }else{
+                    tv_cid.append("\n");
+                    breakLine = 0;
+                }
+
+
             }
         }
 //        tv_expertlink = (TextView) view.findViewById(R.id.frag_disorder_description_tv_expertlink);

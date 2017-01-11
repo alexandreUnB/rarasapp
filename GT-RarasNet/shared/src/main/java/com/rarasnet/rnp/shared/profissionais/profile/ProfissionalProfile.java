@@ -308,7 +308,7 @@ public class ProfissionalProfile extends AppCompatActivity {
     private ArrayList<ProfissionaisModel> getAssociatesModel() {
         ArrayList<ProfissionaisModel> associatesModel = new ArrayList<>();
 
-        associatesModel.add(getDoenca());
+//        associatesModel.add(getDoenca());
 //        associatesModel.add(getCentros());
 
         // associatesModel.add(getPesquisadores());

@@ -140,7 +140,7 @@ public class Contact extends AppCompatActivity implements View.OnClickListener {
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("message/rfc822");
         i.putExtra(Intent.EXTRA_EMAIL, new String[]{"contato@rederaras.org"});
-        i.putExtra(Intent.EXTRA_CC, new String[]{"ronnyerybarbosa@hotmail.com"});
+        i.putExtra(Intent.EXTRA_CC, new String[]{""});
         i.putExtra(Intent.EXTRA_SUBJECT, "Rarasnet");
         i.putExtra(Intent.EXTRA_TEXT, "Mensagem");
         try {
@@ -186,7 +186,7 @@ public class Contact extends AppCompatActivity implements View.OnClickListener {
 
                             }else if(Complemeto.equals("database")) {
 
-                                i.setData(Uri.parse("http://rederaras.org/webservice/"));
+                                i.setData(Uri.parse("http://rarasbase.rederaras.org"));
                                 startActivity(i);
 
 

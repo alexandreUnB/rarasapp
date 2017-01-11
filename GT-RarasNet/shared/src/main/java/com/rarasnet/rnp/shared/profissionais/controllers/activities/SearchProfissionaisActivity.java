@@ -200,14 +200,15 @@ public class SearchProfissionaisActivity extends AppCompatActivity {
                 RadioButton radioButton = (RadioButton) group.findViewById(checkedId);
                 if (null != radioButton && checkedId > -1) {
 
-                    if (checkedId == R.id.radio_disorder_professional) {
-                        ac_searchEditText.setHint("Buscar por nome da disordem");
-                        ac_searchEditText.setVisibility(View.VISIBLE);
-                        ((ProfessionalsAutocompleteAdapter)
-                                ac_searchEditText.getAdapter()).setSearchOption("disorder");
-                        searchOption = "disorder";
-
-                    } else if (checkedId == R.id.radio_name_professional) {
+//                    if (checkedId == R.id.radio_disorder_professional) {
+//                        ac_searchEditText.setHint("Buscar por nome da disordem");
+//                        ac_searchEditText.setVisibility(View.VISIBLE);
+//                        ((ProfessionalsAutocompleteAdapter)
+//                                ac_searchEditText.getAdapter()).setSearchOption("disorder");
+//                        searchOption = "disorder";
+//
+//                    } else
+                    if (checkedId == R.id.radio_name_professional) {
                         ac_searchEditText.setHint("Buscar por nome do profissional");
                         ac_searchEditText.setVisibility(View.VISIBLE);
                         ((ProfessionalsAutocompleteAdapter)

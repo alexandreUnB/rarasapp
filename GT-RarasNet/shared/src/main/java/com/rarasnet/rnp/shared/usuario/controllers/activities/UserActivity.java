@@ -266,10 +266,11 @@ public class UserActivity extends AppCompatActivity {
         protected void onPostExecute(Profile user){
 
 
-            tvnome.setText(user.getNome());
-            tvsobrenome.setText(user.getSobrenome());
-            tvemail.setText(user.getEmail());
-            tvlogin.setText(user.getLogin());
+//            tvnome.setText(user.getNome());
+            tvnome.setText("Beta");
+            tvsobrenome.setText("Tester");
+            tvemail.setText(" ");
+            tvlogin.setText(" ");
            // email.setText(user.getEmail());
 
 

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -77,6 +78,7 @@ public class LawSearchResultsAdapter extends ArrayAdapter<LawModel> {
             // well set up the ViewHolder
             viewHolder = new ViewHolder();
 
+            viewHolder.loadButton = (ImageButton) convertView.findViewById(R.id.loadButton);
             viewHolder.imagem = (ImageView) convertView.findViewById(R.id.avatar);
             viewHolder.tv_nome = (TextView) convertView.findViewById(R.id.default_search_item_tv_principal);
             viewHolder.tv_cidade = (TextView) convertView.findViewById(R.id.default_search_item_tv_info1);
@@ -111,7 +113,8 @@ public class LawSearchResultsAdapter extends ArrayAdapter<LawModel> {
             viewHolder.tv_nome.setText(professional.getName_law());
             viewHolder.tv_cidade.setText("");
             viewHolder.tv_profissao.setText("");
-            viewHolder.imagem.setImageResource(R.mipmap.pdf_icon);
+            viewHolder.loadButton.setImageResource(0);
+//            viewHolder.imagem.setImageResource(R.mipmap.pdf_icon);
 
         }
 
@@ -132,5 +135,6 @@ public class LawSearchResultsAdapter extends ArrayAdapter<LawModel> {
         TextView tv_uf;
         ImageView imagem;
         ImageView iv_isFavoriteDoenca;
+        ImageButton loadButton;
     }
 }

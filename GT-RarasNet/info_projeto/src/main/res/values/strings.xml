@@ -41,7 +41,7 @@
         <p>É importante ressaltar a existência da portaria 199 de 30 de janeiro de 2014 Institui a Política Nacional de Atenção Integral às Pessoas com Doenças Raras, onde aprova as “Diretrizes para Atenção Integral às Pessoas com Doenças Raras no âmbito do Sistema Único de Saúde (SUS) e institui incentivos financeiros de custeio”. Para que essa portaria seja aceita, considera-se doença rara aquela que atinge até 65 pessoas em cada 100.000 indivíduos, ou seja, 1,3 pessoas para cada 2.000 indivíduos.
         <br>
         <br>
-        <b>Sobre o Aplicativo RarasNet: </b> O aplicativo está em fase experimental, versão Beta 1.0.
+        <b>Sobre o Aplicativo RarasNet: </b> O aplicativo está em fase experimental, versão Alpha 1.0.
         ]]>
 
 </string>
@@ -56,7 +56,8 @@
          <h4> Equipe de TI </h4>
         <li> Alexandre Sanches - Gerente de Projeto</li>
         <li> Felipe Brandão - Desenvolvedor</li>
-        <li> Ronnyery Barbosa - Desenvolverdor</li>
+        <li> Lucas Maciel - Desenvolvedor</li>
+       <!-- <li> Ronnyery Barbosa - Desenvolverdor</li> -->
 
         <h4> Equipe de Conteúdo </h4>
         <li> Larissa Arruda</li>
